@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import booksImage from "../assets/img/books.jpg";
 
 const Eventi = () => {
   const events = [
@@ -12,7 +13,7 @@ const Eventi = () => {
       description: "Un workshop interattivo per migliorare le tue capacità di conversazione in inglese. Pratica con madrelingua in un ambiente rilassato e stimolante.",
       price: "Gratuito",
       category: "Lingue",
-      image: "/src/assets/img/books.jpg"
+      image: booksImage
     },
     {
       id: 2,
@@ -23,7 +24,7 @@ const Eventi = () => {
       description: "Esplora la tua creatività attraverso la scrittura. Tecniche innovative per sviluppare il tuo stile personale e raccontare storie coinvolgenti.",
       price: "€15",
       category: "Creatività",
-      image: "/src/assets/img/books.jpg"
+      image: booksImage
     },
     {
       id: 3,
@@ -34,7 +35,7 @@ const Eventi = () => {
       description: "Inizia il tuo viaggio nell'apprendimento dello spagnolo. Metodologie innovative per acquisire le basi linguistiche in modo divertente ed efficace.",
       price: "€25",
       category: "Lingue",
-      image: "/src/assets/img/books.jpg"
+      image: booksImage
     },
     {
       id: 4,
@@ -45,7 +46,7 @@ const Eventi = () => {
       description: "Scopri tecniche di mindfulness per migliorare il tuo benessere psicofisico. Pratiche meditative e esercizi di respirazione per la vita quotidiana.",
       price: "€20",
       category: "Benessere",
-      image: "/src/assets/img/books.jpg"
+      image: booksImage
     },
     {
       id: 5,
@@ -56,7 +57,7 @@ const Eventi = () => {
       description: "Una serata speciale per praticare diverse lingue in un ambiente sociale e rilassato. Cibo, musica e conversazioni in inglese, spagnolo e francese.",
       price: "€10",
       category: "Sociale",
-      image: "/src/assets/img/books.jpg"
+      image: booksImage
     },
     {
       id: 6,
@@ -67,7 +68,7 @@ const Eventi = () => {
       description: "Supera la paura di parlare in pubblico. Tecniche pratiche per migliorare la tua comunicazione, gestire l'ansia e coinvolgere il tuo pubblico.",
       price: "€30",
       category: "Sviluppo Personale",
-      image: "/src/assets/img/books.jpg"
+      image: booksImage
     }
   ];
 
@@ -80,7 +81,7 @@ const Eventi = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/src/assets/img/books.jpg')`,
+            backgroundImage: `url(${booksImage})`,
             filter: 'blur(2px) brightness(0.6)'
           }}
         />
@@ -120,10 +121,10 @@ const Eventi = () => {
               <div key={event.id} className="bg-white/80 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
                 <div 
                   className="h-48 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url('${event.image}')`,
-                    filter: 'brightness(0.8)'
-                  }}
+                     style={{
+                       backgroundImage: `url(${event.image})`,
+                       filter: 'brightness(0.8)'
+                     }}
                 />
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">

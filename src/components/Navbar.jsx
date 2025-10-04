@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logoImage from "../assets/img/logo.png";
 
 const Navbar = () => {
   const location = useLocation();
@@ -20,7 +21,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/src/assets/img/logo.png" 
+              src={logoImage} 
               alt="A LIFELONG LEARNING HUB" 
               className="h-10 w-auto"
             />

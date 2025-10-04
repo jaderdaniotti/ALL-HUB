@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import booksImage from "../assets/img/books.jpg";
 
 const Contatti = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const Contatti = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/src/assets/img/books.jpg')`,
+            backgroundImage: `url(${booksImage})`,
             filter: 'blur(3px) brightness(0.6)'
           }}
         />

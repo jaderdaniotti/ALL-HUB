@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import booksImage from "../assets/img/books.jpg";
 
 const Servizi = () => (
   <div className="">
@@ -8,7 +9,7 @@ const Servizi = () => (
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/src/assets/img/books.jpg')`,
+          backgroundImage: `url(${booksImage})`,
           filter: 'blur(2px) brightness(0.6)'
         }}
       />

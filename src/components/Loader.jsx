@@ -1,4 +1,5 @@
 import React from "react";
+import logoImage from "../assets/img/logo.png";
 
 const Loader = () => {
   return (
@@ -7,7 +8,7 @@ const Loader = () => {
         {/* Logo con animazione personalizzata */}
         <div className="loader-logo">
           <img
-            src="/src/assets/img/logo.png"
+            src={logoImage}
             alt="A LIFELONG LEARNING HUB"
             className="h-20 w-auto"
           />

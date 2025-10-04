@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logoImage from "../assets/img/logo.png";
 
 const Footer = () => (
   <footer className="w-full z-50 bg-white/90 backdrop-blur-md shadow-sm py-3">

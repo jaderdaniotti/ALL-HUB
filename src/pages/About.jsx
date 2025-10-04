@@ -1,4 +1,5 @@
 import React from "react";
+import booksImage from "../assets/img/books.jpg";
 
 const About = () => (
   <div className="">
@@ -7,7 +8,7 @@ const About = () => (
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/src/assets/img/books.jpg')`,
+          backgroundImage: `url(${booksImage})`,
           filter: 'blur(2px) brightness(0.6)'
         }}
       />
@@ -172,7 +173,7 @@ const About = () => (
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/src/assets/img/books.jpg')`,
+          backgroundImage: `url(${booksImage})`,
           filter: 'blur(3px) brightness(0.6)'
         }}
       />

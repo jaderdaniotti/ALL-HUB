@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import booksImage from "../assets/img/books.jpg";
 
 const Home = () => (
   <div className="">
@@ -9,7 +10,7 @@ const Home = () => (
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/src/assets/img/books.jpg')`,
+          backgroundImage: `url(${booksImage})`,
           filter: 'blur(2px) brightness(0.7)'
         }}
       />
@@ -168,7 +169,7 @@ const Home = () => (
           </div>
         </div>
       </div>
-    </section>
+  </section>
 
     {/* Newsletter Section */}
     {/* <section className="py-12 relative overflow-hidden">

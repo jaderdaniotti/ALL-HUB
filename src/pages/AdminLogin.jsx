@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import booksImage from "../assets/img/books.jpg";
 
 const AdminLogin = () => {
   const [credentials, setCredentials] = useState({
@@ -40,7 +41,7 @@ const AdminLogin = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/src/assets/img/books.jpg')`,
+            backgroundImage: `url(${booksImage})`,
             filter: 'blur(2px) brightness(0.6)'
           }}
         />
