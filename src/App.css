@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import 'bootstrap-icons';
+@plugin "daisyui";
+
+
+:root {
+  --scuro: #111111;
+  --scuro-2: #222222;
+  --chiaro-2: #e5e7eb;
+  --chiaro: #f3f4f6;
+  --bianco: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--chiaro);
+  /* background-image: url(//immagini/sfondo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+  color: var(--scuro);
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.025em;
+  min-height: 100vh;
+    /* -0.025em */
+  
+  overflow-y: auto;
+}
+
+/* #region colori */
+.bg-scuro {
+  background-color: var(--scuro);
+}
+
+.bg-scuro-2 {
+  background-color: var(--scuro-2);
+}
+
+.bg-chiaro {
+  background-color: var(--chiaro);
+}
+
+.bg-chiaro-2 {
+  background-color: var(--chiaro-2);
+}
+
+.bg-bianco {
+  background-color: var(--bianco);
+}
+
+.text-bianco {
+  color: var(--bianco);
+}
+
+.text-scuro {
+  color: var(--scuro);
+}
+
+.text-scuro-2 {
+  color: var(--scuro-2);
+}
+
+.text-chiaro {
+  color: var(--chiaro);
+}
+
+.text-chiaro-2 {
+  color: var(--chiaro-2);
+}
+
+/* #endregion */
+
+/* #region font */
+.michroma-regular {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.exo-2 {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* #endregion */
+
