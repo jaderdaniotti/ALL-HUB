@@ -63,7 +63,7 @@ const Home = () => (
           </div>
           <div className="relative">
             <img 
-              src="/src/assets/img/books.jpg" 
+              src={booksImage} 
               alt="Learning environment" 
               className="rounded-2xl shadow-2xl"
             />
