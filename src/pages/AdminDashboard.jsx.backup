@@ -1081,4 +1081,689 @@ const AdminDashboard = () => {
   );
 };
 
+            {activeTab === 'eventi' && (
+
+              <form onSubmit={handleAddEvent} className="space-y-4">
+
+                <div>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                    Titolo dell'Evento
+
+                  </label>
+
+                  <input
+
+                    type="text"
+
+                    value={newEvent.title}
+
+                    onChange={(e) => setNewEvent({...newEvent, title: e.target.value})}
+
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                    required
+
+                  />
+
+                </div>
+
+
+
+                <div className="grid grid-cols-2 gap-4">
+
+                  <div>
+
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                      Data
+
+                    </label>
+
+                    <input
+
+                      type="date"
+
+                      value={newEvent.date}
+
+                      onChange={(e) => setNewEvent({...newEvent, date: e.target.value})}
+
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                      required
+
+                    />
+
+                  </div>
+
+
+
+                  <div>
+
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                      Orario
+
+                    </label>
+
+                    <input
+
+                      type="text"
+
+                      value={newEvent.time}
+
+                      onChange={(e) => setNewEvent({...newEvent, time: e.target.value})}
+
+                      placeholder="es. 18:00 - 19:30"
+
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                      required
+
+                    />
+
+                  </div>
+
+                </div>
+
+
+
+                <div>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                    Luogo
+
+                  </label>
+
+                  <input
+
+                    type="text"
+
+                    value={newEvent.location}
+
+                    onChange={(e) => setNewEvent({...newEvent, location: e.target.value})}
+
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                    required
+
+                  />
+
+                </div>
+
+
+
+                <div>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                    Categoria
+
+                  </label>
+
+                  <select
+
+                    value={newEvent.category}
+
+                    onChange={(e) => setNewEvent({...newEvent, category: e.target.value})}
+
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                  >
+
+                    <option value="Lingue">Lingue</option>
+
+                    <option value="Benessere">Benessere</option>
+
+                    <option value="Cultura">Cultura</option>
+
+                    <option value="Workshop">Workshop</option>
+
+                  </select>
+
+                </div>
+
+
+
+                <div>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                    Descrizione
+
+                  </label>
+
+                  <textarea
+
+                    value={newEvent.description}
+
+                    onChange={(e) => setNewEvent({...newEvent, description: e.target.value})}
+
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent h-24"
+
+                    required
+
+                  />
+
+                </div>
+
+
+
+                <div>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                    Immagine
+
+                  </label>
+
+                  <input
+
+                    type="file"
+
+                    accept="image/*"
+
+                    onChange={(e) => handleImageUpload(e.target.files[0], setNewEvent, setEventImagePreview)}
+
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                  />
+
+                  {eventImagePreview && (
+
+                    <div className="mt-4">
+
+                      <img src={eventImagePreview} alt="Preview" className="w-full h-32 object-cover rounded-lg" />
+
+                    </div>
+
+                  )}
+
+                </div>
+
+
+
+                <button
+
+                  type="submit"
+
+                  className="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors font-medium"
+
+                >
+
+                  Aggiungi Evento
+
+                </button>
+
+              </form>
+
+            )}
+
+
+
+            {/* Form Settimane Studio */}
+
+            {activeTab === 'settimane' && (
+
+              <form onSubmit={handleAddStudyWeek} className="space-y-4">
+
+                <div>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                    Titolo della Settimana
+
+                  </label>
+
+                  <input
+
+                    type="text"
+
+                    value={newStudyWeek.title}
+
+                    onChange={(e) => setNewStudyWeek({...newStudyWeek, title: e.target.value})}
+
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                    required
+
+                  />
+
+                </div>
+
+
+
+                <div>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                    Descrizione
+
+                  </label>
+
+                  <textarea
+
+                    value={newStudyWeek.description}
+
+                    onChange={(e) => setNewStudyWeek({...newStudyWeek, description: e.target.value})}
+
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent h-24"
+
+                    required
+
+                  />
+
+                </div>
+
+
+
+                <div className="grid grid-cols-2 gap-4">
+
+                  <div>
+
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                      Durata
+
+                    </label>
+
+                    <input
+
+                      type="text"
+
+                      value={newStudyWeek.duration}
+
+                      onChange={(e) => setNewStudyWeek({...newStudyWeek, duration: e.target.value})}
+
+                      placeholder="es. 5 giorni, 1 settimana"
+
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                      required
+
+                    />
+
+                  </div>
+
+
+
+                  <div>
+
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                      Tipo
+
+                    </label>
+
+                    <select
+
+                      value={newStudyWeek.type}
+
+                      onChange={(e) => setNewStudyWeek({...newStudyWeek, type: e.target.value})}
+
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                    >
+
+                      <option value="Intensiva">Intensiva</option>
+
+                      <option value="Culturale">Culturale</option>
+
+                      <option value="Mista">Mista</option>
+
+                    </select>
+
+                  </div>
+
+                </div>
+
+
+
+                <div>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                    Città di Destinazione
+
+                  </label>
+
+                  <input
+
+                    type="text"
+
+                    value={newStudyWeek.city}
+
+                    onChange={(e) => setNewStudyWeek({...newStudyWeek, city: e.target.value})}
+
+                    placeholder="es. Londra, Parigi, Madrid..."
+
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                    required
+
+                  />
+
+                </div>
+
+
+
+                <div>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                    Attività Incluse
+
+                  </label>
+
+                  <textarea
+
+                    value={newStudyWeek.activities}
+
+                    onChange={(e) => setNewStudyWeek({...newStudyWeek, activities: e.target.value})}
+
+                    placeholder="Descrivi le attività incluse nella settimana..."
+
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent h-24"
+
+                    required
+
+                  />
+
+                </div>
+
+
+
+                <div>
+
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+
+                    Immagine
+
+                  </label>
+
+                  <input
+
+                    type="file"
+
+                    accept="image/*"
+
+                    onChange={(e) => handleImageUpload(e.target.files[0], setNewStudyWeek, setStudyWeekImagePreview)}
+
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+
+                  />
+
+                  {studyWeekImagePreview && (
+
+                    <div className="mt-4">
+
+                      <img src={studyWeekImagePreview} alt="Preview" className="w-full h-32 object-cover rounded-lg" />
+
+                    </div>
+
+                  )}
+
+                </div>
+
+
+
+                <button
+
+                  type="submit"
+
+                  className="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors font-medium"
+
+                >
+
+                  Aggiungi Settimana Studio
+
+                </button>
+
+              </form>
+
+            )}
+
+          </div>
+
+
+
+          {/* Anteprima Section */}
+          <div className="bg-white/90 rounded-2xl shadow-xl p-6">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+              Anteprima Card
+            </h2>
+            
+            <div className="sticky top-4">
+              {activeTab === 'corsi' && (
+                <CoursePreview courseData={newCourse} />
+              )}
+              
+              {activeTab === 'eventi' && (
+                <EventPreview eventData={newEvent} />
+              )}
+              
+              {activeTab === 'settimane' && (
+                <StudyWeekPreview studyWeekData={newStudyWeek} />
+              )}
+            </div>
+          </div>
+        </div>
+        
+        {/* List Section */}
+        <div className="mt-8">
+          <h3 className="text-3xl text-center font-semibold text-gray-800 mb-6">Anteprime</h3>
+          <div className="bg-white/90 rounded-2xl shadow-xl p-6">
+
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+
+              {activeTab === 'corsi' && `Corsi (${courses.length})`}
+
+              {activeTab === 'eventi' && `Eventi (${events.length})`}
+
+              {activeTab === 'settimane' && `Settimane Studio (${studyWeeks.length})`}
+
+            </h2>
+
+
+
+            <div className="space-y-4 max-h-96 overflow-y-auto">
+
+            
+              {/* Lista Corsi */}
+
+              {activeTab === 'corsi' && courses.map((course) => (
+
+                <div key={course.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+
+                  <div className="flex justify-between items-start">
+
+                    <div className="flex-1">
+
+                      <h3 className="font-semibold text-gray-800 mb-2">{course.title}</h3>
+
+                      <p className="text-sm text-gray-600 mb-2">{course.description}</p>
+
+                      <div className="flex space-x-4 text-xs text-gray-500">
+
+                        <span>Durata: {course.duration}</span>
+
+                        <span>Livello: {course.level}</span>
+
+                        <span>Tipo: {course.type}</span>
+
+                      </div>
+
+                    </div>
+
+                    <button
+
+                      onClick={() => openDeleteModal(course.id, 'course', course.title)}
+
+                      className="text-red-500 hover:text-red-700 ml-4"
+
+                    >
+
+                      <i className="bi bi-trash"></i>
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              ))}
+
+
+
+              {/* Lista Eventi */}
+
+              {activeTab === 'eventi' && events.map((event) => (
+
+                <div key={event.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+
+                  <div className="flex justify-between items-start">
+
+                    <div className="flex-1">
+
+                      <h3 className="font-semibold text-gray-800 mb-2">{event.title}</h3>
+
+                      <p className="text-sm text-gray-600 mb-2">{event.description}</p>
+
+                      <div className="flex space-x-4 text-xs text-gray-500">
+
+                        <span>Data: {event.date}</span>
+
+                        <span>Orario: {event.time}</span>
+
+                        <span>Categoria: {event.category}</span>
+
+                      </div>
+
+                    </div>
+
+                    <button
+
+                      onClick={() => openDeleteModal(event.id, 'event', event.title)}
+
+                      className="text-red-500 hover:text-red-700 ml-4"
+
+                    >
+
+                      <i className="bi bi-trash"></i>
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              ))}
+
+
+
+              {/* Lista Settimane Studio */}
+
+              {activeTab === 'settimane' && studyWeeks.map((week) => (
+
+                <div key={week.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+
+                  <div className="flex justify-between items-start">
+
+                    <div className="flex-1">
+
+                      <h3 className="font-semibold text-gray-800 mb-2">{week.title}</h3>
+
+                      <p className="text-sm text-gray-600 mb-2">{week.description}</p>
+
+                      <div className="flex space-x-4 text-xs text-gray-500">
+
+                        <span>Durata: {week.duration}</span>
+
+                        <span>Tipo: {week.type}</span>
+
+                        <span>Città: {week.city}</span>
+
+                      </div>
+
+                    </div>
+
+                    <button
+
+                      onClick={() => openDeleteModal(week.id, 'studyWeek', week.title)}
+
+                      className="text-red-500 hover:text-red-700 ml-4"
+
+                    >
+
+                      <i className="bi bi-trash"></i>
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              ))}
+
+
+
+              {/* Messaggio se non ci sono elementi */}
+
+              {activeTab === 'corsi' && courses.length === 0 && (
+
+                <div className="text-center text-gray-500 py-8">
+
+                  <i className="bi bi-book text-4xl mb-4"></i>
+
+                  <p>Nessun corso aggiunto ancora</p>
+
+                </div>
+
+              )}
+
+
+
+              {activeTab === 'eventi' && events.length === 0 && (
+
+                <div className="text-center text-gray-500 py-8">
+
+                  <i className="bi bi-calendar-event text-4xl mb-4"></i>
+
+                  <p>Nessun evento aggiunto ancora</p>
+
+                </div>
+
+              )}
+
+
+
+              {activeTab === 'settimane' && studyWeeks.length === 0 && (
+
+                <div className="text-center text-gray-500 py-8">
+
+                  <i className="bi bi-globe text-4xl mb-4"></i>
+
+                  <p>Nessuna settimana studio aggiunta ancora</p>
+
+                </div>
+
+              )}
+
+          </div>
+
+        </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  );
+
+};
+
+
+
 export default AdminDashboard;

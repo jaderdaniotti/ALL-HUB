@@ -39,11 +39,45 @@ src/
 └── main.jsx                # Entry point
 ```
 
+## 🗄️ Database Setup (Supabase)
+
+### Struttura Database
+Il progetto utilizza Supabase PostgreSQL con le seguenti tabelle:
+
+- **Users**: Gestione amministratori
+- **Corsi**: Corsi di lingua offerti  
+- **Eventi**: Eventi e workshop
+- **SettimaneStudio**: Settimane studio internazionali
+
+### Setup Database
+1. **Crea progetto Supabase** su [supabase.com](https://supabase.com)
+2. **Esegui lo script SQL** dal file `database_setup.sql` nel SQL Editor
+3. **Crea bucket Storage** chiamato `activity-images` per le immagini
+4. **Configura variabili environment** nel file `.env.local`:
+
+```env
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### Script SQL Completo
+```bash
+# Esegui nel SQL Editor di Supabase
+cat database_setup.sql
+```
+
+### Credenziali Admin Default
+- **Email**: `secretariat.allhub@gmail.com`
+- **Password**: `Learning25!`
+
+Per maggiori dettagli, vedi `DATABASE_STRUCTURE.md`.
+
 ## 🚀 Installazione e Avvio
 
 ### Prerequisiti
 - Node.js (versione 16 o superiore)
 - npm o yarn
+- Progetto Supabase configurato
 
 ### Installazione
 ```bash

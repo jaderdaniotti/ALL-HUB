@@ -13,7 +13,7 @@ const Footer = () => (
          
           {/* Social Media Icons */}
           <div className="flex justify-center gap-6">
-            <a href="#" aria-label="Facebook" className="text-gray-900 hover:text-blue-500 transition-colors duration-300">
+            <a href="https://www.facebook.com/share/1BjGLxA7af/" aria-label="Facebook" className="text-gray-900 hover:text-blue-500 transition-colors duration-300" target="__blank">
               <i className="bi bi-facebook text-2xl"></i>
             </a>
             <a href="#" aria-label="Instagram" className="text-gray-900 hover:text-pink-500 transition-colors duration-300">
@@ -22,7 +22,7 @@ const Footer = () => (
             <a href="#" aria-label="WhatsApp" className="text-gray-900 hover:text-green-500 transition-colors duration-300">
               <i className="bi bi-whatsapp text-2xl"></i>
             </a>
-            <a href="#" aria-label="Email" className="text-gray-900 hover:text-purple-500 transition-colors duration-300">
+            <a href="mailto:secretariat.allhub@gmail.com" aria-label="Email" className="text-gray-900 hover:text-purple-500 transition-colors duration-300">
               <i className="bi bi-envelope text-2xl"></i>
             </a>
           </div>
@@ -32,6 +32,9 @@ const Footer = () => (
       <div className=" border-gray-700 pt-4 text-center">
         <p className="text-gray-400 text-sm">
           &copy; {new Date().getFullYear()} A LIFELONG LEARNING HUB. Tutti i diritti riservati.
+        </p>
+        <p className="text-gray-400 text-sm mt-1">
+          P.IVA: 03182820302
         </p>
       </div>
     </div>

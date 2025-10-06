@@ -5,13 +5,34 @@ Guida completa per il deploy del sito web su Vercel, la piattaforma di hosting p
 ## 📋 Prerequisiti
 
 - Account Vercel (gratuito)
+- Account Supabase (gratuito) per il backend
 - Progetto React completato e funzionante
 - Git repository configurato
-- Node.js installato
+- Node.js installato (versione >= 16)
 
 ## 🔧 Preparazione del Progetto
 
-### 1. Verifica Build Locale
+### 1. Configurazione Supabase
+
+Prima del deploy, configura il database Supabase:
+
+1. **Crea Progetto Supabase**
+   - Vai su [supabase.com](https://supabase.com)
+   - Crea un nuovo progetto
+   - Salva URL e API Key
+
+2. **Setup Database**
+   ```sql
+   -- Esegui il file database_setup.sql nel SQL Editor di Supabase
+   -- Questo creerà le tabelle: corsi, eventi, settimane_studio, admin_users
+   ```
+
+3. **Configurazione Autenticazione**
+   - Abilita Email Auth in Authentication → Settings
+   - Configura RLS (Row Level Security) per le tabelle
+   - Crea utente admin con password hashata
+
+### 2. Verifica Build Locale
 ```bash
 # Assicurati che la build funzioni correttamente
 npm run build
@@ -78,10 +99,11 @@ Assicurati che il tuo `package.json` contenga:
    Install Command: npm install
    ```
 
-3. **Variabili d'Ambiente** (se necessarie)
+3. **Variabili d'Ambiente** (obbligatorie per Supabase)
    ```
    NODE_ENV=production
-   VITE_API_URL=your_api_url
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
    ```
 
 4. **Deploy**
@@ -145,9 +167,12 @@ Nel dashboard Vercel:
 Settings → Environment Variables
 
 NODE_ENV=production
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 VITE_APP_TITLE=A LIFELONG LEARNING HUB
-VITE_API_BASE_URL=https://api.yourdomain.com
 ```
+
+**⚠️ Importante**: Le variabili Supabase sono obbligatorie per il funzionamento del sito!
 
 ### 3. Redirect e Rewrites
 
@@ -333,6 +358,19 @@ In `vercel.json`:
    # Riavvia deployment dopo modifiche
    ```
 
+5. **Problemi Supabase**
+   ```bash
+   # Verifica connessione Supabase
+   # Controlla console browser per errori di autenticazione
+   # Verifica che le tabelle esistano nel database
+   # Controlla RLS policies in Supabase Dashboard
+   ```
+
+6. **Admin Panel non Funziona**
+   - Verifica che l'utente admin esista nel database
+   - Controlla che la password sia correttamente hashata
+   - Verifica le policies RLS per la tabella admin_users
+
 ### Log di Debug
 ```bash
 # Vedi logs di deployment
@@ -348,7 +386,11 @@ vercel dev
 - [ ] Tutte le pagine caricano
 - [ ] Navigazione funziona
 - [ ] Form contatti operativo
-- [ ] Admin panel accessibile
+- [ ] **Admin panel accessibile e funzionante**
+- [ ] **Login admin funziona correttamente**
+- [ ] **CRUD operations (crea/modifica/elimina) funzionano**
+- [ ] **Immagini caricano correttamente**
+- [ ] **Modali di conferma eliminazione funzionano**
 - [ ] Responsive su mobile
 
 ### 2. Performance Check
@@ -381,6 +423,49 @@ Per problemi con il deploy:
 3. Consulta la [documentazione Vercel](https://vercel.com/docs)
 4. Contatta il supporto Vercel
 
+## 🔐 Credenziali Admin di Default
+
+Dopo il deploy, puoi accedere al pannello admin con:
+
+```
+URL: https://your-domain.vercel.app/admin/login
+Username: admin@learninghub.com
+Password: Learning25!
+```
+
+**⚠️ Sicurezza**: Cambia immediatamente la password dopo il primo accesso!
+
+## 🎯 Funzionalità Implementate
+
+### ✅ Frontend
+- **Homepage** con hero section e sezioni informative
+- **Pagine**: About, Attività, Location, Contatti
+- **Design responsive** con Tailwind CSS
+- **Animazioni** con GSAP Scroll
+- **Loading states** e fallback per immagini
+
+### ✅ Backend (Supabase)
+- **Database** con tabelle per corsi, eventi, settimane studio
+- **Autenticazione** admin con password hashata
+- **CRUD operations** complete per tutti i contenuti
+- **Row Level Security** per protezione dati
+
+### ✅ Admin Panel
+- **Login sicuro** con validazione
+- **Dashboard** con tabs per gestione contenuti
+- **Form di creazione** con anteprima real-time
+- **Modifica** contenuti esistenti
+- **Eliminazione** con modale di conferma
+- **Upload immagini** con preview
+- **Gestione stati** avanzata
+
+### ✅ UX/UI
+- **Modali personalizzate** per conferme
+- **Chips colorati** per categorizzazione
+- **Icone Bootstrap** per interfaccia intuitiva
+- **Feedback visivo** per tutte le azioni
+- **Navigazione dinamica** (Login → Pannello)
+
 ---
 
-**🚀 Il tuo sito A LIFELONG LEARNING HUB è ora live su Vercel!**
+**🚀 Il tuo sito A LIFELONG LEARNING HUB è ora live su Vercel con tutte le funzionalità avanzate!**

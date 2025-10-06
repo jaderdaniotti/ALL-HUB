@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import booksImage from "../assets/img/books.jpg";
+import logorosa from "../assets/img/logorosa-Photoroom.png";
 
-const Home = () => (
+const Home = () => {
+
+  return (
   <div className="">
     {/* Hero Section */}
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -44,28 +47,28 @@ const Home = () => (
     </section>
 
     {/* Mission Section */}
-    <section className="py-12 bg-white/30">
+    <section className="py-8 md:py-12 bg-white/30">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-4 md:mb-6">
               Cresci con noi, trasforma il tuo sapere
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-base sm:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
               Siamo un gruppo di insegnanti madrelingua o bilingue che offrono percorsi didattici ed attività per apprendere, ad ogni età, le lingue straniere. Proponiamo inoltre laboratori per accrescere le proprie conoscenze e ricercare il proprio benessere psicofisico in un ambiente divertente, stimolante e vivace.
             </p>
             <Link 
               to="/about" 
-              className="bg-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition-colors inline-block"
+              className="bg-purple-600 text-white px-6 py-3 md:px-8 md:py-3 rounded-full font-semibold hover:bg-purple-700 transition-colors inline-block text-sm md:text-base"
             >
               Scopri di più
             </Link>
           </div>
-          <div className="relative">
+          <div className="relative flex justify-center order-1 lg:order-2">
             <img 
-              src={booksImage} 
+              src={logorosa} 
               alt="Learning environment" 
-              className="rounded-2xl shadow-2xl"
+              className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-full lg:w-4/5 xl:w-3/4 object-contain rounded-2xl "
             />
           </div>
         </div>
@@ -77,52 +80,63 @@ const Home = () => (
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
-            Prenota ora un servizio
+            Scopri le Nostre Attività
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Scopri i nostri servizi e inizia il tuo percorso di crescita personale oggi stesso!
+            Corsi, eventi e settimane studio per ogni età e livello di apprendimento
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Individual Classes Card */}
-          <div className="bg-white/65 hover:scale-105 transition-all duration-150 rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl ">
-            <div className="text-center">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Individual classes</h3>
-              <div className="mb-6">
-                <span className="text-3xl font-bold text-purple-600">€25.00</span>
-                <span className="text-gray-600 ml-2">/ 1 ora</span>
-              </div>
-              <p className="text-gray-600 mb-8">
-                Lezioni personalizzate one-to-one per un apprendimento su misura
-              </p>
-              <Link 
-                to="/servizi" 
-                className="bg-purple-600 text-white px-8 py-3 rounded-full font-medium hover:bg-purple-700 transition-colors"
-              >
-                Contattaci!
-              </Link>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* Corsi */}
+          <div className="bg-white/65 hover:scale-105 transition-all duration-300 rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl text-center flex flex-col h-full">
+            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i className="bi bi-book text-2xl text-purple-600"></i>
             </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Corsi</h3>
+            <p className="text-gray-600 mb-6 flex-grow">
+              Lezioni individuali e di gruppo per imparare le lingue straniere con metodi innovativi
+            </p>
+            <Link 
+              to="/attivita" 
+              className="bg-purple-600 text-white px-6 py-3 rounded-full font-medium hover:bg-purple-700 transition-colors mt-auto"
+            >
+              Scopri i Corsi
+            </Link>
           </div>
 
-          {/* Group Classes Card */}
-          <div className="bg-white/65 hover:scale-105 transition-transform duration-150 rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl ">
-            <div className="text-center">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Group classes</h3>
-              <div className="mb-6">
-                <span className="text-3xl font-bold text-purple-600">€10.00</span>
-                <span className="text-gray-600 ml-2">/ 1 ora</span>
-              </div>
-              <p className="text-gray-600 mb-8">
-                Lezioni di gruppo per imparare insieme in un ambiente stimolante
-              </p>
-              <Link 
-                to="/servizi" 
-                className="bg-purple-600 text-white px-8 py-3 rounded-full font-medium hover:bg-purple-700 transition-colors"
-              >
-                Contattaci!
-              </Link>
+          {/* Eventi */}
+          <div className="bg-white/65 hover:scale-105 transition-all duration-300 rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl text-center flex flex-col h-full">
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i className="bi bi-calendar-event text-2xl text-blue-600"></i>
             </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Eventi</h3>
+            <p className="text-gray-600 mb-6 flex-grow">
+              Workshop, conversazioni libere e laboratori per praticare e migliorare le tue competenze
+            </p>
+            <Link 
+              to="/attivita" 
+              className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors mt-auto"
+            >
+              Scopri gli Eventi
+            </Link>
+          </div>
+
+          {/* Settimane Studio */}
+          <div className="bg-white/65 hover:scale-105 transition-all duration-300 rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl text-center flex flex-col h-full">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i className="bi bi-globe text-2xl text-green-600"></i>
+            </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Settimane Studio</h3>
+            <p className="text-gray-600 mb-6 flex-grow">
+              Programmi intensivi settimanali per un'esperienza di apprendimento completa e immersiva
+            </p>
+            <Link 
+              to="/attivita" 
+              className="bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors mt-auto"
+            >
+              Scopri le Settimane
+            </Link>
           </div>
         </div>
       </div>
@@ -214,7 +228,8 @@ const Home = () => (
       </div>
   </section> */}
   </div>
-);
+  );
+};
 
 export default Home;
 

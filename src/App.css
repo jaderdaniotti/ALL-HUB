@@ -142,6 +142,11 @@ body {
   font-weight: 500;
   font-style: normal;
 }
+.bilbo-regular {
+  font-family: "Bilbo", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
 
 /* #endregion */
 
@@ -320,5 +325,55 @@ body {
   .no-print {
     display: none !important;
   }
+}
+
+/* Utility classes for text truncation */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Preview card animations */
+.preview-card {
+  transition: all 0.3s ease;
+}
+
+.preview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Chip styles for activity cards */
+.chip {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+}
+
+.chip-purple {
+  @apply bg-purple-100 text-purple-700;
+}
+
+.chip-green {
+  @apply bg-green-100 text-green-700;
+}
+
+.chip-blue {
+  @apply bg-blue-100 text-blue-700;
+}
+
+.chip-indigo {
+  @apply bg-indigo-100 text-indigo-700;
+}
+
+.chip-gray {
+  @apply bg-gray-100 text-gray-700;
 }
 

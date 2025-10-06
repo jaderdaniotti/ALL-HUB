@@ -3,9 +3,9 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/home'
 import About from './pages/About'
-import Servizi from './pages/Servizi'
+import Attivita from './pages/Attivita'
 import Contatti from './pages/Contatti'
-import Eventi from './pages/Eventi'
+import Location from './pages/Location'
 import AdminLogin from './pages/AdminLogin'
 import AdminDashboard from './pages/AdminDashboard'
 import Navbar from './components/Navbar';
@@ -27,9 +27,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/servizi" element={<Servizi />} />
+          <Route path="/attivita" element={<Attivita />} />
           <Route path="/contatti" element={<Contatti />} />
-          <Route path="/eventi" element={<Eventi />} />
+          <Route path="/location" element={<Location />} />
+          <Route path="/login" element={<AdminLogin />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
         </Routes>

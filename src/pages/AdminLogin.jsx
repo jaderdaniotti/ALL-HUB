@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import booksImage from "../assets/img/books.jpg";
+import { supabaseService } from "../lib/supabase";
 
 const AdminLogin = () => {
   const [credentials, setCredentials] = useState({
@@ -8,21 +9,42 @@ const AdminLogin = () => {
     password: ""
   });
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    setError("");
     
-    // Credenziali hardcoded per demo (senza backend)
-    if (credentials.username === "admin" && credentials.password === "admin123") {
-      // Salva lo stato di login nel localStorage
-      localStorage.setItem("adminLoggedIn", "true");
-      localStorage.setItem("adminUsername", credentials.username);
+    console.log('Login attempt with:', { email: credentials.username, password: credentials.password })
+    
+    try {
+      // Usa il servizio Supabase per l'autenticazione
+      const result = await supabaseService.loginAdmin(credentials.username, credentials.password);
       
-      // Reindirizza al pannello admin
-      navigate("/admin/dashboard");
-    } else {
-      setError("Credenziali non valide. Usa: admin / admin123");
+      console.log('Login result:', result)
+      
+      if (result.success) {
+        // Salva lo stato di login nel localStorage
+        localStorage.setItem("adminLoggedIn", "true");
+        localStorage.setItem("adminUsername", result.user.name);
+        localStorage.setItem("adminEmail", result.user.email);
+        
+        console.log('Login successful, redirecting...')
+        
+        // Reindirizza al pannello admin
+        navigate("/admin/dashboard");
+      } else {
+        console.log('Login failed:', result.error)
+        setError(result.error || "Credenziali non valide");
+      }
+    } catch (err) {
+      console.error("Errore durante il login:", err);
+      setError("Errore di connessione. Riprova più tardi.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -36,26 +58,7 @@ const AdminLogin = () => {
 
   return (
     <div className="">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${booksImage})`,
-            filter: 'blur(2px) brightness(0.6)'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/40 to-blue-900/40" />
-        
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">
-            Pannello Admin
-          </h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Accedi al pannello di controllo per gestire eventi e contenuti
-          </p>
-        </div>
-      </section>
+
 
       {/* Login Form */}
       <section className="py-12 bg-white/70">
@@ -101,37 +104,47 @@ const AdminLogin = () => {
                   <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
                     Password
                   </label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    value={credentials.password}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="Inserisci password"
-                    required
-                  />
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      id="password"
+                      name="password"
+                      value={credentials.password}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      placeholder="Inserisci password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                    >
+                      {showPassword ? (
+                        <i className="bi bi-eye-slash text-lg"></i>
+                      ) : (
+                        <i className="bi bi-eye text-lg"></i>
+                      )}
+                    </button>
+                  </div>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-purple-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                  disabled={isLoading}
+                  className="w-full bg-purple-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Accedi
+                  {isLoading ? (
+                    <div className="flex items-center justify-center">
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                      Accesso in corso...
+                    </div>
+                  ) : (
+                    "Accedi"
+                  )}
                 </button>
               </form>
 
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <h3 className="text-sm font-medium text-blue-800 mb-2">
-                    Credenziali Demo:
-                  </h3>
-                  <p className="text-xs text-blue-700">
-                    <strong>Username:</strong> admin<br/>
-                    <strong>Password:</strong> admin123
-                  </p>
-                </div>
-              </div>
 
               <div className="mt-6 text-center">
                 <Link 
