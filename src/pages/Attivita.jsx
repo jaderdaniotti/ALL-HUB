@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import { supabaseService } from "../lib/supabase";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 
 const Attivita = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('corsi');
   const [courses, setCourses] = useState([]);
   const [events, setEvents] = useState([]);
@@ -46,7 +48,7 @@ const Attivita = () => {
       {loading && (
         <div className="py-20 text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Caricamento attività...</p>
+          <p className="text-gray-600">{t('common.loading')}</p>
         </div>
       )}
 
@@ -60,7 +62,7 @@ const Attivita = () => {
               onClick={() => window.location.reload()} 
               className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
             >
-              Riprova
+              {t('common.back')}
             </button>
           </div>
         </div>
@@ -83,7 +85,7 @@ const Attivita = () => {
                   }`}
                   onClick={() => setActiveTab('corsi')}
                 >
-                  Corsi
+                  {t('activities.tabs.courses')}
                 </button>
                 <button 
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
@@ -93,7 +95,7 @@ const Attivita = () => {
                   }`}
                   onClick={() => setActiveTab('eventi')}
                 >
-                  Eventi
+                  {t('activities.tabs.events')}
                 </button>
                 <button 
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
@@ -103,7 +105,7 @@ const Attivita = () => {
                   }`}
                   onClick={() => setActiveTab('settimane')}
                 >
-                  Settimane Studio
+                  {t('activities.tabs.studyWeeks')}
                 </button>
               </div>
             </div>
@@ -115,10 +117,10 @@ const Attivita = () => {
               <div className="space-y-12">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
-                    I Nostri Corsi ({courses.length})
+                    {t('activities.coursesTitle')} ({courses.length})
                   </h2>
                   <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Lezioni personalizzate per ogni livello e obiettivo di apprendimento
+                    {t('activities.coursesSubtitle')}
                   </p>
                 </div>
 
@@ -158,7 +160,7 @@ const Attivita = () => {
                           to="/contatti" 
                           className="bg-purple-600 text-white px-6 py-2 rounded-full font-medium hover:bg-purple-700 transition-colors text-sm"
                         >
-                          Prenota Ora
+                          {t('activities.course.bookNow')}
                         </Link>
                       </div>
                     </div>
@@ -171,10 +173,10 @@ const Attivita = () => {
               <div className="space-y-12">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
-                    I Nostri Eventi ({events.length})
+                    {t('activities.eventsTitle')} ({events.length})
                   </h2>
                   <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Partecipa ai nostri eventi speciali per praticare e migliorare le tue competenze linguistiche
+                    {t('activities.eventsSubtitle')}
                   </p>
                 </div>
 
@@ -217,7 +219,7 @@ const Attivita = () => {
                           to="/contatti" 
                           className="bg-green-600 text-white px-6 py-2 rounded-full font-medium hover:bg-green-700 transition-colors text-sm"
                         >
-                          Prenota Ora
+                          {t('activities.course.bookNow')}
                         </Link>
                       </div>
                     </div>
@@ -230,15 +232,15 @@ const Attivita = () => {
               <div className="space-y-12">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
-                    Settimane Studio ({studyWeeks.length})
+                    {t('activities.studyWeeksTitle')} ({studyWeeks.length})
                   </h2>
                   <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Programmi intensivi settimanali per un'esperienza di apprendimento completa e immersiva
+                    {t('activities.studyWeeksSubtitle')}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {studyWeeks.map((week) => (
+                  {studyWeeks.map((week) => (
                     <div key={week.id} className="bg-white/65 hover:scale-105 transition-all duration-300 rounded-2xl shadow-xl p-6 border border-gray-100 hover:shadow-2xl">
                       <div className="text-center">
                         {/* Immagine della settimana studio */}

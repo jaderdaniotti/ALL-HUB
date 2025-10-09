@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import booksImage from "../assets/img/books.jpg";
 import { supabaseService } from "../lib/supabase";
 
 const AdminLogin = () => {
+  const { t } = useTranslation();
   const [credentials, setCredentials] = useState({
     username: "",
     password: ""
@@ -27,16 +29,16 @@ const AdminLogin = () => {
       console.log('Login result:', result)
       
       if (result.success) {
-        // Salva lo stato di login nel localStorage
-        localStorage.setItem("adminLoggedIn", "true");
+      // Salva lo stato di login nel localStorage
+      localStorage.setItem("adminLoggedIn", "true");
         localStorage.setItem("adminUsername", result.user.name);
         localStorage.setItem("adminEmail", result.user.email);
         
         console.log('Login successful, redirecting...')
-        
-        // Reindirizza al pannello admin
-        navigate("/admin/dashboard");
-      } else {
+      
+      // Reindirizza al pannello admin
+      navigate("/admin/dashboard");
+    } else {
         console.log('Login failed:', result.error)
         setError(result.error || "Credenziali non valide");
       }
@@ -70,10 +72,10 @@ const AdminLogin = () => {
                   <i className="bi bi-shield-lock text-purple-600 text-2xl"></i>
                 </div>
                 <h2 className="text-2xl font-semibold text-gray-800 mb-2">
-                  Accesso Admin
+                  {t('admin.login.title')}
                 </h2>
                 <p className="text-gray-600 text-sm">
-                  Inserisci le tue credenziali per accedere
+                  {t('admin.login.subtitle')}
                 </p>
               </div>
 
@@ -86,7 +88,7 @@ const AdminLogin = () => {
 
                 <div>
                   <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">
-                    Username
+                    {t('admin.login.email')}
                   </label>
                   <input
                     type="text"
@@ -102,19 +104,19 @@ const AdminLogin = () => {
 
                 <div>
                   <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                    Password
+                    {t('admin.login.password')}
                   </label>
                   <div className="relative">
-                    <input
+                  <input
                       type={showPassword ? "text" : "password"}
-                      id="password"
-                      name="password"
-                      value={credentials.password}
-                      onChange={handleChange}
+                    id="password"
+                    name="password"
+                    value={credentials.password}
+                    onChange={handleChange}
                       className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                      placeholder="Inserisci password"
-                      required
-                    />
+                    placeholder="Inserisci password"
+                    required
+                  />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
@@ -137,10 +139,10 @@ const AdminLogin = () => {
                   {isLoading ? (
                     <div className="flex items-center justify-center">
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      Accesso in corso...
+                      {t('admin.login.loading')}
                     </div>
                   ) : (
-                    "Accedi"
+                    t('admin.login.login')
                   )}
                 </button>
               </form>

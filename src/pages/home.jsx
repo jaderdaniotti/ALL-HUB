@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import booksImage from "../assets/img/books.jpg";
 import logorosa from "../assets/img/logorosa-Photoroom.png";
 
 const Home = () => {
+  const { t } = useTranslation();
 
   return (
   <div className="">
@@ -24,23 +26,23 @@ const Home = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-semibold mb-6 leading-tight tracking-tighter">
-          Benvenuto nel nostro hub educativo!
+          {t('home.hero.title')}
     </h1>
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto font-normal">
-          Formazione personalizzata per la crescita personale, conoscenza e successo duraturo.
+          {t('home.hero.subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link 
-            to="/servizi" 
+            to="/attivita" 
             className="bg-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-700 transition-colors"
           >
-            Scopri di più
+            {t('home.hero.cta1')}
           </Link>
           <Link 
             to="/contatti" 
             className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors"
           >
-            Contattaci ora
+            {t('home.hero.cta2')}
           </Link>
         </div>
       </div>
@@ -52,16 +54,16 @@ const Home = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="order-2 lg:order-1">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-4 md:mb-6">
-              Cresci con noi, trasforma il tuo sapere
+              {t('home.mission.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
-              Siamo un gruppo di insegnanti madrelingua o bilingue che offrono percorsi didattici ed attività per apprendere, ad ogni età, le lingue straniere. Proponiamo inoltre laboratori per accrescere le proprie conoscenze e ricercare il proprio benessere psicofisico in un ambiente divertente, stimolante e vivace.
+              {t('home.mission.description')}
             </p>
             <Link 
               to="/about" 
               className="bg-purple-600 text-white px-6 py-3 md:px-8 md:py-3 rounded-full font-semibold hover:bg-purple-700 transition-colors inline-block text-sm md:text-base"
             >
-              Scopri di più
+              {t('home.mission.cta')}
             </Link>
           </div>
           <div className="relative flex justify-center order-1 lg:order-2">
@@ -80,10 +82,10 @@ const Home = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
-            Scopri le Nostre Attività
+            {t('home.services.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Corsi, eventi e settimane studio per ogni età e livello di apprendimento
+            {t('home.services.subtitle')}
           </p>
         </div>
 
@@ -93,15 +95,15 @@ const Home = () => {
             <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <i className="bi bi-book text-2xl text-purple-600"></i>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Corsi</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">{t('home.services.courses.title')}</h3>
             <p className="text-gray-600 mb-6 flex-grow">
-              Lezioni individuali e di gruppo per imparare le lingue straniere con metodi innovativi
+              {t('home.services.courses.description')}
             </p>
             <Link 
               to="/attivita" 
               className="bg-purple-600 text-white px-6 py-3 rounded-full font-medium hover:bg-purple-700 transition-colors mt-auto"
             >
-              Scopri i Corsi
+              {t('home.services.courses.cta')}
             </Link>
           </div>
 
@@ -110,15 +112,15 @@ const Home = () => {
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <i className="bi bi-calendar-event text-2xl text-blue-600"></i>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Eventi</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">{t('home.services.events.title')}</h3>
             <p className="text-gray-600 mb-6 flex-grow">
-              Workshop, conversazioni libere e laboratori per praticare e migliorare le tue competenze
+              {t('home.services.events.description')}
             </p>
             <Link 
               to="/attivita" 
               className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors mt-auto"
             >
-              Scopri gli Eventi
+              {t('home.services.events.cta')}
             </Link>
           </div>
 
@@ -127,15 +129,15 @@ const Home = () => {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <i className="bi bi-globe text-2xl text-green-600"></i>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Settimane Studio</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">{t('home.services.studyWeeks.title')}</h3>
             <p className="text-gray-600 mb-6 flex-grow">
-              Programmi intensivi settimanali per un'esperienza di apprendimento completa e immersiva
+              {t('home.services.studyWeeks.description')}
             </p>
             <Link 
               to="/attivita" 
               className="bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors mt-auto"
             >
-              Scopri le Settimane
+              {t('home.services.studyWeeks.cta')}
             </Link>
           </div>
         </div>
@@ -147,7 +149,7 @@ const Home = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-2  ">
-            Come funziona?
+            {t('home.howItWorks.title')}
           </h2>
         </div>
 
@@ -156,9 +158,9 @@ const Home = () => {
             <div className="bg-purple-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
               1
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Seleziona il servizio</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">{t('home.howItWorks.step1.title')}</h3>
             <p className="text-gray-600">
-              Seleziona il servizio più adatto alle tue esigenze. I servizi offerti sono altamente personalizzabili, studieremo insieme il percorso più adatto alle tue esigenze.
+              {t('home.howItWorks.step1.description')}
             </p>
           </div>
 
@@ -166,9 +168,9 @@ const Home = () => {
             <div className="bg-purple-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 ">
               2
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Scegli un giorno</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">{t('home.howItWorks.step2.title')}</h3>
             <p className="text-gray-600">
-              Scegli il giorno in cui usufruire del servizio. Per particolari esigenze contattami e troveremo insieme una soluzione.
+              {t('home.howItWorks.step2.description')}
             </p>
           </div>
 
@@ -176,9 +178,9 @@ const Home = () => {
             <div className="bg-purple-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
               3
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Conferma l'appuntamento</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">{t('home.howItWorks.step3.title')}</h3>
             <p className="text-gray-600">
-              Conferma l'appuntamento prenotato. Puoi contattarmi tramite email, numero whatsapp e confermare l'appuntamento in sede.
+              {t('home.howItWorks.step3.description')}
             </p>
           </div>
         </div>

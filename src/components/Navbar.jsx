@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import logoImage from "../assets/img/logo.png";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -79,7 +82,7 @@ const Navbar = () => {
                 location.pathname === '/' ? 'text-purple-600 border-b-2 border-purple-600' : ''
               }`}
             >
-              Home
+              {t('nav.home')}
             </Link>
             <Link 
               to="/about" 
@@ -87,7 +90,7 @@ const Navbar = () => {
                 location.pathname === '/about' ? 'text-purple-600 border-b-2 border-purple-600' : ''
               }`}
             >
-              About
+              {t('nav.about')}
             </Link>
             <Link 
               to="/attivita" 
@@ -95,7 +98,7 @@ const Navbar = () => {
                 location.pathname === '/attivita' ? 'text-purple-600 border-b-2 border-purple-600' : ''
               }`}
             >
-              Attività
+              {t('nav.activities')}
             </Link>
             <Link 
               to="/contatti" 
@@ -103,7 +106,7 @@ const Navbar = () => {
                 location.pathname === '/contatti' ? 'text-purple-600 border-b-2 border-purple-600' : ''
               }`}
             >
-              Contatti
+              {t('nav.contacts')}
             </Link>
             <Link 
               to="/location" 
@@ -111,7 +114,7 @@ const Navbar = () => {
                 location.pathname === '/location' ? 'text-purple-600 border-b-2 border-purple-600' : ''
               }`}
             >
-              Location
+              {t('nav.location')}
             </Link>
             {isLoggedIn ? (
               <div className="flex items-center space-x-4">
@@ -121,14 +124,14 @@ const Navbar = () => {
                     location.pathname === '/admin/dashboard' ? 'text-purple-600 border-b-2 border-purple-600' : ''
                   }`}
                 >
-                  Pannello
+                  {t('nav.panel')}
                 </Link>
                 <div className="flex items-center space-x-2">
-                  <span className="text-sm text-gray-600">Ciao, {adminUsername}</span>
+                  <span className="text-sm text-gray-600">{t('nav.hello')}, {adminUsername}</span>
                   <button
                     onClick={handleLogout}
                     className="text-gray-500 hover:text-red-600 text-sm font-medium"
-                    title="Logout"
+                    title={t('nav.logout')}
                   >
                     <i className="bi bi-box-arrow-right"></i>
                   </button>
@@ -141,9 +144,12 @@ const Navbar = () => {
                   location.pathname === '/login' ? 'text-purple-600 border-b-2 border-purple-600' : ''
                 }`}
               >
-                Login
+                {t('nav.login')}
               </Link>
             )}
+            
+            {/* Language Switcher */}
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -176,7 +182,7 @@ const Navbar = () => {
                   location.pathname === '/' ? 'text-purple-600' : ''
                 }`}
               >
-                Home
+                {t('nav.home')}
               </Link>
               <Link 
                 to="/about" 
@@ -185,7 +191,7 @@ const Navbar = () => {
                   location.pathname === '/about' ? 'text-purple-600' : ''
                 }`}
               >
-                About
+                {t('nav.about')}
               </Link>
               <Link 
                 to="/attivita" 
@@ -194,7 +200,7 @@ const Navbar = () => {
                   location.pathname === '/attivita' ? 'text-purple-600' : ''
                 }`}
               >
-                Attività
+                {t('nav.activities')}
               </Link>
               <Link 
                 to="/contatti" 
@@ -203,7 +209,7 @@ const Navbar = () => {
                   location.pathname === '/contatti' ? 'text-purple-600' : ''
                 }`}
               >
-                Contatti
+                {t('nav.contacts')}
               </Link>
               <Link 
                 to="/location" 
@@ -212,7 +218,7 @@ const Navbar = () => {
                   location.pathname === '/location' ? 'text-purple-600' : ''
                 }`}
               >
-                Location
+                {t('nav.location')}
               </Link>
               {isLoggedIn ? (
                 <>
@@ -223,10 +229,10 @@ const Navbar = () => {
                       location.pathname === '/admin/dashboard' ? 'text-purple-600' : ''
                     }`}
                   >
-                    Pannello Admin
+                    {t('nav.panel')}
                   </Link>
                   <div className="flex items-center justify-between py-2">
-                    <span className="text-gray-600 text-sm">Ciao, {adminUsername}</span>
+                    <span className="text-gray-600 text-sm">{t('nav.hello')}, {adminUsername}</span>
                     <button
                       onClick={() => {
                         handleLogout();
@@ -235,7 +241,7 @@ const Navbar = () => {
                       className="text-red-500 hover:text-red-700 text-sm font-medium"
                     >
                       <i className="bi bi-box-arrow-right mr-1"></i>
-                      Logout
+                      {t('nav.logout')}
                     </button>
                   </div>
                 </>
@@ -247,9 +253,14 @@ const Navbar = () => {
                     location.pathname === '/login' ? 'text-purple-600' : ''
                   }`}
                 >
-                  Login
+                  {t('nav.login')}
                 </Link>
               )}
+              
+              {/* Language Switcher Mobile */}
+              <div className="pt-4 border-t border-gray-200">
+                <LanguageSwitcher />
+              </div>
               <div className="pt-4 border-t border-gray-200">
                 <Link 
                   to="/contatti"

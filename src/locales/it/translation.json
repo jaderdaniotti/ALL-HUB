@@ -1,0 +1,289 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "activities": "Attività",
+    "contacts": "Contatti",
+    "location": "Location",
+    "panel": "Pannello",
+    "login": "Login",
+    "logout": "Logout",
+    "hello": "Ciao"
+  },
+  "home": {
+    "hero": {
+      "title": "Benvenuto nel nostro hub educativo!",
+      "subtitle": "Formazione personalizzata per la crescita personale, conoscenza e successo duraturo.",
+      "cta1": "Scopri di più",
+      "cta2": "Contattaci ora"
+    },
+    "mission": {
+      "title": "Cresci con noi, trasforma il tuo sapere",
+      "description": "Siamo un gruppo di insegnanti madrelingua o bilingue che offrono percorsi didattici ed attività per apprendere, ad ogni età, le lingue straniere. Proponiamo inoltre laboratori per accrescere le proprie conoscenze e ricercare il proprio benessere psicofisico in un ambiente divertente, stimolante e vivace.",
+      "cta": "Scopri di più"
+    },
+    "services": {
+      "title": "Scopri le Nostre Attività",
+      "subtitle": "Corsi, eventi e settimane studio per ogni età e livello di apprendimento",
+      "courses": {
+        "title": "Corsi",
+        "description": "Lezioni individuali e di gruppo per imparare le lingue straniere con metodi innovativi",
+        "cta": "Vedi Corsi"
+      },
+      "events": {
+        "title": "Eventi",
+        "description": "Workshop, seminari e incontri culturali per arricchire il tuo percorso di apprendimento",
+        "cta": "Scopri Eventi"
+      },
+      "studyWeeks": {
+        "title": "Settimane Studio",
+        "description": "Esperienze immersive all'estero per praticare le lingue in contesti reali",
+        "cta": "Esplora Settimane"
+      }
+    },
+    "cta": {
+      "title": "Inizia il Tuo Percorso Oggi",
+      "subtitle": "Unisciti a noi e scopri come l'apprendimento continuo può trasformare la tua vita",
+      "button": "Contattaci"
+    },
+    "howItWorks": {
+      "title": "Come funziona?",
+      "step1": {
+        "title": "Seleziona il servizio",
+        "description": "Seleziona il servizio più adatto alle tue esigenze. I servizi offerti sono altamente personalizzabili, studieremo insieme il percorso più adatto alle tue esigenze."
+      },
+      "step2": {
+        "title": "Scegli un giorno",
+        "description": "Scegli il giorno in cui usufruire del servizio. Per particolari esigenze contattami e troveremo insieme una soluzione."
+      },
+      "step3": {
+        "title": "Inizia a studiare",
+        "description": "Sarai pronto a iniziare il tuo percorso di crescita e miglioramento personale."
+      }
+    },
+    "finalCta": {
+      "title": "Inizia il Tuo Percorso Oggi",
+      "subtitle": "Unisciti a noi e scopri come l'apprendimento continuo può trasformare la tua vita",
+      "button": "Contattaci Ora"
+    },
+    "newsletter": {
+      "title": "Iscriviti alla Newsletter",
+      "subtitle": "Iscriviti alla newsletter per restare aggiornato sui nostri servizi",
+      "placeholder": "Inserisci la tua email",
+      "button": "Sign up",
+      "privacy": "Accetto il trattamento dei miei dati personali per l'invio di newsletter"
+    }
+  },
+  "about": {
+    "title": "Chi Siamo",
+    "subtitle": "Scopri la nostra passione per l'insegnamento e la crescita personale",
+    "team": {
+      "title": "Il team",
+      "description1": "Siamo un gruppo di insegnanti madrelingua o bilingue che offrono percorsi didattici ed attività per apprendere, ad ogni età, le lingue straniere. Proponiamo inoltre laboratori per accrescere le proprie conoscenze e ricercare il proprio benessere psicofisico in un ambiente divertente, stimolante e vivace.",
+      "description2": "L'insegnamento è la nostra passione e ci impegniamo per condividere le nostre competenze con studenti di ogni età e nazione. Le necessità e le richieste degli studenti sono il punto di partenza per creare programmi specifici utilizzando metodologie non-formali pensate specificamente per ogni gruppo."
+    },
+    "mission": {
+      "title": "LA NOSTRA MISSIONE",
+      "subtitle": "I nostri obiettivi sono:",
+      "goals": {
+        "lifelong": "Incoraggiare gli utenti a diventare \"appassionati studenti permanenti - LIFELONG LEARNERS\"",
+        "interaction": "Incoraggiare l'interazione tra insegnanti e studenti",
+        "programs": "Offrire programmi educativi creati su misura per assecondare interessi e competenze dei nostri allievi",
+        "experiences": "Creare esperienze trasformative, divertenti e utili per migliorarci come persone",
+        "languages": "Imparare le lingue mentre si praticano attività quotidiane"
+      }
+    },
+    "offerings": {
+      "title": "COSA OFFRIAMO",
+      "items": {
+        "training": "Formazione continua in educazione e sviluppo personale",
+        "methods": "Esperienza in metodi didattici innovativi",
+        "growth": "Competenze nella crescita emotiva e cognitiva",
+        "support": "Supporto per l'apprendimento personalizzato",
+        "programs": "Sviluppo di programmi di miglioramento personale",
+        "success": "Promozione del successo attraverso l'educazione continua"
+      }
+    },
+    "testimonials": {
+      "title": "Cosa dicono i nostri clienti",
+      "testimonial1": "Un centro che nutre mente e anima con passione e professionalità",
+      "testimonial2": "Un ambiente che favorisce crescita personale e relazioni autentiche",
+      "testimonial3": "Centro che stimola mente e anima per una crescita reale e duratura",
+      "testimonial4": "Centro che trasmette passione e competenza, trasformando la crescita personale"
+    },
+    "values": {
+      "title": "I Nostri Valori",
+      "quality": {
+        "title": "Qualità",
+        "description": "Insegnanti qualificati e metodi di apprendimento comprovati"
+      },
+      "innovation": {
+        "title": "Innovazione",
+        "description": "Approcci moderni e tecnologie all'avanguardia"
+      },
+      "community": {
+        "title": "Comunità",
+        "description": "Un ambiente inclusivo e collaborativo"
+      },
+      "passion": {
+        "title": "Passione",
+        "description": "Amore per l'insegnamento e l'apprendimento"
+      }
+    }
+  },
+  "activities": {
+    "title": "Le Nostre Attività",
+    "subtitle": "Esplora i nostri corsi, eventi e settimane studio",
+    "coursesTitle": "I Nostri Corsi",
+    "coursesSubtitle": "Lezioni personalizzate per ogni livello e obiettivo di apprendimento",
+    "eventsTitle": "I Nostri Eventi",
+    "eventsSubtitle": "Partecipa ai nostri eventi speciali per praticare e migliorare le tue competenze linguistiche",
+    "studyWeeksTitle": "Settimane Studio",
+    "studyWeeksSubtitle": "Programmi intensivi settimanali per un'esperienza di apprendimento completa e immersiva",
+    "tabs": {
+      "courses": "Corsi",
+      "events": "Eventi",
+      "studyWeeks": "Settimane Studio"
+    },
+    "course": {
+      "duration": "Durata",
+      "level": "Livello",
+      "type": "Tipo",
+      "bookNow": "Prenota Ora"
+    },
+    "event": {
+      "date": "Data",
+      "time": "Orario",
+      "location": "Luogo",
+      "category": "Categoria",
+      "register": "Iscriviti"
+    },
+    "studyWeek": {
+      "duration": "Durata",
+      "type": "Tipo",
+      "city": "Città",
+      "activities": "Attività",
+      "discover": "Scopri di più"
+    },
+    "empty": {
+      "courses": "Nessun corso disponibile al momento",
+      "events": "Nessun evento in programma",
+      "studyWeeks": "Nessuna settimana studio disponibile"
+    }
+  },
+  "contacts": {
+    "title": "Contattaci",
+    "subtitle": "Contattaci per scoprire come possiamo aiutarti a crescere",
+    "contactInfo": "Informazioni di Contatto",
+    "followUs": "Seguici sui Social",
+    "form": {
+      "name": "Nome Completo",
+      "email": "Email",
+      "phone": "Telefono",
+      "message": "Messaggio",
+      "submit": "Invia Messaggio",
+      "sending": "Invio...",
+      "success": "Messaggio inviato con successo!",
+      "error": "Errore nell'invio del messaggio"
+    },
+    "info": {
+      "title": "Informazioni di Contatto",
+      "address": "Indirizzo",
+      "phone": "Telefono",
+      "email": "Email",
+      "hours": "Orari di Apertura"
+    }
+  },
+  "location": {
+    "title": "Dove Siamo",
+    "subtitle": "Vieni a trovarci nella nostra sede a Gemona del Friuli",
+    "address": "Via della Cartiera 36, 33080 Gemona del Friuli (UD)",
+    "description": "Siamo facilmente raggiungibili con i mezzi pubblici e disponiamo di parcheggio gratuito per i nostri studenti.",
+    "ourCity": "La nostra città",
+    "visitTitle": "Vuoi Visitare la Nostra Sede?",
+    "visitDescription": "Siamo sempre felici di accogliere nuovi studenti e mostrare loro il nostro ambiente di apprendimento. Contattaci per fissare una visita o per maggiori informazioni sui nostri corsi.",
+    "contactUs": "Contattaci",
+    "callNow": "Chiama Ora",
+    "directions": "Ottieni Indicazioni"
+  },
+  "admin": {
+    "login": {
+      "title": "Accesso Admin",
+      "subtitle": "Accedi al pannello di amministrazione",
+      "email": "Email",
+      "password": "Password",
+      "showPassword": "Mostra Password",
+      "hidePassword": "Nascondi Password",
+      "submit": "Accedi",
+      "loggingIn": "Accesso in corso...",
+      "error": "Credenziali non valide"
+    },
+    "dashboard": {
+      "title": "Pannello Admin",
+      "welcome": "Benvenuto",
+      "tabs": {
+        "courses": "Corsi",
+        "events": "Eventi",
+        "studyWeeks": "Settimane Studio"
+      },
+      "form": {
+        "addCourse": "Aggiungi Nuovo Corso",
+        "editCourse": "Modifica Corso",
+        "addEvent": "Aggiungi Nuovo Evento",
+        "editEvent": "Modifica Evento",
+        "addStudyWeek": "Aggiungi Nuova Settimana Studio",
+        "editStudyWeek": "Modifica Settimana Studio",
+        "title": "Titolo",
+        "description": "Descrizione",
+        "duration": "Durata",
+        "level": "Livello",
+        "type": "Tipo",
+        "date": "Data",
+        "time": "Orario",
+        "location": "Luogo",
+        "category": "Categoria",
+        "city": "Città",
+        "activities": "Attività Incluse",
+        "image": "Immagine",
+        "submit": "Aggiungi",
+        "update": "Modifica",
+        "cancel": "Annulla"
+      },
+      "preview": "Anteprima Card",
+      "list": "Anteprime",
+      "actions": {
+        "edit": "Modifica",
+        "delete": "Elimina"
+      },
+      "confirmDelete": {
+        "title": "Conferma Eliminazione",
+        "message": "Sei sicuro di voler eliminare",
+        "warning": "Questa azione non può essere annullata.",
+        "confirm": "Elimina",
+        "cancel": "Annulla",
+        "course": "il corso",
+        "event": "l'evento",
+        "studyWeek": "la settimana studio"
+      }
+    }
+  },
+  "footer": {
+    "description": "Il tuo hub per l'apprendimento continuo",
+    "quickLinks": "Link Rapidi",
+    "followUs": "Seguici",
+    "copyright": "©2025 A LIFELONG LEARNING HUB. Tutti i diritti riservati.",
+    "vat": "P.IVA: 03182820302"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore",
+    "readMore": "Leggi di più",
+    "close": "Chiudi",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "confirm": "Conferma",
+    "back": "Indietro",
+    "next": "Avanti"
+  }
+}
+

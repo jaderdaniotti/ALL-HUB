@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import booksImage from "../assets/img/books.jpg";
 
 // Import all location images
@@ -15,6 +16,7 @@ import location9 from "../assets/img/location/WhatsApp Image 2025-10-06 at 12.46
 import location10 from "../assets/img/location/WhatsApp Image 2025-10-06 at 12.46.38.jpeg";
 
 const Location = () => {
+    const { t } = useTranslation();
     const locationImages = [
         location1, location2, location3, location4, location5,
         location6, location7, location8, location9, location10
@@ -33,10 +35,10 @@ const Location = () => {
                             <div className="container mx-auto px-4">
                                 <div className="text-center mb-12">
                                     <h2 className="text-3xl font-semibold text-gray-800 mb-6">
-                                        Dove Siamo
+                                        {t('location.title')}
                                     </h2>
                                     <p className="text-xl text-gray-600">
-                                        Vieni a trovarci nella nostra sede a Gemona del Friuli
+                                        {t('location.subtitle')}
                                     </p>
                                 </div>
 
@@ -56,10 +58,10 @@ const Location = () => {
                                     <div className="p-8">
                                         <h3 className="text-2xl font-bold text-gray-800 mb-4">A LIFELONG LEARNING HUB</h3>
                                         <p className="text-gray-600 mb-4">
-                                            Via della Cartiera 36, 33080 Gemona del Friuli (UD)
+                                            {t('location.address')}
                                         </p>
                                         <p className="text-gray-600">
-                                            Siamo facilmente raggiungibili con i mezzi pubblici e disponiamo di parcheggio gratuito per i nostri studenti.
+                                            {t('location.description')}
                                         </p>
                                     </div>
                                 </div>
@@ -69,7 +71,7 @@ const Location = () => {
                         {/* Photo Gallery */}
                         <div className="mb-16 mt-6">
                             <h3 className="text-3xl font-semibold text-gray-800 mb-8 text-center">
-                                La nostra città
+                                {t('location.ourCity')}
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {locationImages.map((image, index) => (
@@ -93,11 +95,10 @@ const Location = () => {
                         {/* Contact Info */}
                         <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 text-center">
                             <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-                                Vuoi Visitare la Nostra Sede?
+                                {t('location.visitTitle')}
                             </h3>
                             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                                Siamo sempre felici di accogliere nuovi studenti e mostrare loro il nostro ambiente di apprendimento.
-                                Contattaci per fissare una visita o per maggiori informazioni sui nostri corsi.
+                                {t('location.visitDescription')}
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                                 <Link
@@ -105,14 +106,14 @@ const Location = () => {
                                     className="bg-purple-600 text-white px-8 py-3 rounded-full font-medium hover:bg-purple-700 transition-colors"
                                 >
                                     <i className="bi bi-envelope me-2"></i>
-                                    Contattaci
+                                    {t('location.contactUs')}
                                 </Link>
                                 <a
                                     href="tel:+393402218595"
                                     className="bg-green-600 text-white px-8 py-3 rounded-full font-medium hover:bg-green-700 transition-colors"
                                 >
                                     <i className="bi bi-telephone me-2"></i>
-                                    Chiama Ora
+                                    {t('location.callNow')}
                                 </a>
                             </div>
                         </div>

@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import logoImage from "../assets/img/logo.png";
 
-const Footer = () => (
+const Footer = () => {
+  const { t } = useTranslation();
+  
+  return (
   <footer className="w-full z-50 bg-white/90 backdrop-blur-md shadow-sm py-3">
     <div className="container mx-auto px-4  border-gray-700 py-3">
       <div className="grid">
@@ -31,14 +35,15 @@ const Footer = () => (
       {/* Bottom Bar */}
       <div className=" border-gray-700 pt-4 text-center">
         <p className="text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} A LIFELONG LEARNING HUB. Tutti i diritti riservati.
+          {t('footer.copyright')}
         </p>
         <p className="text-gray-400 text-sm mt-1">
-          P.IVA: 03182820302
+          {t('footer.vat')}
         </p>
       </div>
     </div>
   </footer>
-);
+  );
+};
 
 export default Footer; 

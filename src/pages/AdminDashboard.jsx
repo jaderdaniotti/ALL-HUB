@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import { supabaseService } from "../lib/supabase";
 import { EventPreview, CoursePreview, StudyWeekPreview } from "../components/PreviewCards";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 import { ConfirmDeleteModal } from "../components/ConfirmDeleteModal";
 
 const AdminDashboard = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('corsi');
   const [courses, setCourses] = useState([]);
   const [events, setEvents] = useState([]);

@@ -1,0 +1,313 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "activities": "Activities",
+    "contacts": "Contacts",
+    "location": "Location",
+    "panel": "Admin Panel",
+    "hello": "Hello",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to our educational hub!",
+      "subtitle": "Personalized training for personal growth, knowledge and lasting success.",
+      "cta1": "Learn more",
+      "cta2": "Contact us now"
+    },
+    "mission": {
+      "title": "Grow with us, transform your knowledge",
+      "description": "We are a group of native or bilingual teachers who offer educational paths and activities to learn foreign languages at any age. We also offer workshops to increase your knowledge and seek your psychophysical well-being in a fun, stimulating and lively environment.",
+      "cta": "Learn more"
+    },
+    "services": {
+      "title": "Discover Our Activities",
+      "subtitle": "Courses, events and study weeks for every age and learning level",
+      "courses": {
+        "title": "Courses",
+        "description": "Individual and group lessons to learn foreign languages with innovative methods",
+        "cta": "Discover Courses"
+      },
+      "events": {
+        "title": "Events",
+        "description": "Workshops, free conversations and laboratories to practice and improve your skills",
+        "cta": "Discover Events"
+      },
+      "studyWeeks": {
+        "title": "Study Weeks",
+        "description": "Intensive weekly programs for a complete and immersive learning experience",
+        "cta": "Discover Weeks"
+      }
+    },
+    "steps": {
+      "title": "How it works",
+      "subtitle": "Three simple steps to start your learning journey",
+      "step1": {
+        "title": "Contact us",
+        "description": "Get in touch with us to discuss your needs and goals."
+      },
+      "step2": {
+        "title": "Choose your path",
+        "description": "We will help you choose the most suitable course or activity for you."
+      },
+      "step3": {
+        "title": "Start studying",
+        "description": "You will be ready to start your journey of personal growth and improvement."
+      }
+    },
+    "finalCta": {
+      "title": "Start Your Journey Today",
+      "subtitle": "Join us and discover how continuous learning can transform your life",
+      "button": "Contact Us Now"
+    },
+    "newsletter": {
+      "title": "Subscribe to Newsletter",
+      "subtitle": "Subscribe to our newsletter to stay updated on our services",
+      "placeholder": "Enter your email",
+      "button": "Sign up",
+      "privacy": "I accept the processing of my personal data for newsletter sending"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Discover our passion for teaching and personal growth",
+    "team": {
+      "title": "The team",
+      "description1": "We are a group of native or bilingual teachers who offer educational paths and activities to learn foreign languages at any age. We also offer workshops to increase your knowledge and seek your psychophysical well-being in a fun, stimulating and lively environment.",
+      "description2": "Teaching is our passion and we are committed to sharing our skills with students of all ages and nations. The needs and requests of students are the starting point for creating specific programs using non-formal methodologies designed specifically for each group."
+    },
+    "mission": {
+      "title": "OUR MISSION",
+      "subtitle": "Our goals are:",
+      "goals": {
+        "lifelong": "Encourage users to become \"passionate lifelong learners - LIFELONG LEARNERS\"",
+        "interaction": "Encourage interaction between teachers and students",
+        "programs": "Offer educational programs tailored to meet the interests and skills of our students",
+        "experiences": "Create transformative, fun, and useful experiences to improve ourselves as people",
+        "languages": "Learn languages while practicing daily activities"
+      }
+    },
+    "offerings": {
+      "title": "WHAT WE OFFER",
+      "items": {
+        "training": "Continuous training in education and personal development",
+        "methods": "Experience in innovative teaching methods",
+        "growth": "Skills in emotional and cognitive growth",
+        "support": "Support for personalized learning",
+        "programs": "Development of personal improvement programs",
+        "success": "Promotion of success through continuous education"
+      }
+    },
+    "testimonials": {
+      "title": "What our clients say",
+      "testimonial1": "A center that nourishes mind and soul with passion and professionalism",
+      "testimonial2": "An environment that fosters personal growth and authentic relationships",
+      "testimonial3": "A center that stimulates mind and soul for real and lasting growth",
+      "testimonial4": "A center that transmits passion and competence, transforming personal growth"
+    },
+    "values": {
+      "title": "Our Values",
+      "quality": {
+        "title": "Quality",
+        "description": "Qualified teachers and proven learning methods"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Modern approaches and cutting-edge technologies"
+      },
+      "community": {
+        "title": "Community",
+        "description": "An inclusive and collaborative environment"
+      },
+      "passion": {
+        "title": "Passion",
+        "description": "Love for teaching and learning"
+      }
+    }
+  },
+  "activities": {
+    "title": "Our Activities",
+    "subtitle": "Explore our courses, events and study weeks",
+    "coursesTitle": "Our Courses",
+    "coursesSubtitle": "Personalized lessons for every level and learning objective",
+    "eventsTitle": "Our Events",
+    "eventsSubtitle": "Join our special events to practice and improve your language skills",
+    "studyWeeksTitle": "Study Weeks",
+    "studyWeeksSubtitle": "Intensive weekly programs for a complete and immersive learning experience",
+    "tabs": {
+      "courses": "Courses",
+      "events": "Events",
+      "studyWeeks": "Study Weeks"
+    },
+    "course": {
+      "duration": "Duration",
+      "level": "Level",
+      "type": "Type",
+      "bookNow": "Book Now"
+    },
+    "event": {
+      "date": "Date",
+      "time": "Time",
+      "location": "Location",
+      "category": "Category",
+      "register": "Register"
+    },
+    "studyWeek": {
+      "duration": "Duration",
+      "type": "Type",
+      "city": "City",
+      "activities": "Activities",
+      "discover": "Discover More"
+    },
+    "empty": {
+      "courses": "No courses available at the moment",
+      "events": "No events scheduled",
+      "studyWeeks": "No study weeks available"
+    }
+  },
+  "contacts": {
+    "title": "Contact Us",
+    "subtitle": "Contact us to discover how we can help you grow",
+    "contactInfo": "Contact Information",
+    "followUs": "Follow Us on Social",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Opening Hours"
+    }
+  },
+  "location": {
+    "title": "Where We Are",
+    "subtitle": "Come visit us at our headquarters in Gemona del Friuli",
+    "address": "Via della Cartiera 36, 33080 Gemona del Friuli (UD)",
+    "description": "We are easily reachable by public transport and have free parking for our students.",
+    "ourCity": "Our city",
+    "visitTitle": "Want to Visit Our Headquarters?",
+    "visitDescription": "We are always happy to welcome new students and show them our learning environment. Contact us to schedule a visit or for more information about our courses.",
+    "contactUs": "Contact Us",
+    "callNow": "Call Now",
+    "directions": "Get Directions"
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Access",
+      "subtitle": "Enter your credentials to access",
+      "email": "Email",
+      "password": "Password",
+      "login": "Login",
+      "loading": "Logging in...",
+      "error": "Invalid credentials"
+    },
+    "dashboard": {
+      "title": "Administration Panel",
+      "subtitle": "Manage courses, events and study weeks",
+      "tabs": {
+        "courses": "Courses",
+        "events": "Events",
+        "studyWeeks": "Study Weeks"
+      },
+      "forms": {
+        "addCourse": "Add Course",
+        "addEvent": "Add Event",
+        "addStudyWeek": "Add Study Week",
+        "editCourse": "Edit Course",
+        "editEvent": "Edit Event",
+        "editStudyWeek": "Edit Study Week",
+        "title": "Title",
+        "description": "Description",
+        "duration": "Duration",
+        "level": "Level",
+        "type": "Type",
+        "image": "Image",
+        "date": "Date",
+        "time": "Time",
+        "location": "Location",
+        "category": "Category",
+        "city": "City",
+        "activities": "Activities",
+        "add": "Add",
+        "edit": "Edit",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "save": "Save"
+      },
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      },
+      "types": {
+        "individual": "Individual",
+        "group": "Group"
+      },
+      "categories": {
+        "workshop": "Workshop",
+        "conversation": "Conversation",
+        "cultural": "Cultural",
+        "exam": "Exam Preparation"
+      },
+      "messages": {
+        "success": "Operation completed successfully!",
+        "error": "An error occurred",
+        "confirmDelete": "Are you sure you want to delete",
+        "course": "the course",
+        "event": "the event",
+        "studyWeek": "the study week"
+      }
+    }
+  },
+  "footer": {
+    "description": "Your hub for continuous learning",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "copyright": "©2025 A LIFELONG LEARNING HUB. All rights reserved.",
+    "vat": "VAT: 03182820302"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "readMore": "Read more",
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "reset": "Reset",
+    "clear": "Clear",
+    "select": "Select",
+    "choose": "Choose",
+    "upload": "Upload",
+    "download": "Download",
+    "print": "Print",
+    "share": "Share",
+    "copy": "Copy",
+    "paste": "Paste",
+    "cut": "Cut",
+    "undo": "Undo",
+    "redo": "Redo"
+  }
+}

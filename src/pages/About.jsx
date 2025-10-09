@@ -1,7 +1,11 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import booksImage from "../assets/img/books.jpg";
 
-const About = () => (
+const About = () => {
+  const { t } = useTranslation();
+  
+  return (
   <div className="">
     {/* Hero Section */}
     <section className="relative py-20 overflow-hidden">
@@ -16,10 +20,10 @@ const About = () => (
       
       <div className="relative z-10 container mx-auto px-4 text-center">
         <h1 className="text-5xl md:text-6xl tracking-tight font-semibold text-white mb-6">
-          Chi Siamo
+          {t('about.title')}
         </h1>
         <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-          Scopri la nostra passione per l'insegnamento e la crescita personale
+          {t('about.subtitle')}
         </p>
       </div>
     </section>
@@ -30,15 +34,15 @@ const About = () => (
         <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-3">
-            Il team
+            {t('about.team.title')}
           </h2>
         </div>
           <div className="prose prose-lg mx-auto text-gray-600">
             <p className="text-xl leading-relaxed mb-8">
-              Siamo un gruppo di insegnanti madrelingua o bilingue che offrono percorsi didattici ed attività per apprendere, ad ogni età, le lingue straniere. Proponiamo inoltre laboratori per accrescere le proprie conoscenze e ricercare il proprio benessere psicofisico in un ambiente divertente, stimolante e vivace.
+              {t('about.team.description1')}
             </p>
             <p className="text-lg leading-relaxed mb-8">
-              L'insegnamento è la nostra passione e ci impegniamo per condividere le nostre competenze con studenti di ogni età e nazione. Le necessità e le richieste degli studenti sono il punto di partenza per creare programmi specifici utilizzando metodologie non-formali pensate specificamente per ogni gruppo.
+              {t('about.team.description2')}
             </p>
           </div>
         </div>
@@ -51,30 +55,30 @@ const About = () => (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Mission */}
           <div>
-            <h2 className="text-3xl font-semibold text-gray-800 mb-8">LA NOSTRA MISSIONE</h2>
+            <h2 className="text-3xl font-semibold text-gray-800 mb-8">{t('about.mission.title')}</h2>
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">I nostri obiettivi sono:</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">{t('about.mission.subtitle')}</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start">
                     <span className="text-purple-600 mr-3 mt-1">•</span>
-                    <span>Incoraggiare gli utenti a diventare "appassionati studenti permanenti - LIFELONG LEARNERS"</span>
+                    <span>{t('about.mission.goals.lifelong')}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-purple-600 mr-3 mt-1">•</span>
-                    <span>Incoraggiare l'interazione tra insegnanti e studenti</span>
+                    <span>{t('about.mission.goals.interaction')}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-purple-600 mr-3 mt-1">•</span>
-                    <span>Offrire programmi educativi creati su misura per assecondare interessi e competenze dei nostri allievi</span>
+                    <span>{t('about.mission.goals.programs')}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-purple-600 mr-3 mt-1">•</span>
-                    <span>Creare esperienze trasformative, divertenti e utili per migliorarci come persone</span>
+                    <span>{t('about.mission.goals.experiences')}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-purple-600 mr-3 mt-1">•</span>
-                    <span>Imparare le lingue mentre si praticano attività quotidiane</span>
+                    <span>{t('about.mission.goals.languages')}</span>
                   </li>
                 </ul>
               </div>
@@ -83,43 +87,43 @@ const About = () => (
 
           {/* What We Offer */}
           <div>
-            <h2 className="text-3xl font-semibold text-gray-800 mb-8">COSA OFFRIAMO</h2>
+            <h2 className="text-3xl font-semibold text-gray-800 mb-8">{t('about.offerings.title')}</h2>
             <ul className="space-y-4 text-gray-600">
               <li className="flex items-start">
                 <svg className="w-6 h-6 text-purple-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Formazione continua in educazione e sviluppo personale</span>
+                <span>{t('about.offerings.items.training')}</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-6 h-6 text-purple-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Esperienza in metodi didattici innovativi</span>
+                <span>{t('about.offerings.items.methods')}</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-6 h-6 text-purple-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Competenze nella crescita emotiva e cognitiva</span>
+                <span>{t('about.offerings.items.growth')}</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-6 h-6 text-purple-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Supporto per l'apprendimento personalizzato</span>
+                <span>{t('about.offerings.items.support')}</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-6 h-6 text-purple-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Sviluppo di programmi di miglioramento personale</span>
+                <span>{t('about.offerings.items.programs')}</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-6 h-6 text-purple-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Promozione del successo attraverso l'educazione continua</span>
+                <span>{t('about.offerings.items.success')}</span>
               </li>
             </ul>
           </div>
@@ -132,35 +136,35 @@ const About = () => (
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
-            Cosa dicono i nostri clienti
+            {t('about.testimonials.title')}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div className="bg-white/70 p-8 rounded-2xl">
             <p className="text-gray-700 text-lg mb-4 italic">
-              "Un centro che nutre mente e anima con passione e professionalità."
+              "{t('about.testimonials.testimonial1')}"
             </p>
             <p className="text-purple-600 font-semibold">- Anna B.</p>
           </div>
 
           <div className="bg-white/70 p-8 rounded-2xl">
             <p className="text-gray-700 text-lg mb-4 italic">
-              "Un ambiente che favorisce crescita personale e relazioni autentiche."
+              "{t('about.testimonials.testimonial2')}"
             </p>
             <p className="text-purple-600 font-semibold">- Sara V.</p>
           </div>
 
           <div className="bg-white/70 p-8 rounded-2xl">
             <p className="text-gray-700 text-lg mb-4 italic">
-              "Centro che stimola mente e anima per una crescita reale e duratura."
+              "{t('about.testimonials.testimonial3')}"
             </p>
             <p className="text-purple-600 font-semibold">- Marco R.</p>
           </div>
 
           <div className="bg-white/70 p-8 rounded-2xl">
             <p className="text-gray-700 text-lg mb-4 italic">
-              "Centro che trasmette passione e competenza, trasformando la crescita personale."
+              "{t('about.testimonials.testimonial4')}"
             </p>
             <p className="text-purple-600 font-semibold">- Elena T.</p>
           </div>
@@ -203,6 +207,7 @@ const About = () => (
       </div>
     </section> */}
   </div>
-);
+  );
+};
 
 export default About;

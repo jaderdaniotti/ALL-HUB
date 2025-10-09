@@ -1,7 +1,9 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import booksImage from "../assets/img/books.jpg";
 
 const Contatti = () => {
+  const { t } = useTranslation();
   return (
     <div className="">
       {/* Hero Section */}
@@ -17,10 +19,10 @@ const Contatti = () => {
 
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Contattaci
+            {t('contacts.title')}
           </h1>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Contattaci per scoprire come possiamo aiutarti a crescere
+            {t('contacts.subtitle')}
           </p>
         </div>
       </section>
@@ -32,7 +34,7 @@ const Contatti = () => {
             {/* Contact Information */}
             <div>
               <h2 className="text-3xl font-semibold text-gray-800 mb-8">
-                Informazioni di Contatto
+                {t('contacts.contactInfo')}
               </h2>
 
               <div className="space-y-8">
@@ -41,7 +43,7 @@ const Contatti = () => {
                     <i className="bi bi-envelope text-purple-600 text-xl"></i>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Email</h3>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('contacts.info.email')}</h3>
                     <p className="text-gray-600">secretariat.allhub@gmail.com</p>
                   </div>
                 </div>
@@ -51,7 +53,7 @@ const Contatti = () => {
                     <i className="bi bi-telephone text-purple-600 text-xl"></i>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Telefono</h3>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('contacts.info.phone')}</h3>
                     <p className="text-gray-600">+39 06 98765432</p>
                   </div>
                 </div>
@@ -61,7 +63,7 @@ const Contatti = () => {
                     <i className="bi bi-geo-alt text-purple-600 text-xl"></i>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Indirizzo</h3>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('contacts.info.address')}</h3>
                     <p className="text-gray-600">Via della Cartiera, 36, Gemona del Friuli (UD)</p>
                   </div>
                 </div>
