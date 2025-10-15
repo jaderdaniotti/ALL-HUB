@@ -191,41 +191,47 @@ const AdminDashboard = () => {
   };
 
   // Gestione aggiunta/modifica settimana studio
-  const handleAddStudyWeek = (e) => {
+  const handleAddStudyWeek = async (e) => {
     e.preventDefault();
     
-    if (editMode.isEditing && editMode.editingType === 'studyWeek') {
-      // Modifica settimana studio esistente
-      const updatedStudyWeeks = studyWeeks.map(week => 
-        week.id === editMode.editingId 
-          ? { ...week, ...newStudyWeek }
-          : week
-      );
-      setStudyWeeks(updatedStudyWeeks);
-      localStorage.setItem("adminStudyWeeks", JSON.stringify(updatedStudyWeeks));
-      cancelEdit();
-    } else {
-      // Aggiungi nuova settimana studio
-    const studyWeek = {
-      id: Date.now(),
-      ...newStudyWeek,
-      createdAt: new Date().toISOString()
-    };
-    const updatedStudyWeeks = [...studyWeeks, studyWeek];
-    setStudyWeeks(updatedStudyWeeks);
-    localStorage.setItem("adminStudyWeeks", JSON.stringify(updatedStudyWeeks));
+    try {
+      const studyWeekData = {
+        title: newStudyWeek.title,
+        description: newStudyWeek.description,
+        duration: newStudyWeek.duration,
+        type: newStudyWeek.type,
+        city: newStudyWeek.city,
+        activities: newStudyWeek.activities,
+        image_url: newStudyWeek.image
+      };
       
-      // Reset form
-    setNewStudyWeek({
-      title: "",
-      description: "",
-      duration: "",
-      type: "Intensiva",
-        city: "",
-      activities: "",
-      image: null
-    });
-    setStudyWeekImagePreview(null);
+      if (editMode.isEditing && editMode.editingType === 'studyWeek') {
+        // Modifica settimana studio esistente
+        const updatedStudyWeek = await supabaseService.updateSettimanaStudio(editMode.editingId, studyWeekData);
+        const updatedStudyWeeks = studyWeeks.map(week => 
+          week.id === editMode.editingId ? updatedStudyWeek : week
+        );
+        setStudyWeeks(updatedStudyWeeks);
+        cancelEdit();
+      } else {
+        // Aggiungi nuova settimana studio
+        const addedStudyWeek = await supabaseService.addSettimanaStudio(studyWeekData);
+        setStudyWeeks([...studyWeeks, addedStudyWeek]);
+        
+        // Reset form
+        setNewStudyWeek({
+          title: "",
+          description: "",
+          duration: "",
+          type: "Intensiva",
+          city: "",
+          activities: "",
+          image: null
+        });
+        setStudyWeekImagePreview(null);
+      }
+    } catch (error) {
+      console.error('Errore nella gestione della settimana studio:', error);
     }
   };
 

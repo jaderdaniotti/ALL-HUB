@@ -4,14 +4,30 @@ import bcrypt from 'bcryptjs'
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-console.log('Supabase URL:', supabaseUrl)
-console.log('Supabase Key:', supabaseKey ? 'Present' : 'Missing')
+
 
 if (!supabaseUrl || !supabaseKey) {
   console.warn('Missing Supabase environment variables - using fallback authentication')
 }
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
+
+// Test connessione Supabase
+export const testSupabaseConnection = async () => {
+  try {
+    console.log('🧪 Testing Supabase connection...');
+    const { data, error } = await supabase
+      .from('eventi')
+      .select('count')
+      .limit(1);
+    
+    console.log('🧪 Connection test result:', { data, error });
+    return { success: !error, error };
+  } catch (err) {
+    console.error('🧪 Connection test failed:', err);
+    return { success: false, error: err };
+  }
+};
 
 // Helper functions per le operazioni CRUD
 export const supabaseService = {
@@ -62,7 +78,6 @@ export const supabaseService = {
     const { data, error } = await supabase
       .from('eventi')
       .select('*')
-      .eq('is_active', true)
       .order('date', { ascending: true })
     
     if (error) throw error
@@ -70,12 +85,21 @@ export const supabaseService = {
   },
 
   async addEvento(evento) {
+    console.log('➕ Adding evento:', evento);
+    
     const { data, error } = await supabase
       .from('eventi')
       .insert([evento])
       .select()
     
-    if (error) throw error
+    console.log('📊 Add evento result:', { data, error });
+    
+    if (error) {
+      console.error('❌ Error adding evento:', error);
+      throw error;
+    }
+    
+    console.log('✅ Evento added successfully:', data[0]);
     return data[0]
   },
 
@@ -104,7 +128,6 @@ export const supabaseService = {
     const { data, error } = await supabase
       .from('settimane_studio')
       .select('*')
-      .eq('is_active', true)
       .order('created_at', { ascending: false })
     
     if (error) throw error
@@ -112,12 +135,21 @@ export const supabaseService = {
   },
 
   async addSettimanaStudio(settimana) {
+    console.log('➕ Adding settimana studio:', settimana);
+    
     const { data, error } = await supabase
       .from('settimane_studio')
       .insert([settimana])
       .select()
     
-    if (error) throw error
+    console.log('📊 Add settimana result:', { data, error });
+    
+    if (error) {
+      console.error('❌ Error adding settimana:', error);
+      throw error;
+    }
+    
+    console.log('✅ Settimana added successfully:', data[0]);
     return data[0]
   },
 
@@ -164,7 +196,7 @@ export const supabaseService = {
     try {
       // Fallback per quando Supabase non è configurato
       if (!supabaseUrl || !supabaseKey) {
-        console.log('Using fallback authentication')
+       
         if (email === 'secretariat.allhub@gmail.com' && password === 'Learning25!') {
           return { 
             success: true, 
@@ -179,7 +211,6 @@ export const supabaseService = {
         return { success: false, error: 'Credenziali non valide' }
       }
 
-      console.log('Attempting Supabase authentication for:', email)
       
       const { data, error } = await supabase
         .from('users')
@@ -188,7 +219,6 @@ export const supabaseService = {
         .eq('is_admin', true)
         .single()
       
-      console.log('Supabase response:', { data, error })
       
       if (error) {
         console.error('Database error:', error)
@@ -196,15 +226,12 @@ export const supabaseService = {
       }
       
       if (!data) {
-        console.log('No user found with email:', email)
         return { success: false, error: 'Credenziali non valide' }
       }
       
-      console.log('User found:', data.name)
       
       // Verifica password usando bcrypt
       const isValidPassword = await bcrypt.compare(password, data.password_hash)
-      console.log('Password valid:', isValidPassword)
       
       // Test con password comuni per debug
       if (!isValidPassword) {
@@ -212,7 +239,6 @@ export const supabaseService = {
         for (const testPwd of testPasswords) {
           const testResult = await bcrypt.compare(testPwd, data.password_hash)
           if (testResult) {
-            console.log(`Found matching password: ${testPwd}`)
             break
           }
         }
@@ -224,7 +250,6 @@ export const supabaseService = {
       
       // Fallback temporaneo: accetta Learning25! anche se l'hash non corrisponde
       if (password === 'Learning25!') {
-        console.log('Using fallback for Learning25!')
         return { success: true, user: data }
       }
       

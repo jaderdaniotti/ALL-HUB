@@ -44,12 +44,62 @@ const Attivita = () => {
     <div className="">
 
 
-      {/* Loading State */}
+      {/* Loading State - Skeleton */}
       {loading && (
-        <div className="py-20 text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">{t('common.loading')}</p>
-        </div>
+        <section className="py-12 bg-white/70 min-h-screen">
+          <div className="container mx-auto px-4">
+            {/* Tab Navigation Skeleton */}
+            <div className="flex justify-center mb-12">
+              <div className="bg-white/80 rounded-full p-2 shadow-lg">
+                <div className="flex space-x-2">
+                  <div className="px-6 py-3 rounded-full bg-gray-200 animate-pulse w-24 h-12"></div>
+                  <div className="px-6 py-3 rounded-full bg-gray-200 animate-pulse w-24 h-12"></div>
+                  <div className="px-6 py-3 rounded-full bg-gray-200 animate-pulse w-24 h-12"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Skeleton */}
+            <div className="max-w-6xl mx-auto">
+              {/* Header Skeleton */}
+              <div className="text-center mb-12">
+                <div className="h-10 bg-gray-200 rounded-lg animate-pulse mx-auto mb-6 w-96"></div>
+                <div className="h-6 bg-gray-200 rounded-lg animate-pulse mx-auto w-80"></div>
+              </div>
+
+              {/* Cards Grid Skeleton */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[...Array(6)].map((_, index) => (
+                  <div key={index} className="bg-white/65 rounded-2xl shadow-xl p-6 border border-gray-100">
+                    <div className="text-center">
+                      {/* Image Skeleton */}
+                      <div className="w-full h-50 mb-4 rounded-lg bg-gray-200 animate-pulse"></div>
+                      
+                      {/* Title Skeleton */}
+                      <div className="h-6 bg-gray-200 rounded-lg animate-pulse mb-2 w-3/4 mx-auto"></div>
+                      
+                      {/* Description Skeleton */}
+                      <div className="space-y-2 mb-4">
+                        <div className="h-4 bg-gray-200 rounded-lg animate-pulse w-full"></div>
+                        <div className="h-4 bg-gray-200 rounded-lg animate-pulse w-2/3 mx-auto"></div>
+                      </div>
+                      
+                      {/* Chips Skeleton */}
+                      <div className="space-y-2 mb-4">
+                        <div className="h-8 bg-gray-200 rounded-full animate-pulse w-32 mx-auto"></div>
+                        <div className="h-8 bg-gray-200 rounded-full animate-pulse w-28 mx-auto"></div>
+                        <div className="h-8 bg-gray-200 rounded-full animate-pulse w-36 mx-auto"></div>
+                      </div>
+                      
+                      {/* Button Skeleton */}
+                      <div className="h-10 bg-gray-200 rounded-full animate-pulse w-32 mx-auto"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       )}
 
       {/* Error State */}
@@ -72,7 +122,7 @@ const Attivita = () => {
       {!loading && !error && (
         <>
           {/* Tab Navigation */}
-          <section className="py-12 bg-white/70">
+          <section className="py-12 bg-white/70 min-h-screen">
         <div className="container mx-auto px-4">
           <div className="flex justify-center mb-12">
             <div className="bg-white/80 rounded-full p-2 shadow-lg">

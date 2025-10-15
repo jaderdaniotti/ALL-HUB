@@ -136,14 +136,7 @@ const AdminLogin = () => {
                   disabled={isLoading}
                   className="w-full bg-purple-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isLoading ? (
-                    <div className="flex items-center justify-center">
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      {t('admin.login.loading')}
-                    </div>
-                  ) : (
-                    t('admin.login.login')
-                  )}
+                  Accedi
                 </button>
               </form>
 

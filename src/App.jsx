@@ -14,7 +14,8 @@ import Loader from './components/Loader';
 import useLoader from './hooks/useLoader';
 
 function App() {
-  const isLoading = useLoader(1500); // 1.5 secondi di caricamento
+  // const isLoading = useLoader(500); // Disabilitato per vedere subito lo skeleton
+  const isLoading = false; // Caricamento istantaneo
 
   if (isLoading) {
     return <Loader />;
