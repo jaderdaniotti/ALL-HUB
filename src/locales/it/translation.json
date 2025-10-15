@@ -24,7 +24,7 @@
     },
     "services": {
       "title": "Scopri le Nostre Attività",
-      "subtitle": "Corsi, eventi e settimane studio per ogni età e livello di apprendimento",
+      "subtitle": "Corsi, eventi e Skill Up Camps per ogni età e livello di apprendimento",
       "courses": {
         "title": "Corsi",
         "description": "Lezioni individuali e di gruppo per imparare le lingue straniere con metodi innovativi",
@@ -36,7 +36,7 @@
         "cta": "Scopri Eventi"
       },
       "studyWeeks": {
-        "title": "Settimane Studio",
+        "title": "Skill up Camps",
         "description": "Esperienze immersive all'estero per praticare le lingue in contesti reali",
         "cta": "Esplora Settimane"
       }
@@ -65,6 +65,21 @@
       "title": "Inizia il Tuo Percorso Oggi",
       "subtitle": "Unisciti a noi e scopri come l'apprendimento continuo può trasformare la tua vita",
       "button": "Contattaci Ora"
+    },
+    "howItWorks": {
+      "title": "Come funziona?",
+      "step1": {
+        "title": "Seleziona il servizio",
+        "description": "Seleziona il servizio più adatto alle tue esigenze. I servizi offerti sono altamente personalizzabili, studieremo insieme il percorso più adatto alle tue esigenze."
+      },
+      "step2": {
+        "title": "Scegli un giorno",
+        "description": "Scegli il giorno in cui usufruire del servizio. Per particolari esigenze contattami e troveremo insieme una soluzione."
+      },
+      "step3": {
+        "title": "Inizia a studiare",
+        "description": "Sarai pronto a iniziare il tuo percorso di crescita e miglioramento personale."
+      }
     },
     "newsletter": {
       "title": "Iscriviti alla Newsletter",
@@ -133,22 +148,24 @@
   },
   "activities": {
     "title": "Le Nostre Attività",
-    "subtitle": "Esplora i nostri corsi, eventi e settimane studio",
+    "subtitle": "Esplora i nostri corsi, eventi e Skill Up Camps",
     "coursesTitle": "I Nostri Corsi",
     "coursesSubtitle": "Lezioni personalizzate per ogni livello e obiettivo di apprendimento",
     "eventsTitle": "I Nostri Eventi",
     "eventsSubtitle": "Partecipa ai nostri eventi speciali per praticare e migliorare le tue competenze linguistiche",
-    "studyWeeksTitle": "Settimane Studio",
+    "studyWeeksTitle": "Skill Up Camps",
     "studyWeeksSubtitle": "Programmi intensivi settimanali per un'esperienza di apprendimento completa e immersiva",
     "tabs": {
       "courses": "Corsi",
       "events": "Eventi",
-      "studyWeeks": "Settimane Studio"
+      "studyWeeks": "Skill Up Camps"
     },
     "course": {
       "duration": "Durata",
       "level": "Livello",
       "type": "Tipo",
+      "modality": "Modalità",
+      "additionalNotes": "Note Aggiuntive",
       "bookNow": "Prenota Ora"
     },
     "event": {
@@ -174,6 +191,34 @@
   "contacts": {
     "title": "Contattaci",
     "subtitle": "Contattaci per scoprire come possiamo aiutarti a crescere",
+    "contactOptions": {
+      "title": "Entra in contatto con noi",
+      "subtitle": "Hai domande, proposte o vuoi semplicemente conoscerci meglio? Scegli il canale che preferisci e scrivici subito — siamo sempre felici di rispondere!",
+      "facebook": {
+        "title": "Facebook",
+        "description": "Seguici e scrivici sulla nostra pagina ufficiale.",
+        "brandName": "A Lifelong Learning Hub"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "description": "Scopri i nostri progetti, corsi e momenti di vita AllHub.",
+        "brandName": "A Lifelong Learning Hub"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Scrivici direttamente per ricevere informazioni sui corsi.",
+        "phoneNumber": "+39 340 221 8595"
+      },
+      "email": {
+        "title": "Email",
+        "description": "Preferisci scrivere in modo formale? Ti risponderemo entro 24h.",
+        "address": "secretariat.allhub@gmail.com"
+      },
+      "suggestion": {
+        "title": "Suggerimento:",
+        "text": "Per domande rapide usa WhatsApp, per collaborazioni o comunicazioni ufficiali scrivici via Email. E non dimenticare di seguirci su Facebook e Instagram per restare aggiornato!"
+      }
+    },
     "contactInfo": "Informazioni di Contatto",
     "followUs": "Seguici sui Social",
     "form": {
@@ -195,16 +240,45 @@
     }
   },
   "location": {
-    "title": "Dove Siamo",
-    "subtitle": "Vieni a trovarci nella nostra sede a Gemona del Friuli",
-    "address": "Via della Cartiera 36, 33080 Gemona del Friuli (UD)",
-    "description": "Siamo facilmente raggiungibili con i mezzi pubblici e disponiamo di parcheggio gratuito per i nostri studenti.",
-    "ourCity": "La nostra città",
-    "visitTitle": "Vuoi Visitare la Nostra Sede?",
-    "visitDescription": "Siamo sempre felici di accogliere nuovi studenti e mostrare loro il nostro ambiente di apprendimento. Contattaci per fissare una visita o per maggiori informazioni sui nostri corsi.",
-    "contactUs": "Contattaci",
-    "callNow": "Chiama Ora",
-    "directions": "Ottieni Indicazioni"
+    "title": "Locations & Weekly Camps",
+    "subtitle": "Le settimane studio possono essere organizzate in tutte le città italiane. La nostra sede si trova a Udine.",
+    "mapTitle": "Mappa Friuli Venezia Giulia",
+    "udineSection": {
+      "title": "Udine: Un gioiello nascosto",
+      "description1": "Situata nell'incantevole regione del Friuli Venezia Giulia, Udine è un gioiello da scoprire. Con la sua elegante architettura veneziana, le piazze baciate dal sole e il ricco intreccio di culture, invita i viaggiatori a rallentare, assaporare la vita e scoprire un lato autentico e accogliente dell'Italia.",
+      "description2": "La città è abbracciata dalle Alpi ed è a un'ora dal mare e dalla montagna. Venezia e Trieste sono facilmente raggiungibili in treno."
+    },
+    "historySection": {
+      "title": "Una città intrisa di storia",
+      "description1": "La sua storia risale all'epoca romana, ma Udine fiorì sotto il dominio veneziano, che lasciò un'impronta elegante nell'architettura e nell'arte.",
+      "description2": "Passeggiando nel centro storico si possono ammirare gli affreschi di Tiepolo, il Castello di Udine e la Loggia del Lionello, ispirata al Palazzo Ducale di Venezia."
+    },
+    "activitiesSection": {
+      "title": "Cosa fare a Udine",
+      "description": "Passeggia tra le meraviglie di Piazza Libertà, spesso definita la più bella piazza della terraferma veneziana. Salendo al castello, potrai godere di una vista panoramica sulla città e sulle Alpi. Immergiti nell'atmosfera accogliente del centro storico tra boutique, caffè e botteghe artigiane, o visita gallerie e chiese storiche come il Duomo. Infine, concediti un'esperienza culturale al Teatro Nuovo Giovanni da Udine, uno dei cuori pulsanti della scena artistica locale."
+    },
+    "surroundingsSection": {
+      "title": "I dintorni",
+      "description1": "Udine è la porta d'accesso a una regione straordinaria. A pochi chilometri si trova Cividale del Friuli, patrimonio UNESCO e cuore della storia longobarda. Le colline del Collio accolgono gli amanti del vino con paesaggi mozzafiato e cantine rinomate per i loro bianchi eleganti.",
+      "description2": "Gli appassionati di natura possono dedicarsi a escursioni, cicloturismo o sci nelle Alpi Giulie, oppure esplorare le bellezze delle Dolomiti Friulane. Sulla costa adriatica, Grado e Lignano offrono spiagge incantevoli, mentre Trieste affascina con la sua eleganza mitteleuropea.",
+      "description3": "A breve distanza si trovano Slovenia e Austria, ideali per una giornata tra laghi e natura. Da non perdere Aquileia, città romana con un imponente sito archeologico e la splendida basilica paleocristiana. E infine, la magia senza tempo di Venezia, facilmente raggiungibile in treno, che regala un'esperienza unica fatta di arte, canali e fascino eterno."
+    },
+    "flavorsSection": {
+      "title": "Sapori del Friuli",
+      "description1": "La cucina friulana è un connubio perfetto di influenze slave, austriache e italiane. I piatti tradizionali raccontano secoli di cultura e convivialità.",
+      "description2": "Tra le specialità imperdibili troviamo il Frico, croccante frittella di formaggio e patate; i Cjarsons, ravioli dal sapore dolce-salato con erbe e ricotta; e l'inconfondibile Prosciutto di San Daniele, stagionato a pochi chilometri dalla città.",
+      "description3": "Il tutto accompagnato da un calice di Friulano o Ribolla Gialla, vini che riflettono l'eleganza e l'autenticità del territorio."
+    },
+    "traditionsSection": {
+      "title": "Patrimonio culturale e tradizioni",
+      "description1": "Udine vive di tradizioni e festival durante tutto l'anno. A settembre, Friuli Doc celebra i sapori e i vini locali con musica e convivialità. Durante l'inverno, Natale in Città trasforma le strade in un mondo di luci e mercatini, mentre la cultura friulana si esprime attraverso feste popolari, musica e dialetti tramandati da secoli.",
+      "description2": "Udine non è solo una destinazione — è un'emozione. Vieni per la storia, resta per il cibo, tifa con i tifosi e innamorati del suo fascino."
+    },
+    "finalCta": {
+      "title": "Udine ti aspetta!",
+      "description": "Che tu stia passeggiando tra vicoli acciottolati, brindando con i locali o celebrando un gol alla Dacia Arena, Udine offre un assaggio indimenticabile dell'Italia fuori dai sentieri battuti.",
+      "button": "Contattaci per saperne di più"
+    }
   },
   "admin": {
     "login": {
@@ -224,7 +298,7 @@
       "tabs": {
         "courses": "Corsi",
         "events": "Eventi",
-        "studyWeeks": "Settimane Studio"
+        "studyWeeks": "Skill Up Camps"
       },
       "form": {
         "addCourse": "Aggiungi Nuovo Corso",
@@ -238,6 +312,8 @@
         "duration": "Durata",
         "level": "Livello",
         "type": "Tipo",
+        "modality": "Modalità",
+        "additionalNotes": "Note Aggiuntive",
         "date": "Data",
         "time": "Orario",
         "location": "Luogo",

@@ -47,7 +47,7 @@ Il progetto utilizza Supabase PostgreSQL con le seguenti tabelle:
 - **Users**: Gestione amministratori
 - **Corsi**: Corsi di lingua offerti  
 - **Eventi**: Eventi e workshop
-- **SettimaneStudio**: Settimane studio internazionali
+- **SettimaneStudio**: Skill Up Camps internazionali
 
 ### Setup Database
 1. **Crea progetto Supabase** su [supabase.com](https://supabase.com)

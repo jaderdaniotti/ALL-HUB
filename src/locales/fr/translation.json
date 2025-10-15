@@ -62,6 +62,21 @@
       "subtitle": "Rejoignez-nous et découvrez comment l'apprentissage continu peut transformer votre vie",
       "button": "Contactez-nous Maintenant"
     },
+    "howItWorks": {
+      "title": "Comment ça marche ?",
+      "step1": {
+        "title": "Sélectionnez le service",
+        "description": "Sélectionnez le service le plus adapté à vos besoins. Les services offerts sont hautement personnalisables, nous étudierons ensemble le parcours le plus adapté à vos besoins."
+      },
+      "step2": {
+        "title": "Choisissez un jour",
+        "description": "Choisissez le jour où vous voulez utiliser le service. Pour des besoins particuliers, contactez-moi et nous trouverons ensemble une solution."
+      },
+      "step3": {
+        "title": "Commencez à étudier",
+        "description": "Vous serez prêt à commencer votre parcours de croissance et d'amélioration personnelle."
+      }
+    },
     "newsletter": {
       "title": "Abonnez-vous à la Newsletter",
       "subtitle": "Abonnez-vous à notre newsletter pour rester informé de nos services",
@@ -145,6 +160,8 @@
       "duration": "Durée",
       "level": "Niveau",
       "type": "Type",
+      "modality": "Modalité",
+      "additionalNotes": "Notes Supplémentaires",
       "bookNow": "Réserver Maintenant"
     },
     "event": {
@@ -170,6 +187,34 @@
   "contacts": {
     "title": "Contactez-nous",
     "subtitle": "Contactez-nous pour découvrir comment nous pouvons vous aider à grandir",
+    "contactOptions": {
+      "title": "Entrez en contact avec nous",
+      "subtitle": "Vous avez des questions, des suggestions ou vous voulez simplement mieux nous connaître ? Choisissez votre canal préféré et écrivez-nous tout de suite — nous sommes toujours heureux de répondre !",
+      "facebook": {
+        "title": "Facebook",
+        "description": "Suivez-nous et écrivez-nous sur notre page officielle.",
+        "brandName": "A Lifelong Learning Hub"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "description": "Découvrez nos projets, cours et moments de vie AllHub.",
+        "brandName": "A Lifelong Learning Hub"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Écrivez-nous directement pour recevoir des informations sur les cours.",
+        "phoneNumber": "+39 340 221 8595"
+      },
+      "email": {
+        "title": "Email",
+        "description": "Vous préférez écrire de manière formelle ? Nous vous répondrons sous 24h.",
+        "address": "secretariat.allhub@gmail.com"
+      },
+      "suggestion": {
+        "title": "Conseil :",
+        "text": "Pour les questions rapides utilisez WhatsApp, pour les collaborations ou communications officielles écrivez-nous par Email. Et n'oubliez pas de nous suivre sur Facebook et Instagram pour rester informé !"
+      }
+    },
     "contactInfo": "Informations de Contact",
     "followUs": "Suivez-nous sur les Réseaux Sociaux",
     "form": {
@@ -191,16 +236,45 @@
     }
   },
   "location": {
-    "title": "Où Nous Sommes",
-    "subtitle": "Venez nous rendre visite dans notre siège à Gemona del Friuli",
-    "address": "Via della Cartiera 36, 33080 Gemona del Friuli (UD)",
-    "description": "Nous sommes facilement accessibles en transports publics et disposons d'un parking gratuit pour nos étudiants.",
-    "ourCity": "Notre ville",
-    "visitTitle": "Voulez-vous Visiter Notre Siège?",
-    "visitDescription": "Nous sommes toujours heureux d'accueillir de nouveaux étudiants et de leur montrer notre environnement d'apprentissage. Contactez-nous pour planifier une visite ou pour plus d'informations sur nos cours.",
-    "contactUs": "Nous Contacter",
-    "callNow": "Appeler Maintenant",
-    "directions": "Obtenir les Directions"
+    "title": "Localisations et Camps Hebdomadaires",
+    "subtitle": "Les semaines d'étude peuvent être organisées dans toutes les villes italiennes. Notre siège est situé à Udine.",
+    "mapTitle": "Carte du Friuli Venezia Giulia",
+    "udineSection": {
+      "title": "Udine : Un joyau caché",
+      "description1": "Située dans la région enchanteresse du Friuli Venezia Giulia, Udine est un joyau à découvrir. Avec son architecture vénitienne élégante, ses places baignées de soleil et le riche entrelacement de cultures, elle invite les voyageurs à ralentir, savourer la vie et découvrir un côté authentique et accueillant de l'Italie.",
+      "description2": "La ville est embrassée par les Alpes et se trouve à une heure de la mer et de la montagne. Venise et Trieste sont facilement accessibles en train."
+    },
+    "historySection": {
+      "title": "Une ville imprégnée d'histoire",
+      "description1": "Son histoire remonte à l'époque romaine, mais Udine a prospéré sous la domination vénitienne, qui a laissé une empreinte élégante dans l'architecture et l'art.",
+      "description2": "En se promenant dans le centre historique, on peut admirer les fresques de Tiepolo, le Château d'Udine et la Loggia del Lionello, inspirée du Palais des Doges de Venise."
+    },
+    "activitiesSection": {
+      "title": "Que faire à Udine",
+      "description": "Promenez-vous parmi les merveilles de la Piazza Libertà, souvent définie comme la plus belle place de la terre ferme vénitienne. En montant au château, vous pourrez profiter d'une vue panoramique sur la ville et les Alpes. Plongez-vous dans l'atmosphère accueillante du centre historique parmi les boutiques, cafés et ateliers d'artisans, ou visitez les galeries et églises historiques comme la Cathédrale. Enfin, offrez-vous une expérience culturelle au Teatro Nuovo Giovanni da Udine, l'un des cœurs battants de la scène artistique locale."
+    },
+    "surroundingsSection": {
+      "title": "Les environs",
+      "description1": "Udine est la porte d'entrée vers une région extraordinaire. À quelques kilomètres se trouve Cividale del Friuli, patrimoine UNESCO et cœur de l'histoire lombarde. Les collines du Collio accueillent les amateurs de vin avec des paysages à couper le souffle et des caves renommées pour leurs blancs élégants.",
+      "description2": "Les passionnés de nature peuvent se consacrer à la randonnée, au cyclotourisme ou au ski dans les Alpes Juliennes, ou explorer les beautés des Dolomites frioulanes. Sur la côte adriatique, Grado et Lignano offrent des plages enchantées, tandis que Trieste fascine par son élégance mitteleuropéenne.",
+      "description3": "À courte distance se trouvent la Slovénie et l'Autriche, idéales pour une journée entre lacs et nature. Ne manquez pas Aquilée, ville romaine avec un imposant site archéologique et la splendide basilique paléochrétienne. Et enfin, la magie intemporelle de Venise, facilement accessible en train, qui offre une expérience unique faite d'art, de canaux et de charme éternel."
+    },
+    "flavorsSection": {
+      "title": "Saveurs du Friuli",
+      "description1": "La cuisine frioulane est un mélange parfait d'influences slaves, autrichiennes et italiennes. Les plats traditionnels racontent des siècles de culture et de convivialité.",
+      "description2": "Parmi les spécialités incontournables, nous trouvons le Frico, galette croustillante de fromage et pommes de terre ; les Cjarsons, raviolis au goût sucré-salé aux herbes et ricotta ; et l'incontournable Prosciutto de San Daniele, affiné à quelques kilomètres de la ville.",
+      "description3": "Le tout accompagné d'un verre de Friulano ou Ribolla Gialla, des vins qui reflètent l'élégance et l'authenticité du territoire."
+    },
+    "traditionsSection": {
+      "title": "Patrimoine culturel et traditions",
+      "description1": "Udine vit de traditions et de festivals toute l'année. En septembre, Friuli Doc célèbre les saveurs et vins locaux avec musique et convivialité. Pendant l'hiver, Natale in Città transforme les rues en un monde de lumières et marchés, tandis que la culture frioulane s'exprime à travers des fêtes populaires, de la musique et des dialectes transmis pendant des siècles.",
+      "description2": "Udine n'est pas seulement une destination — c'est une émotion. Venez pour l'histoire, restez pour la nourriture, encouragez avec les supporters et tombez amoureux de son charme."
+    },
+    "finalCta": {
+      "title": "Udine vous attend !",
+      "description": "Que vous vous promeniez dans des ruelles pavées, trinquiez avec les habitants ou célébriez un but à la Dacia Arena, Udine offre un avant-goût inoubliable de l'Italie hors des sentiers battus.",
+      "button": "Contactez-nous pour en savoir plus"
+    }
   },
   "admin": {
     "login": {
@@ -232,6 +306,8 @@
         "duration": "Durée",
         "level": "Niveau",
         "type": "Type",
+        "modality": "Modalité",
+        "additionalNotes": "Notes Supplémentaires",
         "image": "Image",
         "date": "Date",
         "time": "Heure",

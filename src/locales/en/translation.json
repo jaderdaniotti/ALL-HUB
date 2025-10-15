@@ -57,10 +57,40 @@
         "description": "You will be ready to start your journey of personal growth and improvement."
       }
     },
+    "howItWorks": {
+      "title": "How it works?",
+      "step1": {
+        "title": "Select the service",
+        "description": "Select the service most suitable for your needs. The services offered are highly customizable, we will study together the path most suitable for your needs."
+      },
+      "step2": {
+        "title": "Choose a day",
+        "description": "Choose the day you want to use the service. For particular needs, contact me and we will find a solution together."
+      },
+      "step3": {
+        "title": "Start studying",
+        "description": "You will be ready to start your journey of growth and personal improvement."
+      }
+    },
     "finalCta": {
       "title": "Start Your Journey Today",
       "subtitle": "Join us and discover how continuous learning can transform your life",
       "button": "Contact Us Now"
+    },
+    "howItWorks": {
+      "title": "How it works?",
+      "step1": {
+        "title": "Select the service",
+        "description": "Select the service most suitable for your needs. The services offered are highly customizable, we will study together the path most suitable for your needs."
+      },
+      "step2": {
+        "title": "Choose a day",
+        "description": "Choose the day you want to use the service. For particular needs, contact me and we will find a solution together."
+      },
+      "step3": {
+        "title": "Start studying",
+        "description": "You will be ready to start your journey of growth and personal improvement."
+      }
     },
     "newsletter": {
       "title": "Subscribe to Newsletter",
@@ -145,6 +175,8 @@
       "duration": "Duration",
       "level": "Level",
       "type": "Type",
+      "modality": "Modality",
+      "additionalNotes": "Additional Notes",
       "bookNow": "Book Now"
     },
     "event": {
@@ -170,6 +202,34 @@
   "contacts": {
     "title": "Contact Us",
     "subtitle": "Contact us to discover how we can help you grow",
+    "contactOptions": {
+      "title": "Get in touch with us",
+      "subtitle": "Have questions, suggestions or simply want to get to know us better? Choose your preferred channel and write to us right away — we're always happy to respond!",
+      "facebook": {
+        "title": "Facebook",
+        "description": "Follow us and write to us on our official page.",
+        "brandName": "A Lifelong Learning Hub"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "description": "Discover our projects, courses and AllHub life moments.",
+        "brandName": "A Lifelong Learning Hub"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Write to us directly to receive information about courses.",
+        "phoneNumber": "+39 340 221 8595"
+      },
+      "email": {
+        "title": "Email",
+        "description": "Prefer to write formally? We'll respond within 24h.",
+        "address": "secretariat.allhub@gmail.com"
+      },
+      "suggestion": {
+        "title": "Tip:",
+        "text": "For quick questions use WhatsApp, for collaborations or official communications write to us via Email. And don't forget to follow us on Facebook and Instagram to stay updated!"
+      }
+    },
     "contactInfo": "Contact Information",
     "followUs": "Follow Us on Social",
     "form": {
@@ -191,16 +251,45 @@
     }
   },
   "location": {
-    "title": "Where We Are",
-    "subtitle": "Come visit us at our headquarters in Gemona del Friuli",
-    "address": "Via della Cartiera 36, 33080 Gemona del Friuli (UD)",
-    "description": "We are easily reachable by public transport and have free parking for our students.",
-    "ourCity": "Our city",
-    "visitTitle": "Want to Visit Our Headquarters?",
-    "visitDescription": "We are always happy to welcome new students and show them our learning environment. Contact us to schedule a visit or for more information about our courses.",
-    "contactUs": "Contact Us",
-    "callNow": "Call Now",
-    "directions": "Get Directions"
+    "title": "Locations & Weekly Camps",
+    "subtitle": "Study weeks can be organized in all Italian cities. Our headquarters is located in Udine.",
+    "mapTitle": "Friuli Venezia Giulia Map",
+    "udineSection": {
+      "title": "Udine: A hidden gem",
+      "description1": "Located in the enchanting region of Friuli Venezia Giulia, Udine is a gem to discover. With its elegant Venetian architecture, sun-kissed squares and rich interweaving of cultures, it invites travelers to slow down, savor life and discover an authentic and welcoming side of Italy.",
+      "description2": "The city is embraced by the Alps and is an hour from the sea and mountains. Venice and Trieste are easily reachable by train."
+    },
+    "historySection": {
+      "title": "A city steeped in history",
+      "description1": "Its history dates back to Roman times, but Udine flourished under Venetian rule, which left an elegant mark on architecture and art.",
+      "description2": "Walking through the historic center, you can admire Tiepolo's frescoes, Udine Castle and the Lionello Loggia, inspired by the Doge's Palace in Venice."
+    },
+    "activitiesSection": {
+      "title": "What to do in Udine",
+      "description": "Stroll among the wonders of Piazza Libertà, often called the most beautiful square of the Venetian mainland. Climbing to the castle, you can enjoy a panoramic view of the city and the Alps. Immerse yourself in the welcoming atmosphere of the historic center among boutiques, cafes and artisan shops, or visit galleries and historic churches like the Cathedral. Finally, treat yourself to a cultural experience at the Teatro Nuovo Giovanni da Udine, one of the beating hearts of the local artistic scene."
+    },
+    "surroundingsSection": {
+      "title": "The surroundings",
+      "description1": "Udine is the gateway to an extraordinary region. A few kilometers away is Cividale del Friuli, a UNESCO World Heritage Site and heart of Lombard history. The Collio hills welcome wine lovers with breathtaking landscapes and renowned wineries for their elegant whites.",
+      "description2": "Nature enthusiasts can dedicate themselves to hiking, cycling or skiing in the Julian Alps, or explore the beauties of the Friulian Dolomites. On the Adriatic coast, Grado and Lignano offer enchanting beaches, while Trieste fascinates with its Mitteleuropean elegance.",
+      "description3": "A short distance away are Slovenia and Austria, ideal for a day among lakes and nature. Don't miss Aquileia, a Roman city with an imposing archaeological site and the splendid early Christian basilica. And finally, the timeless magic of Venice, easily reachable by train, which offers a unique experience made of art, canals and eternal charm."
+    },
+    "flavorsSection": {
+      "title": "Flavors of Friuli",
+      "description1": "Friulian cuisine is a perfect blend of Slavic, Austrian and Italian influences. Traditional dishes tell centuries of culture and conviviality.",
+      "description2": "Among the unmissable specialties we find Frico, a crispy cheese and potato pancake; Cjarsons, sweet-savory ravioli with herbs and ricotta; and the unmistakable San Daniele Prosciutto, aged just a few kilometers from the city.",
+      "description3": "All accompanied by a glass of Friulano or Ribolla Gialla, wines that reflect the elegance and authenticity of the territory."
+    },
+    "traditionsSection": {
+      "title": "Cultural heritage and traditions",
+      "description1": "Udine lives on traditions and festivals throughout the year. In September, Friuli Doc celebrates local flavors and wines with music and conviviality. During winter, Natale in Città transforms the streets into a world of lights and markets, while Friulian culture expresses itself through folk festivals, music and dialects handed down for centuries.",
+      "description2": "Udine is not just a destination — it's an emotion. Come for the history, stay for the food, cheer with the fans and fall in love with its charm."
+    },
+    "finalCta": {
+      "title": "Udine awaits you!",
+      "description": "Whether you're strolling through cobblestone alleys, toasting with the locals or celebrating a goal at the Dacia Arena, Udine offers an unforgettable taste of Italy off the beaten path.",
+      "button": "Contact us to learn more"
+    }
   },
   "admin": {
     "login": {
@@ -232,6 +321,8 @@
         "duration": "Duration",
         "level": "Level",
         "type": "Type",
+        "modality": "Modality",
+        "additionalNotes": "Additional Notes",
         "image": "Image",
         "date": "Date",
         "time": "Time",

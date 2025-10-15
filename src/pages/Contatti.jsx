@@ -4,15 +4,16 @@ import booksImage from "../assets/img/books.jpg";
 
 const Contatti = () => {
   const { t } = useTranslation();
+
   return (
-    <div className="">
+    <div>
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${booksImage})`,
-            filter: 'blur(3px) brightness(0.6)'
+            filter: 'blur(3px) brightness(0.6)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/40 to-blue-900/40" />
@@ -21,80 +22,101 @@ const Contatti = () => {
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             {t('contacts.title')}
           </h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             {t('contacts.subtitle')}
           </p>
         </div>
       </section>
 
-      {/* Contact Information & Form */}
-      <section className="py-12 bg-white/70">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-semibold text-gray-800 mb-8">
-                {t('contacts.contactInfo')}
-              </h2>
+      {/* Contact Options */}
+      <section className="py-16 bg-gradient-to-b from-white via-white/80 to-gray-100">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-semibold text-gray-800 mb-6">
+            {t('contacts.contactOptions.title')}
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+            {t('contacts.contactOptions.subtitle')}
+          </p>
 
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-100 p-3 rounded-full">
-                    <i className="bi bi-envelope text-purple-600 text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('contacts.info.email')}</h3>
-                    <p className="text-gray-600">secretariat.allhub@gmail.com</p>
-                  </div>
+          {/* Social Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/share/1BjGLxA7af/"
+              target="__blank"
+              className="group relative bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+            >
+              <div className="absolute inset-0 bg-blue-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="bg-blue-600 text-white w-14 h-14 flex items-center justify-center rounded-full mb-4">
+                  <i className="bi bi-facebook text-2xl"></i>
                 </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-100 p-3 rounded-full">
-                    <i className="bi bi-telephone text-purple-600 text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('contacts.info.phone')}</h3>
-                    <p className="text-gray-600">+39 06 98765432</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-100 p-3 rounded-full">
-                    <i className="bi bi-geo-alt text-purple-600 text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('contacts.info.address')}</h3>
-                    <p className="text-gray-600">Via della Cartiera, 36, Gemona del Friuli (UD)</p>
-                  </div>
-                </div>
+                <h3 className="text-xl font-semibold mb-2">{t('contacts.contactOptions.facebook.title')}</h3>
+                <p className="text-gray-600 mb-3">{t('contacts.contactOptions.facebook.description')}</p>
+                <span className="text-blue-600 font-medium">{t('contacts.contactOptions.facebook.brandName')}</span>
               </div>
+            </a>
 
-
-            </div>
-            {/* Social Media */}
-            <div className="mt-12">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Seguici sui Social</h3>
-              <div className="grid xl:grid-cols-2 gap-4">
-                <a href="https://www.facebook.com/share/1BjGLxA7af/" className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors flex items-center justify-center gap-2" target="__blank">
-                  <i className="bi bi-facebook text-xl"></i> <span className="font-medium">A lifelong learning hub</span>
-                </a>
-                <a href="#" className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-full hover:from-purple-600 hover:to-pink-600 transition-colors flex items-center justify-center gap-2">
-                  <i className="bi bi-instagram text-xl"></i> <span className="font-medium">A lifelong learning hub</span>
-                </a>
-                <a href="https://wa.me/+393402218595" className="bg-green-600 text-white p-3 rounded-full hover:bg-green-700 transition-colors flex items-center justify-center gap-2" target="__blank">
-                  <i className="bi bi-whatsapp text-xl"></i> <span className="font-medium">+39 340 221 8595 </span>
-                </a>
-                <a href="mailto:secretariat.allhub@gmail.com" className="bg-gray-600 text-white p-3 rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center gap-2">
-                  <i className="bi bi-envelope text-xl"></i> <span className="font-medium">secretariat.allhub@gmail.com</span>
-                </a>
+            {/* Instagram */}
+            <a
+              href="#"
+              target="__blank"
+              className="group relative bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-14 h-14 flex items-center justify-center rounded-full mb-4">
+                  <i className="bi bi-instagram text-2xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{t('contacts.contactOptions.instagram.title')}</h3>
+                <p className="text-gray-600 mb-3">{t('contacts.contactOptions.instagram.description')}</p>
+                <span className="text-pink-500 font-medium">{t('contacts.contactOptions.instagram.brandName')}</span>
               </div>
-            </div>
+            </a>
 
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/+393402218595"
+              target="__blank"
+              className="group relative bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+            >
+              <div className="absolute inset-0 bg-green-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="bg-green-500 text-white w-14 h-14 flex items-center justify-center rounded-full mb-4">
+                  <i className="bi bi-whatsapp text-2xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{t('contacts.contactOptions.whatsapp.title')}</h3>
+                <p className="text-gray-600 mb-3">{t('contacts.contactOptions.whatsapp.description')}</p>
+                <span className="text-green-600 font-medium">{t('contacts.contactOptions.whatsapp.phoneNumber')}</span>
+              </div>
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:secretariat.allhub@gmail.com"
+              target="__blank"
+              className="group relative bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+            >
+              <div className="absolute inset-0 bg-gray-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="bg-gray-700 text-white w-14 h-14 flex items-center justify-center rounded-full mb-4">
+                  <i className="bi bi-envelope text-2xl"></i>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{t('contacts.contactOptions.email.title')}</h3>
+                <p className="text-gray-600 mb-3">{t('contacts.contactOptions.email.description')}</p>
+                <span className="text-gray-700 font-medium">{t('contacts.contactOptions.email.address')}</span>
+              </div>
+            </a>
+          </div>
+
+          <div className="mt-16 text-gray-700">
+            <p className="text-lg mb-2 font-medium">{t('contacts.contactOptions.suggestion.title')}</p>
+            <p className="text-gray-600">
+              {t('contacts.contactOptions.suggestion.text')}
+            </p>
           </div>
         </div>
       </section>
-
-
     </div>
   );
 };

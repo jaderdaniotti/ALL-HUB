@@ -124,7 +124,7 @@ const Home = () => {
             </Link>
           </div>
 
-          {/* Settimane Studio */}
+          {/* Skill Up Camps */}
           <div className="bg-white/65 hover:scale-105 transition-all duration-300 rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl text-center flex flex-col h-full">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <i className="bi bi-globe text-2xl text-green-600"></i>

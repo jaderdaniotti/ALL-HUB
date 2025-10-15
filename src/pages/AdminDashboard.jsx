@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next'; // Non utilizzato al momento
 import { supabaseService } from "../lib/supabase";
 import { EventPreview, CoursePreview, StudyWeekPreview } from "../components/PreviewCards";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 import { ConfirmDeleteModal } from "../components/ConfirmDeleteModal";
 
 const AdminDashboard = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation(); // Non utilizzato al momento
   const [activeTab, setActiveTab] = useState('corsi');
   const [courses, setCourses] = useState([]);
   const [events, setEvents] = useState([]);
@@ -35,8 +35,11 @@ const AdminDashboard = () => {
     duration: "",
     level: "Principiante",
     type: "Individuale",
+    modality: "",
+    additional_notes: "",
     image: null
   });
+  
   
   const [newEvent, setNewEvent] = useState({
     title: "",
@@ -114,8 +117,11 @@ const AdminDashboard = () => {
         duration: newCourse.duration,
         level: newCourse.level,
         type: newCourse.type,
+        modality: newCourse.modality,
+        additional_notes: newCourse.additional_notes,
         image_url: newCourse.image
       };
+      
       
       if (editMode.isEditing && editMode.editingType === 'course') {
         // Modifica corso esistente
@@ -137,6 +143,8 @@ const AdminDashboard = () => {
         duration: "",
         level: "Principiante",
         type: "Individuale",
+        modality: "",
+        additional_notes: "",
         image: null
       });
       setCourseImagePreview(null);
@@ -242,17 +250,14 @@ const AdminDashboard = () => {
         await supabaseService.deleteCorso(id);
         const updatedCourses = courses.filter(course => course.id !== id);
         setCourses(updatedCourses);
-        localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
       } else if (type === 'event') {
         await supabaseService.deleteEvento(id);
         const updatedEvents = events.filter(event => event.id !== id);
         setEvents(updatedEvents);
-        localStorage.setItem("adminEvents", JSON.stringify(updatedEvents));
       } else if (type === 'studyWeek') {
         await supabaseService.deleteSettimanaStudio(id);
         const updatedStudyWeeks = studyWeeks.filter(week => week.id !== id);
         setStudyWeeks(updatedStudyWeeks);
-        localStorage.setItem("adminStudyWeeks", JSON.stringify(updatedStudyWeeks));
       }
     } catch (error) {
       console.error('Errore nell\'eliminazione:', error);
@@ -317,6 +322,8 @@ const AdminDashboard = () => {
         duration: item.duration,
         level: item.level,
         type: item.type,
+        modality: item.modality || "",
+        additional_notes: item.additional_notes || "",
         image: item.image_url
       });
       setActiveTab('corsi');
@@ -363,6 +370,8 @@ const AdminDashboard = () => {
       duration: "",
       level: "Principiante",
       type: "Individuale",
+      modality: "",
+      additional_notes: "",
       image: null
     });
     setNewEvent({
@@ -398,7 +407,7 @@ const AdminDashboard = () => {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-gray-800 mb-2">Pannello di Controllo</h1>
-              <p className="text-gray-600">Gestisci corsi, eventi e settimane studio</p>
+              <p className="text-gray-600">Gestisci corsi, eventi e settimane formative</p>
             </div>
             <div className="flex items-center space-x-4">
             <Link 
@@ -451,7 +460,7 @@ const AdminDashboard = () => {
                 }`}
                 onClick={() => setActiveTab('settimane')}
               >
-                Settimane Studio
+                Settimane Formative
               </button>
             </div>
           </div>
@@ -517,11 +526,18 @@ const AdminDashboard = () => {
                     <select
                       value={newCourse.level}
                       onChange={(e) => setNewCourse({...newCourse, level: e.target.value})}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent mb-2"
                     >
-                      <option value="Principiante">Principiante</option>
-                      <option value="Intermedio">Intermedio</option>
-                      <option value="Avanzato">Avanzato</option>
+                        <option value="Principiante">Principiante</option>
+                        <option value="Da base a intermedio">Da base a intermedio</option>
+                        <option value="Intermedio">Intermedio</option>
+                        <option value="Da intermedio ad avanzato">Da intermedio ad avanzato</option>
+                        <option value="Da base ad avanzato">Da base ad avanzato</option>
+                        <option value="Avanzato">Avanzato</option>
+                        <option value="Base">Base</option>
+                        <option value="Esperto">Esperto</option>
+                        <option value="Principiante Assoluto">Principiante Assoluto</option>
+                        <option value="Principiante con Basi">Principiante con Basi</option>
                     </select>
                   </div>
                 </div>
@@ -538,6 +554,34 @@ const AdminDashboard = () => {
                     <option value="Individuale">Individuale</option>
                     <option value="Gruppo">Gruppo</option>
                   </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Modalità
+                  </label>
+                  <select
+                    value={newCourse.modality}
+                    onChange={(e) => setNewCourse({...newCourse, modality: e.target.value})}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  >
+                    <option value="">Seleziona modalità</option>
+                    <option value="Online">Online</option>
+                    <option value="In presenza">In presenza</option>
+                    <option value="Blended">Blended</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Note Aggiuntive
+                  </label>
+                  <textarea
+                    value={newCourse.additional_notes}
+                    onChange={(e) => setNewCourse({...newCourse, additional_notes: e.target.value})}
+                    placeholder="Note aggiuntive sul corso (opzionale)"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent h-20"
+                  />
                 </div>
 
                 <div>
@@ -700,7 +744,7 @@ const AdminDashboard = () => {
               </form>
             )}
 
-            {/* Form Settimane Studio */}
+            {/* Form Skill Up Camps */}
             {activeTab === 'settimane' && (
               <form onSubmit={handleAddStudyWeek} className="space-y-4">
                 <div>
@@ -851,7 +895,7 @@ const AdminDashboard = () => {
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">
               {activeTab === 'corsi' && `Corsi (${courses.length})`}
               {activeTab === 'eventi' && `Eventi (${events.length})`}
-              {activeTab === 'settimane' && `Settimane Studio (${studyWeeks.length})`}
+              {activeTab === 'settimane' && `Skill Up Camps (${studyWeeks.length})`}
             </h2>
 
           <div className="space-y-6">
@@ -880,7 +924,7 @@ const AdminDashboard = () => {
                         <div className="chip chip-purple">
                           <i className="bi bi-clock mr-2"></i>
                           <span>{course.duration}</span>
-                    </div>
+                        </div>
                         <div className="chip chip-blue">
                           <i className="bi bi-graph-up mr-2"></i>
                           <span>{course.level}</span>
@@ -889,7 +933,23 @@ const AdminDashboard = () => {
                           <i className="bi bi-people mr-2"></i>
                           <span>{course.type}</span>
                         </div>
+                        {course.modality && (
+                          <div className="chip chip-indigo">
+                            <i className="bi bi-laptop mr-2"></i>
+                            <span>{course.modality}</span>
+                          </div>
+                        )}
                       </div>
+
+                      {/* Note aggiuntive se presenti */}
+                      {course.additional_notes && (
+                        <div className="bg-gray-50 rounded-lg p-3 mb-4">
+                          <p className="text-sm text-gray-600 italic">
+                            <i className="bi bi-info-circle mr-2"></i>
+                            {course.additional_notes}
+                          </p>
+                        </div>
+                      )}
 
                       <div className="bg-purple-600 text-white px-6 py-2 rounded-full font-medium hover:bg-purple-700 transition-colors text-sm inline-block mb-2">
                         Prenota Ora
@@ -985,7 +1045,7 @@ const AdminDashboard = () => {
               </div>
             )}
 
-            {/* Card Settimane Studio */}
+            {/* Card Skill Up Camps */}
             {activeTab === 'settimane' && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {studyWeeks.map((week) => (

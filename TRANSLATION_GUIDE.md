@@ -177,7 +177,7 @@ Tutti i file di traduzione sono in `src/locales/[lingua]/translation.json`:
 #### 8. **AdminDashboard Page** (`src/pages/AdminDashboard.jsx`)
 **Da tradurre:**
 - Titolo "Pannello Admin"
-- Tabs (Corsi, Eventi, Settimane Studio)
+- Tabs (Corsi, Eventi, Skill Up Camps)
 - Form labels
 - Pulsanti (Aggiungi, Modifica, Elimina, Annulla)
 - Modale di conferma eliminazione

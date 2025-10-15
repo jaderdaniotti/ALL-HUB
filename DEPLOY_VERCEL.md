@@ -445,7 +445,7 @@ Password: Learning25!
 - **Loading states** e fallback per immagini
 
 ### ✅ Backend (Supabase)
-- **Database** con tabelle per corsi, eventi, settimane studio
+- **Database** con tabelle per corsi, eventi, Skill Up Camps
 - **Autenticazione** admin con password hashata
 - **CRUD operations** complete per tutti i contenuti
 - **Row Level Security** per protezione dati

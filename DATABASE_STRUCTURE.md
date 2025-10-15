@@ -52,7 +52,7 @@ Tabella per gestire gli eventi e workshop.
 | `updated_at` | TIMESTAMP | Data ultimo aggiornamento |
 
 ### 4. SettimaneStudio
-Tabella per gestire le settimane studio internazionali.
+Tabella per gestire le Skill Up Camps internazionali.
 
 | Colonna | Tipo | Descrizione |
 |---------|------|-------------|
@@ -72,7 +72,7 @@ Tabella per gestire le settimane studio internazionali.
 
 - **Users** → **Corsi**: Un admin può creare più corsi
 - **Users** → **Eventi**: Un admin può creare più eventi  
-- **Users** → **SettimaneStudio**: Un admin può creare più settimane studio
+- **Users** → **SettimaneStudio**: Un admin può creare più Skill Up Camps
 
 ## Indici Consigliati
 
@@ -91,7 +91,7 @@ CREATE INDEX idx_users_email ON users(email);
 Bucket per le immagini delle attività:
 - **Corsi**: `/corsi/{course_id}/image.jpg`
 - **Eventi**: `/eventi/{event_id}/image.jpg`  
-- **Settimane Studio**: `/settimane/{week_id}/image.jpg`
+- **Skill Up Camps**: `/settimane/{week_id}/image.jpg`
 
 ## Sicurezza
 

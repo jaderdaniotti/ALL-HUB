@@ -104,12 +104,21 @@ export const supabaseService = {
   },
 
   async deleteEvento(id) {
+    console.log('🗑️ Deleting evento:', id);
+    
     const { error } = await supabase
       .from('eventi')
-      .update({ is_active: false })
+      .delete()
       .eq('id', id)
     
-    if (error) throw error
+    console.log('📊 Delete evento result:', { error });
+    
+    if (error) {
+      console.error('❌ Error deleting evento:', error);
+      throw error;
+    }
+    
+    console.log('✅ Evento deleted successfully');
   },
 
   async updateEvento(id, evento) {
@@ -123,7 +132,7 @@ export const supabaseService = {
     return data[0]
   },
 
-  // Settimane Studio
+  // Skill Up Camps
   async getSettimaneStudio() {
     const { data, error } = await supabase
       .from('settimane_studio')
@@ -154,12 +163,21 @@ export const supabaseService = {
   },
 
   async deleteSettimanaStudio(id) {
+    console.log('🗑️ Deleting settimana studio:', id);
+    
     const { error } = await supabase
       .from('settimane_studio')
-      .update({ is_active: false })
+      .delete()
       .eq('id', id)
     
-    if (error) throw error
+    console.log('📊 Delete settimana result:', { error });
+    
+    if (error) {
+      console.error('❌ Error deleting settimana:', error);
+      throw error;
+    }
+    
+    console.log('✅ Settimana deleted successfully');
   },
 
   async updateSettimanaStudio(id, settimana) {

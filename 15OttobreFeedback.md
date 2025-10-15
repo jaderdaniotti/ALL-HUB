@@ -61,7 +61,7 @@
 
 ---
 
-## 📅 SEZIONE: SETTIMANE STUDIO
+## 📅 SEZIONE: Skill Up Camps
 
 ### ✅ Modifiche richieste
 - Rinominare sezione:
@@ -95,15 +95,15 @@
 ### 🔥 PRIORITÀ ALTA (Core functionality)
 | Fase | Task | Stato | Priorità |
 |------|------|-------|----------|
-| 1 | **Fix bug aggiunta eventi** - Risolvere problema permessi/form | ☐ | 🔴 CRITICA |
+| 1 | **Fix bug aggiunta eventi** - Risolvere problema permessi/form | ☐ | 🔴 CRITICA | OK
 | 2 | **Implementare campi aggiuntivi nei corsi** (livello, modalità, note) | ☐ | 🔴 CRITICA |
-| 3 | **Correggere numero di telefono errato** nella sezione Contatti | ☐ | 🔴 CRITICA |
+| 3 | **Correggere numero di telefono errato** nella sezione Contatti | ☐ | 🔴 CRITICA | ok
 
 ### 🟡 PRIORITÀ MEDIA (Content & Structure)
 | Fase | Task | Stato | Priorità |
 |------|------|-------|----------|
-| 4 | **Rimuovere indirizzo di casa** da Locations e Contatti | ☐ | 🟡 MEDIA |
-| 5 | **Rinominare "Settimane studio"** in "Settimane formative / Skill Up Camps" | ☐ | 🟡 MEDIA |
+| 4 | **Rimuovere indirizzo di casa** da Locations e Contatti | ☐ | 🟡 MEDIA | ok
+| 5 | **Rinominare "Skill Up Camps"** in "Settimane formative / Skill Up Camps" | ☐ | 🟡 MEDIA | ok
 | 6 | **Rinominare sottosezione Location** "La nostra città" → "Le nostre locations" | ☐ | 🟡 MEDIA |
 
 ### 🟢 PRIORITÀ BASSA (Enhancement & Future)

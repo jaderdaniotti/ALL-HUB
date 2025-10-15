@@ -62,6 +62,21 @@
       "subtitle": "Únete a nosotros y descubre cómo el aprendizaje continuo puede transformar tu vida",
       "button": "Contáctanos Ahora"
     },
+    "howItWorks": {
+      "title": "¿Cómo funciona?",
+      "step1": {
+        "title": "Selecciona el servicio",
+        "description": "Selecciona el servicio más adecuado para tus necesidades. Los servicios ofrecidos son altamente personalizables, estudiaremos juntos el camino más adecuado para tus necesidades."
+      },
+      "step2": {
+        "title": "Elige un día",
+        "description": "Elige el día en que quieres usar el servicio. Para necesidades particulares, contáctame y encontraremos juntos una solución."
+      },
+      "step3": {
+        "title": "Comienza a estudiar",
+        "description": "Estarás listo para comenzar tu viaje de crecimiento y mejora personal."
+      }
+    },
     "newsletter": {
       "title": "Suscribirse al Boletín",
       "subtitle": "Suscríbete a nuestro boletín para mantenerte actualizado sobre nuestros servicios",
@@ -145,6 +160,8 @@
       "duration": "Duración",
       "level": "Nivel",
       "type": "Tipo",
+      "modality": "Modalidad",
+      "additionalNotes": "Notas Adicionales",
       "bookNow": "Reservar Ahora"
     },
     "event": {
@@ -170,6 +187,34 @@
   "contacts": {
     "title": "Contáctanos",
     "subtitle": "Contáctanos para descubrir cómo podemos ayudarte a crecer",
+    "contactOptions": {
+      "title": "Ponte en contacto con nosotros",
+      "subtitle": "¿Tienes preguntas, propuestas o simplemente quieres conocernos mejor? ¡Elige el canal que prefieras y escríbenos de inmediato — siempre estamos felices de responder!",
+      "facebook": {
+        "title": "Facebook",
+        "description": "Síguenos y escríbenos en nuestra página oficial.",
+        "brandName": "A Lifelong Learning Hub"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "description": "Descubre nuestros proyectos, cursos y momentos de vida AllHub.",
+        "brandName": "A Lifelong Learning Hub"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Escríbenos directamente para recibir información sobre los cursos.",
+        "phoneNumber": "+39 340 221 8595"
+      },
+      "email": {
+        "title": "Email",
+        "description": "¿Prefieres escribir de manera formal? Te responderemos en 24h.",
+        "address": "secretariat.allhub@gmail.com"
+      },
+      "suggestion": {
+        "title": "Consejo:",
+        "text": "Para preguntas rápidas usa WhatsApp, para colaboraciones o comunicaciones oficiales escríbenos por Email. ¡Y no olvides seguirnos en Facebook e Instagram para mantenerte actualizado!"
+      }
+    },
     "contactInfo": "Información de Contacto",
     "followUs": "Síguenos en Redes Sociales",
     "form": {
@@ -191,16 +236,45 @@
     }
   },
   "location": {
-    "title": "Dónde Estamos",
-    "subtitle": "Ven a visitarnos en nuestra sede en Gemona del Friuli",
-    "address": "Via della Cartiera 36, 33080 Gemona del Friuli (UD)",
-    "description": "Somos fácilmente accesibles en transporte público y tenemos estacionamiento gratuito para nuestros estudiantes.",
-    "ourCity": "Nuestra ciudad",
-    "visitTitle": "¿Quieres Visitar Nuestra Sede?",
-    "visitDescription": "Siempre estamos felices de recibir nuevos estudiantes y mostrarles nuestro ambiente de aprendizaje. Contáctanos para programar una visita o para más información sobre nuestros cursos.",
-    "contactUs": "Contáctanos",
-    "callNow": "Llama Ahora",
-    "directions": "Obtener Direcciones"
+    "title": "Ubicaciones y Campamentos Semanales",
+    "subtitle": "Las semanas de estudio pueden organizarse en todas las ciudades italianas. Nuestra sede está ubicada en Udine.",
+    "mapTitle": "Mapa de Friuli Venezia Giulia",
+    "udineSection": {
+      "title": "Udine: Una joya oculta",
+      "description1": "Ubicada en la encantadora región de Friuli Venezia Giulia, Udine es una joya por descubrir. Con su elegante arquitectura veneciana, las plazas bañadas por el sol y el rico entrelazamiento de culturas, invita a los viajeros a desacelerar, saborear la vida y descubrir un lado auténtico y acogedor de Italia.",
+      "description2": "La ciudad está abrazada por los Alpes y está a una hora del mar y la montaña. Venecia y Trieste son fácilmente accesibles en tren."
+    },
+    "historySection": {
+      "title": "Una ciudad impregnada de historia",
+      "description1": "Su historia se remonta a la época romana, pero Udine floreció bajo el dominio veneciano, que dejó una marca elegante en la arquitectura y el arte.",
+      "description2": "Paseando por el centro histórico se pueden admirar los frescos de Tiepolo, el Castillo de Udine y la Loggia del Lionello, inspirada en el Palacio Ducal de Venecia."
+    },
+    "activitiesSection": {
+      "title": "Qué hacer en Udine",
+      "description": "Pasea entre las maravillas de la Piazza Libertà, a menudo definida como la plaza más bella de la tierra firme veneciana. Subiendo al castillo, podrás disfrutar de una vista panorámica de la ciudad y los Alpes. Sumérgete en la atmósfera acogedora del centro histórico entre boutiques, cafés y talleres artesanales, o visita galerías e iglesias históricas como la Catedral. Finalmente, regálate una experiencia cultural en el Teatro Nuovo Giovanni da Udine, uno de los corazones palpitantes de la escena artística local."
+    },
+    "surroundingsSection": {
+      "title": "Los alrededores",
+      "description1": "Udine es la puerta de entrada a una región extraordinaria. A pocos kilómetros se encuentra Cividale del Friuli, patrimonio UNESCO y corazón de la historia lombarda. Las colinas del Collio acogen a los amantes del vino con paisajes impresionantes y bodegas renombradas por sus blancos elegantes.",
+      "description2": "Los apasionados de la naturaleza pueden dedicarse al senderismo, cicloturismo o esquí en los Alpes Julianos, o explorar las bellezas de los Dolomitas Friulanos. En la costa adriática, Grado y Lignano ofrecen playas encantadoras, mientras que Trieste fascina con su elegancia centroeuropea.",
+      "description3": "A poca distancia se encuentran Eslovenia y Austria, ideales para un día entre lagos y naturaleza. No te pierdas Aquileia, ciudad romana con un imponente sitio arqueológico y la espléndida basílica paleocristiana. Y finalmente, la magia atemporal de Venecia, fácilmente accesible en tren, que regala una experiencia única hecha de arte, canales y encanto eterno."
+    },
+    "flavorsSection": {
+      "title": "Sabores del Friuli",
+      "description1": "La cocina friulana es una perfecta combinación de influencias eslavas, austriacas e italianas. Los platos tradicionales cuentan siglos de cultura y convivialidad.",
+      "description2": "Entre las especialidades imperdibles encontramos el Frico, crujiente fritura de queso y patatas; los Cjarsons, raviolis de sabor dulce-salado con hierbas y ricotta; y el inconfundible Prosciutto de San Daniele, curado a pocos kilómetros de la ciudad.",
+      "description3": "Todo acompañado de una copa de Friulano o Ribolla Gialla, vinos que reflejan la elegancia y autenticidad del territorio."
+    },
+    "traditionsSection": {
+      "title": "Patrimonio cultural y tradiciones",
+      "description1": "Udine vive de tradiciones y festivales durante todo el año. En septiembre, Friuli Doc celebra los sabores y vinos locales con música y convivialidad. Durante el invierno, Natale in Città transforma las calles en un mundo de luces y mercadillos, mientras la cultura friulana se expresa a través de fiestas populares, música y dialectos transmitidos durante siglos.",
+      "description2": "Udine no es solo un destino — es una emoción. Ven por la historia, quédate por la comida, anima con los aficionados y enamórate de su encanto."
+    },
+    "finalCta": {
+      "title": "¡Udine te espera!",
+      "description": "Ya sea que estés paseando por callejones empedrados, brindando con los locales o celebrando un gol en la Dacia Arena, Udine ofrece una muestra inolvidable de Italia fuera de los caminos trillados.",
+      "button": "Contáctanos para saber más"
+    }
   },
   "admin": {
     "login": {
@@ -232,6 +306,8 @@
         "duration": "Duración",
         "level": "Nivel",
         "type": "Tipo",
+        "modality": "Modalidad",
+        "additionalNotes": "Notas Adicionales",
         "image": "Imagen",
         "date": "Fecha",
         "time": "Hora",

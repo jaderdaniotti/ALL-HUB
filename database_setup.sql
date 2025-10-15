@@ -137,7 +137,7 @@ INSERT INTO eventi (title, description, date, time, location, category) VALUES
 ('Yoga in Inglese', 'Pratica yoga parlando inglese', '2025-02-25', '17:00', 'Sala relax', 'Benessere')
 ON CONFLICT DO NOTHING;
 
--- Settimane Studio di esempio
+-- Skill Up Camps di esempio
 INSERT INTO settimane_studio (title, description, duration, type, city, activities) VALUES
 ('Settimana Londra', 'Immersione totale in inglese', '5 giorni', 'Intensiva', 'Londra', 'Lezioni, musei, teatro'),
 ('Settimana Parigi', 'Cultura e lingua francese', '1 settimana', 'Culturale', 'Parigi', 'Arte, cucina, storia'),
@@ -162,7 +162,7 @@ SELECT 'Corsi', COUNT(*) FROM corsi
 UNION ALL
 SELECT 'Eventi', COUNT(*) FROM eventi
 UNION ALL
-SELECT 'Settimane Studio', COUNT(*) FROM settimane_studio;
+SELECT 'Skill Up Camps', COUNT(*) FROM settimane_studio;
 
 -- ==============================================
 -- NOTE IMPORTANTI
