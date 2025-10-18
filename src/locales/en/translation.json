@@ -19,7 +19,7 @@
     },
     "mission": {
       "title": "Grow with us, transform your knowledge",
-      "description": "We are a group of native or bilingual teachers who offer educational paths and activities to learn foreign languages at any age. We also offer workshops to increase your knowledge and seek your psychophysical well-being in a fun, stimulating and lively environment.",
+      "description": "Our small educational center is committed to supporting mind and soul to improve knowledge and skills. We offer training courses (designed for employment sectors), study weeks (for young people, adults, elderly), courses, events and much more…",
       "cta": "Learn more"
     },
     "services": {
@@ -252,8 +252,24 @@
   },
   "location": {
     "title": "Locations & Weekly Camps",
-    "subtitle": "Study weeks can be organized in all Italian cities. Our headquarters is located in Udine.",
+    "subtitle": "Study weeks can be organized in all Italian cities and abroad. Our main headquarters is located in Udine.",
     "mapTitle": "Friuli Venezia Giulia Map",
+    "abroadSection": {
+      "title": "And abroad...",
+      "description": "Our study weeks are not limited to Italy only. We have already organized extraordinary educational experiences in various international destinations, where our students were able to fully immerse themselves in the local culture and practice languages in authentic contexts.",
+      "malta": {
+        "title": "Malta",
+        "description": "A Mediterranean island rich in history and culture, perfect for practicing English in an international environment."
+      },
+      "turkey": {
+        "title": "Turkey",
+        "description": "A bridge between Europe and Asia, where tradition and modernity meet for a unique cultural experience."
+      },
+      "vienna": {
+        "title": "Vienna",
+        "description": "The Austrian capital, an imperial city rich in art, music and history, ideal for practicing German."
+      }
+    },
     "udineSection": {
       "title": "Udine: A hidden gem",
       "description1": "Located in the enchanting region of Friuli Venezia Giulia, Udine is a gem to discover. With its elegant Venetian architecture, sun-kissed squares and rich interweaving of cultures, it invites travelers to slow down, savor life and discover an authentic and welcoming side of Italy.",

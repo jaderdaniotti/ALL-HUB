@@ -19,7 +19,7 @@
     },
     "mission": {
       "title": "Grandissez avec nous, transformez votre savoir",
-      "description": "Nous sommes un groupe d'enseignants natifs ou bilingues qui offrent des parcours pédagogiques et des activités pour apprendre les langues étrangères à tout âge. Nous proposons également des ateliers pour accroître vos connaissances et rechercher votre bien-être psychophysique dans un environnement amusant, stimulant et vivant.",
+      "description": "Notre petit centre éducatif s'engage à soutenir l'esprit et l'âme pour améliorer les connaissances et les compétences. Nous proposons des cours de formation (conçus pour les secteurs d'emploi), des semaines d'étude (pour les jeunes, adultes, personnes âgées), des cours, des événements et bien plus encore…",
       "cta": "En savoir plus"
     },
     "services": {
@@ -237,8 +237,24 @@
   },
   "location": {
     "title": "Localisations et Camps Hebdomadaires",
-    "subtitle": "Les semaines d'étude peuvent être organisées dans toutes les villes italiennes. Notre siège est situé à Udine.",
+    "subtitle": "Les semaines d'étude peuvent être organisées dans toutes les villes italiennes et européennes. Notre siège principal est situé à Udine, mais nous avons déjà organisé avec succès des expériences à Malte, en Turquie et à Vienne.",
     "mapTitle": "Carte du Friuli Venezia Giulia",
+    "abroadSection": {
+      "title": "Et à l'étranger...",
+      "description": "Nos semaines d'étude ne se limitent pas seulement à l'Italie. Nous avons déjà organisé des expériences éducatives extraordinaires dans diverses destinations internationales, où nos étudiants ont pu s'immerger complètement dans la culture locale et pratiquer les langues dans des contextes authentiques.",
+      "malta": {
+        "title": "Malte",
+        "description": "Une île méditerranéenne riche en histoire et culture, parfaite pour pratiquer l'anglais dans un environnement international."
+      },
+      "turkey": {
+        "title": "Turquie",
+        "description": "Un pont entre l'Europe et l'Asie, où tradition et modernité se rencontrent pour une expérience culturelle unique."
+      },
+      "vienna": {
+        "title": "Vienne",
+        "description": "La capitale autrichienne, ville impériale riche en art, musique et histoire, idéale pour pratiquer l'allemand."
+      }
+    },
     "udineSection": {
       "title": "Udine : Un joyau caché",
       "description1": "Située dans la région enchanteresse du Friuli Venezia Giulia, Udine est un joyau à découvrir. Avec son architecture vénitienne élégante, ses places baignées de soleil et le riche entrelacement de cultures, elle invite les voyageurs à ralentir, savourer la vie et découvrir un côté authentique et accueillant de l'Italie.",

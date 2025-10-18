@@ -19,7 +19,7 @@
     },
     "mission": {
       "title": "Cresci con noi, trasforma il tuo sapere",
-      "description": "Siamo un gruppo di insegnanti madrelingua o bilingue che offrono percorsi didattici ed attività per apprendere, ad ogni età, le lingue straniere. Proponiamo inoltre laboratori per accrescere le proprie conoscenze e ricercare il proprio benessere psicofisico in un ambiente divertente, stimolante e vivace.",
+      "description": "Il nostro piccolo centro educativo si impegna a supportare mente e anima per migliorare conoscenze e competenze. Proponiamo corsi di formazione (studiate per settori d'impiego), settimane studio (per ragazzi, adulti, anziani), corsi, eventi e molto altro…",
       "cta": "Scopri di più"
     },
     "services": {
@@ -241,8 +241,24 @@
   },
   "location": {
     "title": "Locations & Weekly Camps",
-    "subtitle": "Le settimane studio possono essere organizzate in tutte le città italiane. La nostra sede si trova a Udine.",
+    "subtitle": "Le settimane studio possono essere organizzate in tutte le città italiane e all'estero. La nostra sede principale si trova a Udine.",
     "mapTitle": "Mappa Friuli Venezia Giulia",
+    "abroadSection": {
+      "title": "E all'estero...",
+      "description": "Le nostre settimane studio non si limitano solo all'Italia. Abbiamo già organizzato esperienze formative straordinarie in diverse destinazioni internazionali, dove i nostri studenti hanno potuto immergersi completamente nella cultura locale e praticare le lingue in contesti autentici.",
+      "malta": {
+        "title": "Malta",
+        "description": "Un'isola mediterranea ricca di storia e cultura, perfetta per praticare l'inglese in un ambiente internazionale."
+      },
+      "turkey": {
+        "title": "Turchia",
+        "description": "Un ponte tra Europa e Asia, dove tradizione e modernità si incontrano per un'esperienza culturale unica."
+      },
+      "vienna": {
+        "title": "Vienna",
+        "description": "La capitale austriaca, città imperiale ricca di arte, musica e storia, ideale per praticare il tedesco."
+      }
+    },
     "udineSection": {
       "title": "Udine: Un gioiello nascosto",
       "description1": "Situata nell'incantevole regione del Friuli Venezia Giulia, Udine è un gioiello da scoprire. Con la sua elegante architettura veneziana, le piazze baciate dal sole e il ricco intreccio di culture, invita i viaggiatori a rallentare, assaporare la vita e scoprire un lato autentico e accogliente dell'Italia.",

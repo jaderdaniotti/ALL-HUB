@@ -19,7 +19,7 @@
     },
     "mission": {
       "title": "Wachsen Sie mit uns, verwandeln Sie Ihr Wissen",
-      "description": "Wir sind eine Gruppe von muttersprachlichen oder zweisprachigen Lehrern, die Bildungswege und Aktivitäten zum Erlernen von Fremdsprachen in jedem Alter anbieten. Wir bieten auch Workshops an, um Ihr Wissen zu erweitern und Ihr psychophysisches Wohlbefinden in einer unterhaltsamen, anregenden und lebendigen Umgebung zu suchen.",
+      "description": "Unser kleines Bildungszentrum verpflichtet sich, Geist und Seele zu unterstützen, um Wissen und Fähigkeiten zu verbessern. Wir bieten Schulungskurse (entwickelt für Beschäftigungssektoren), Studienwochen (für Jugendliche, Erwachsene, Senioren), Kurse, Veranstaltungen und vieles mehr…",
       "cta": "Mehr erfahren"
     },
     "services": {
@@ -237,8 +237,24 @@
   },
   "location": {
     "title": "Standorte und Wochenlager",
-    "subtitle": "Studienwochen können in allen italienischen Städten organisiert werden. Unser Hauptsitz befindet sich in Udine.",
+    "subtitle": "Studienwochen können in allen italienischen und europäischen Städten organisiert werden. Unser Hauptsitz befindet sich in Udine, aber wir haben bereits erfolgreich Erfahrungen in Malta, der Türkei und Wien organisiert.",
     "mapTitle": "Karte von Friuli Venezia Giulia",
+    "abroadSection": {
+      "title": "Und im Ausland...",
+      "description": "Unsere Studienwochen beschränken sich nicht nur auf Italien. Wir haben bereits außergewöhnliche Bildungserfahrungen in verschiedenen internationalen Zielen organisiert, wo unsere Studenten vollständig in die lokale Kultur eintauchen und Sprachen in authentischen Kontexten üben konnten.",
+      "malta": {
+        "title": "Malta",
+        "description": "Eine mediterrane Insel reich an Geschichte und Kultur, perfekt zum Üben von Englisch in einer internationalen Umgebung."
+      },
+      "turkey": {
+        "title": "Türkei",
+        "description": "Eine Brücke zwischen Europa und Asien, wo Tradition und Moderne aufeinandertreffen für ein einzigartiges kulturelles Erlebnis."
+      },
+      "vienna": {
+        "title": "Wien",
+        "description": "Die österreichische Hauptstadt, eine kaiserliche Stadt reich an Kunst, Musik und Geschichte, ideal zum Üben von Deutsch."
+      }
+    },
     "udineSection": {
       "title": "Udine: Ein verstecktes Juwel",
       "description1": "Gelegen in der bezaubernden Region Friuli Venezia Giulia ist Udine ein Juwel zu entdecken. Mit seiner eleganten venezianischen Architektur, sonnenverwöhnten Plätzen und dem reichen Geflecht von Kulturen lädt es Reisende ein, langsamer zu werden, das Leben zu genießen und eine authentische und einladende Seite Italiens zu entdecken.",

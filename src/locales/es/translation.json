@@ -19,7 +19,7 @@
     },
     "mission": {
       "title": "Crece con nosotros, transforma tu conocimiento",
-      "description": "Somos un grupo de profesores nativos o bilingües que ofrecen caminos educativos y actividades para aprender idiomas extranjeros a cualquier edad. También ofrecemos talleres para aumentar tu conocimiento y buscar tu bienestar psicofísico en un ambiente divertido, estimulante y vibrante.",
+      "description": "Nuestro pequeño centro educativo se compromete a apoyar mente y alma para mejorar conocimientos y habilidades. Ofrecemos cursos de formación (diseñados para sectores de empleo), semanas de estudio (para jóvenes, adultos, ancianos), cursos, eventos y mucho más…",
       "cta": "Saber más"
     },
     "services": {
@@ -237,7 +237,7 @@
   },
   "location": {
     "title": "Ubicaciones y Campamentos Semanales",
-    "subtitle": "Las semanas de estudio pueden organizarse en todas las ciudades italianas. Nuestra sede está ubicada en Udine.",
+    "subtitle": "Las semanas de estudio pueden organizarse en todas las ciudades italianas y europeas. Nuestra sede principal está ubicada en Udine, pero ya hemos organizado exitosamente experiencias en Malta, Turquía y Viena.",
     "mapTitle": "Mapa de Friuli Venezia Giulia",
     "udineSection": {
       "title": "Udine: Una joya oculta",
@@ -269,6 +269,22 @@
       "title": "Patrimonio cultural y tradiciones",
       "description1": "Udine vive de tradiciones y festivales durante todo el año. En septiembre, Friuli Doc celebra los sabores y vinos locales con música y convivialidad. Durante el invierno, Natale in Città transforma las calles en un mundo de luces y mercadillos, mientras la cultura friulana se expresa a través de fiestas populares, música y dialectos transmitidos durante siglos.",
       "description2": "Udine no es solo un destino — es una emoción. Ven por la historia, quédate por la comida, anima con los aficionados y enamórate de su encanto."
+    },
+    "abroadSection": {
+      "title": "Y en el extranjero...",
+      "description": "¡No nos limitamos solo a Italia! Ya hemos organizado exitosamente semanas de estudio en varios destinos europeos, ofreciendo a nuestros estudiantes experiencias únicas de aprendizaje inmersivo.",
+      "malta": {
+        "title": "Malta",
+        "description": "Una isla rica en historia y cultura, perfecta para aprender inglés en un entorno mediterráneo único."
+      },
+      "turkey": {
+        "title": "Turquía",
+        "description": "Un puente entre Europa y Asia, donde la tradición y la modernidad se encuentran para una experiencia cultural inolvidable."
+      },
+      "vienna": {
+        "title": "Viena",
+        "description": "La capital imperial de Austria, donde la elegancia, la historia y la cultura ofrecen el telón de fondo perfecto para el aprendizaje."
+      }
     },
     "finalCta": {
       "title": "¡Udine te espera!",

@@ -11,6 +11,7 @@ import AdminDashboard from './pages/AdminDashboard'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
+import ScrollToTop from './components/ScrollToTop';
 import useLoader from './hooks/useLoader';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen">
         <Navbar />
         <Routes>
