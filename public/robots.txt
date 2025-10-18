@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://allhub.org/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /login
+Disallow: /admin/login
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /attivita
+Allow: /contatti
+Allow: /location
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
