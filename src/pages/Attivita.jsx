@@ -13,6 +13,8 @@ const Attivita = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCourse, setSelectedCourse] = React.useState(null);
+  const [selectedEvent, setSelectedEvent] = React.useState(null);
+  const [selectedStudyWeek, setSelectedStudyWeek] = React.useState(null);
 
 
   // Carica dati da Supabase
@@ -131,8 +133,8 @@ const Attivita = () => {
                   <div className="flex space-x-2">
                     <button
                       className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === 'corsi'
-                          ? 'bg-purple-600 text-white'
-                          : 'text-gray-600 hover:bg-purple-100'
+                        ? 'bg-purple-600 text-white'
+                        : 'text-gray-600 hover:bg-purple-100'
                         }`}
                       onClick={() => setActiveTab('corsi')}
                     >
@@ -140,8 +142,8 @@ const Attivita = () => {
                     </button>
                     <button
                       className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === 'eventi'
-                          ? 'bg-purple-600 text-white'
-                          : 'text-gray-600 hover:bg-purple-100'
+                        ? 'bg-purple-600 text-white'
+                        : 'text-gray-600 hover:bg-purple-100'
                         }`}
                       onClick={() => setActiveTab('eventi')}
                     >
@@ -149,8 +151,8 @@ const Attivita = () => {
                     </button>
                     <button
                       className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeTab === 'settimane'
-                          ? 'bg-purple-600 text-white'
-                          : 'text-gray-600 hover:bg-purple-100'
+                        ? 'bg-purple-600 text-white'
+                        : 'text-gray-600 hover:bg-purple-100'
                         }`}
                       onClick={() => setActiveTab('settimane')}
                     >
@@ -201,7 +203,7 @@ const Attivita = () => {
                             </p>
 
                             {/* Chips */}
-                            <div className="space-y-2 mb-5">
+                            <div className="space-y-2 mb-5 max-h-32 overflow-hidden">
                               <div className="chip chip-purple">
                                 <i className="bi bi-clock mr-2"></i>
                                 <span>{course.duration}</span>
@@ -215,9 +217,9 @@ const Attivita = () => {
                                 <span>{course.type}</span>
                               </div>
                               {course.modality && (
-                                <div className="chip chip-indigo">
-                                  <i className="bi bi-laptop mr-2"></i>
-                                  <span>{course.modality}</span>
+                                <div className="chip chip-indigo overflow-hidden max-h-12">
+                                  <i className="bi bi-laptop mr-2 flex-shrink-0"></i>
+                                  <span className="truncate">{course.modality}</span>
                                 </div>
                               )}
                             </div>
@@ -237,7 +239,7 @@ const Attivita = () => {
                               onClick={() => setSelectedCourse(course)}
                               className="text-purple-600 border border-purple-600 px-4 sm:px-5 py-2 rounded-full font-medium hover:bg-purple-600 hover:text-white transition-colors text-xs sm:text-sm"
                             >
-                              Leggi tutto
+                              {t('common.readMore')}
                             </button>
 
                             <Link
@@ -360,7 +362,7 @@ const Attivita = () => {
                             </p>
 
                             {/* Chips */}
-                            <div className="space-y-2 mb-5">
+                            <div className="space-y-2 mb-5 max-h-32 overflow-hidden">
                               <div className="chip chip-green">
                                 <i className="bi bi-calendar mr-2"></i>
                                 <span className="truncate">{new Date(event.date).toLocaleDateString('it-IT')}</span>
@@ -373,15 +375,22 @@ const Attivita = () => {
                                 <i className="bi bi-geo-alt mr-2"></i>
                                 <span className="truncate">{event.location}</span>
                               </div>
-                              <div className="chip chip-indigo">
-                                <i className="bi bi-tag mr-2"></i>
+                              <div className="chip chip-indigo overflow-hidden max-h-12">
+                                <i className="bi bi-tag mr-2 flex-shrink-0"></i>
                                 <span className="truncate">{event.category}</span>
                               </div>
                             </div>
                           </div>
 
-                          {/* Bottone finale */}
-                          <div className="mt-auto flex justify-center pt-4 border-t border-gray-100">
+                          {/* Bottoni finali */}
+                          <div className="mt-auto flex flex-col sm:flex-row justify-center gap-2 sm:gap-3 pt-4 border-t border-gray-100">
+                            <button
+                              onClick={() => setSelectedEvent(event)}
+                              className="text-green-600 border border-green-600 px-4 sm:px-5 py-2 rounded-full font-medium hover:bg-green-600 hover:text-white transition-colors text-xs sm:text-sm"
+                            >
+                              {t('common.readMore')}
+                            </button>
+
                             <Link
                               to="/contatti"
                               className="bg-green-600 text-white px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-green-700 transition-colors text-xs sm:text-sm"
@@ -391,6 +400,65 @@ const Attivita = () => {
                           </div>
                         </div>
                       ))}
+
+                      {/* Modal descrizione evento */}
+                      {selectedEvent && (
+                        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center px-4">
+                          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 relative overflow-y-auto max-h-[80vh] animate-fadeIn">
+                            <button
+                              onClick={() => setSelectedEvent(null)}
+                              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl"
+                            >
+                              <i className="bi bi-x-lg"></i>
+                            </button>
+
+                            <h3 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
+                              {selectedEvent.title}
+                            </h3>
+
+                            {selectedEvent.image_url && (
+                              <div className="w-full h-auto mb-5 rounded-lg overflow-hidden">
+                                <ImageWithFallback
+                                  src={selectedEvent.image_url}
+                                  alt={selectedEvent.title}
+                                  fallbackIcon="bi bi-calendar-event"
+                                  fallbackGradient="from-green-400 to-blue-500"
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                            )}
+
+                            <p className="text-gray-700 text-sm leading-relaxed mb-6 whitespace-pre-line">
+                              {selectedEvent.description}
+                            </p>
+
+                            <div className="flex flex-col gap-3 text-sm text-gray-700 mb-6">
+                              <div className="chip chip-green w-full justify-center">
+                                <i className="bi bi-calendar mr-2"></i> {new Date(selectedEvent.date).toLocaleDateString('it-IT')}
+                              </div>
+                              <div className="chip chip-blue w-full justify-center">
+                                <i className="bi bi-clock mr-2"></i> {selectedEvent.time}
+                              </div>
+                              <div className="chip chip-purple w-full justify-center">
+                                <i className="bi bi-geo-alt mr-2"></i> {selectedEvent.location}
+                              </div>
+                              <div className="chip chip-indigo w-full justify-center">
+                                <i className="bi bi-tag mr-2"></i> {selectedEvent.category}
+                              </div>
+                            </div>
+
+                            <div className="flex justify-center">
+                              <Link
+                                to="/contatti"
+                                onClick={() => setSelectedEvent(null)}
+                                className="bg-green-600 text-white px-6 py-2 rounded-full font-medium hover:bg-green-700 transition-colors text-sm"
+                              >
+                                {t('activities.event.register')}
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
@@ -407,7 +475,7 @@ const Attivita = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                      
+
                       {studyWeeks.map((week) => (
                         <div key={week.id} className="bg-white/80 rounded-2xl shadow-md hover:shadow-2xl border border-gray-100 transition-all duration-300 hover:scale-[1.02] flex flex-col justify-between p-4 sm:p-6">
                           {/* Immagine */}
@@ -432,7 +500,7 @@ const Attivita = () => {
                             </p>
 
                             {/* Chips */}
-                            <div className="space-y-2 mb-5">
+                            <div className="space-y-2 mb-5 max-h-32 overflow-hidden">
                               <div className="chip chip-indigo">
                                 <i className="bi bi-clock mr-2"></i>
                                 <span className="truncate">{week.duration}</span>
@@ -445,15 +513,22 @@ const Attivita = () => {
                                 <i className="bi bi-geo-alt mr-2"></i>
                                 <span className="truncate">{week.city}</span>
                               </div>
-                              <div className="chip chip-blue">
-                                <i className="bi bi-list-check mr-2"></i>
+                              <div className="chip chip-blue overflow-hidden max-h-12">
+                                <i className="bi bi-list-check mr-2 flex-shrink-0"></i>
                                 <span className="truncate">{week.activities}</span>
                               </div>
                             </div>
                           </div>
 
-                          {/* Bottone finale */}
-                          <div className="mt-auto flex justify-center pt-4 border-t border-gray-100">
+                          {/* Bottoni finali */}
+                          <div className="mt-auto flex flex-col sm:flex-row justify-center gap-2 sm:gap-3 pt-4 border-t border-gray-100">
+                            <button
+                              onClick={() => setSelectedStudyWeek(week)}
+                              className="text-indigo-600 border border-indigo-600 px-4 sm:px-5 py-2 rounded-full font-medium hover:bg-indigo-600 hover:text-white transition-colors text-xs sm:text-sm"
+                            >
+                              {t('common.readMore')}
+                            </button>
+
                             <Link
                               to="/contatti"
                               className="bg-indigo-600 text-white px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition-colors text-xs sm:text-sm"
@@ -463,6 +538,65 @@ const Attivita = () => {
                           </div>
                         </div>
                       ))}
+
+                      {/* Modal descrizione settimana studio */}
+                      {selectedStudyWeek && (
+                        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center px-4">
+                          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 relative overflow-y-auto max-h-[80vh] animate-fadeIn">
+                            <button
+                              onClick={() => setSelectedStudyWeek(null)}
+                              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl"
+                            >
+                              <i className="bi bi-x-lg"></i>
+                            </button>
+
+                            <h3 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
+                              {selectedStudyWeek.title}
+                            </h3>
+
+                            {selectedStudyWeek.image_url && (
+                              <div className="w-full h-auto mb-5 rounded-lg overflow-hidden">
+                                <ImageWithFallback
+                                  src={selectedStudyWeek.image_url}
+                                  alt={selectedStudyWeek.title}
+                                  fallbackIcon="bi bi-globe"
+                                  fallbackGradient="from-indigo-400 to-purple-500"
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                            )}
+
+                            <p className="text-gray-700 text-sm leading-relaxed mb-6 whitespace-pre-line">
+                              {selectedStudyWeek.description}
+                            </p>
+
+                            <div className="flex flex-col gap-3 text-sm text-gray-700 mb-6">
+                              <div className="chip chip-indigo w-full justify-center">
+                                <i className="bi bi-clock mr-2"></i> {selectedStudyWeek.duration}
+                              </div>
+                              <div className="chip chip-purple w-full justify-center">
+                                <i className="bi bi-tag mr-2"></i> {selectedStudyWeek.type}
+                              </div>
+                              <div className="chip chip-green w-full justify-center">
+                                <i className="bi bi-geo-alt mr-2"></i> {selectedStudyWeek.city}
+                              </div>
+                              <div className="chip chip-blue w-full justify-center">
+                                <i className="bi bi-list-check mr-2"></i> {selectedStudyWeek.activities}
+                              </div>
+                            </div>
+
+                            <div className="flex justify-center">
+                              <Link
+                                to="/contatti"
+                                onClick={() => setSelectedStudyWeek(null)}
+                                className="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition-colors text-sm"
+                              >
+                                {t('activities.studyWeek.discover')}
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
