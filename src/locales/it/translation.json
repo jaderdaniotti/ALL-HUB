@@ -12,18 +12,18 @@
   },
   "home": {
     "hero": {
-      "title": "Benvenuto nel nostro hub educativo! Centro Formazione Udine",
-      "subtitle": "Corsi di formazione professionale e corsi di inglese a Udine per la crescita personale, conoscenza e successo duraturo nel Friuli Venezia Giulia.",
+      "title": "Benvenuto nel nostro hub educativo!",
+      "subtitle": "Il nostro piccolo centro educativo si  impegna a supportare mente e anima per migliorare conoscenze e competenze. Proponiamo percorsi di formazione (studiati per settori d’ impiego), settimane studio (per ragazzi, adulti, anziani), corsi, eventi e molto altro…",
       "cta1": "Scopri i Corsi",
       "cta2": "Contattaci ora"
     },
     "mission": {
-      "title": "Cresci con noi, trasforma il tuo sapere - Formazione Udine",
-      "description": "Il nostro centro educativo di Udine si impegna a supportare mente e anima per migliorare conoscenze e competenze. Proponiamo corsi di formazione professionale (studiate per settori d'impiego), settimane studio (per ragazzi, adulti, anziani), corsi di inglese, eventi e molto altro nel Friuli Venezia Giulia…",
+      "title": "Cresci con noi, trasforma il tuo sapere",
+      "description": "Il nostro centro educativo nasce con l’obiettivo di accompagnare ogni persona in un percorso di crescita continua — mentale, professionale e personale.\nOffriamo percorsi formativi personalizzati, pensati per diversi settori professionali e per ogni fase della vita:\nSettimane studio dedicate a ragazzi, adulti e anziani, per approfondire conoscenze e stimolare la curiosità.\nCorsi e laboratori pratici, in presenza ed online. per sviluppare competenze utili nel mondo del lavoro e nella vita quotidiana.\nProponiamo inoltre eventi, incontri e attività culturali per favorire lo scambio, la creatività e la crescita personale.",
       "cta": "Scopri di più"
     },
     "services": {
-      "title": "Scopri le Nostre Attività - Centro Educativo Udine",
+      "title": "Scopri le Nostre Attività",
       "subtitle": "Corsi di formazione professionale, eventi e Skill Up Camps per ogni età e livello di apprendimento a Udine",
       "courses": {
         "title": "Corsi di Formazione",

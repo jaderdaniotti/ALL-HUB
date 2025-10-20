@@ -13,21 +13,21 @@
   "home": {
     "hero": {
       "title": "¡Bienvenido a nuestro hub educativo!",
-      "subtitle": "Formación personalizada para el crecimiento personal, conocimiento y éxito duradero.",
+      "subtitle": "Nuestro pequeño centro educativo se compromete a apoyar mente y alma para mejorar conocimientos y habilidades. Ofrecemos cursos de formación (diseñados para sectores de empleo), semanas de estudio (para jóvenes, adultos, ancianos), cursos, eventos y mucho más…",
       "cta1": "Saber más",
       "cta2": "Contáctanos ahora"
     },
     "mission": {
       "title": "Crece con nosotros, transforma tu conocimiento",
-      "description": "Nuestro pequeño centro educativo se compromete a apoyar mente y alma para mejorar conocimientos y habilidades. Ofrecemos cursos de formación (diseñados para sectores de empleo), semanas de estudio (para jóvenes, adultos, ancianos), cursos, eventos y mucho más…",
+      "description": "Nuestro centro educativo nació con el objetivo de acompañar a cada persona en un camino de crecimiento continuo — mental, profesional y personal.\nOfrecemos caminos formativos personalizados, pensados para diferentes sectores profesionales y para cada fase de la vida:\nSemanas de estudio dedicadas a jóvenes, adultos y ancianos, para profundizar conocimientos y estimular la curiosidad.\nCursos y talleres prácticos, presenciales y en línea, para desarrollar habilidades útiles en el mundo del trabajo y la vida cotidiana.\nProponemos además eventos, encuentros y actividades culturales para favorecer el intercambio, la creatividad y el crecimiento personal.",
       "cta": "Saber más"
     },
     "services": {
       "title": "Descubre Nuestras Actividades",
-      "subtitle": "Cursos, eventos y semanas de estudio para todas las edades y niveles de aprendizaje",
+      "subtitle": "Cursos de formación profesional, eventos y Skill Up Camps para todas las edades y niveles de aprendizaje en Udine",
       "courses": {
         "title": "Cursos",
-        "description": "Lecciones individuales y grupales para aprender idiomas extranjeros con métodos innovadores",
+        "description": "Cursos de inglés y formación profesional individuales y grupales para aprender idiomas extranjeros con métodos innovadores en Udine",
         "cta": "Descubrir Cursos"
       },
       "events": {

@@ -1,0 +1,98 @@
+
+
+/* Line clamp utilities per limitare il numero di righe del testo */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.line-clamp-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+/* Chip styles per le card */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.chip-purple {
+  background-color: rgb(243 232 255);
+  color: rgb(107 33 168);
+}
+
+.chip-blue {
+  background-color: rgb(219 234 254);
+  color: rgb(30 64 175);
+}
+
+.chip-green {
+  background-color: rgb(220 252 231);
+  color: rgb(22 101 52);
+}
+
+.chip-indigo {
+  background-color: rgb(224 231 255);
+  color: rgb(67 56 202);
+}
+
+/* Animazioni personalizzate */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .line-clamp-3 {
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-2 {
+    -webkit-line-clamp: 1;
+  }
+}
+
+/* Fallback per browser che non supportano line-clamp */
+@supports not (-webkit-line-clamp: 2) {
+  .line-clamp-2 {
+    max-height: 2.5em;
+  }
+  
+  .line-clamp-3 {
+    max-height: 3.75em;
+  }
+}

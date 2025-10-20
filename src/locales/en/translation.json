@@ -13,21 +13,21 @@
   "home": {
     "hero": {
       "title": "Welcome to our educational hub!",
-      "subtitle": "Personalized training for personal growth, knowledge and lasting success.",
+      "subtitle": "Our small educational center is committed to supporting mind and soul to improve knowledge and skills. We offer training courses (designed for employment sectors), study weeks (for young people, adults, elderly), courses, events and much more…",
       "cta1": "Learn more",
       "cta2": "Contact us now"
     },
     "mission": {
       "title": "Grow with us, transform your knowledge",
-      "description": "Our small educational center is committed to supporting mind and soul to improve knowledge and skills. We offer training courses (designed for employment sectors), study weeks (for young people, adults, elderly), courses, events and much more…",
+      "description": "Our educational center was born with the goal of accompanying every person on a path of continuous growth — mental, professional and personal.\nWe offer personalized training paths, designed for different professional sectors and for every phase of life:\nStudy weeks dedicated to young people, adults and elderly, to deepen knowledge and stimulate curiosity.\nPractical courses and workshops, in person and online, to develop skills useful in the world of work and daily life.\nWe also propose events, meetings and cultural activities to promote exchange, creativity and personal growth.",
       "cta": "Learn more"
     },
     "services": {
       "title": "Discover Our Activities",
-      "subtitle": "Courses, events and study weeks for every age and learning level",
+      "subtitle": "Professional training courses, events and Skill Up Camps for every age and learning level in Udine",
       "courses": {
         "title": "Courses",
-        "description": "Individual and group lessons to learn foreign languages with innovative methods",
+        "description": "English and professional training courses, individual and group, to learn foreign languages with innovative methods in Udine",
         "cta": "Discover Courses"
       },
       "events": {

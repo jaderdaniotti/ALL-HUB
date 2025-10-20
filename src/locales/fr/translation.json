@@ -13,21 +13,21 @@
   "home": {
     "hero": {
       "title": "Bienvenue dans notre hub éducatif !",
-      "subtitle": "Formation personnalisée pour la croissance personnelle, la connaissance et le succès durable.",
+      "subtitle": "Notre petit centre éducatif s'engage à soutenir l'esprit et l'âme pour améliorer les connaissances et les compétences. Nous proposons des cours de formation (conçus pour les secteurs d'emploi), des semaines d'étude (pour les jeunes, adultes, personnes âgées), des cours, des événements et bien plus encore…",
       "cta1": "En savoir plus",
       "cta2": "Contactez-nous maintenant"
     },
     "mission": {
       "title": "Grandissez avec nous, transformez votre savoir",
-      "description": "Notre petit centre éducatif s'engage à soutenir l'esprit et l'âme pour améliorer les connaissances et les compétences. Nous proposons des cours de formation (conçus pour les secteurs d'emploi), des semaines d'étude (pour les jeunes, adultes, personnes âgées), des cours, des événements et bien plus encore…",
+      "description": "Notre centre éducatif est né avec l'objectif d'accompagner chaque personne dans un parcours de croissance continue — mentale, professionnelle et personnelle.\nNous offrons des parcours formatifs personnalisés, pensés pour différents secteurs professionnels et pour chaque phase de la vie :\nDes semaines d'étude dédiées aux jeunes, adultes et personnes âgées, pour approfondir les connaissances et stimuler la curiosité.\nDes cours et laboratoires pratiques, en présence et en ligne, pour développer des compétences utiles dans le monde du travail et la vie quotidienne.\nNous proposons également des événements, rencontres et activités culturelles pour favoriser l'échange, la créativité et la croissance personnelle.",
       "cta": "En savoir plus"
     },
     "services": {
       "title": "Découvrez Nos Activités",
-      "subtitle": "Cours, événements et semaines d'étude pour tous les âges et niveaux d'apprentissage",
+      "subtitle": "Cours de formation professionnelle, événements et Skill Up Camps pour tous les âges et niveaux d'apprentissage à Udine",
       "courses": {
         "title": "Cours",
-        "description": "Leçons individuelles et de groupe pour apprendre les langues étrangères avec des méthodes innovantes",
+        "description": "Cours d'anglais et de formation professionnelle individuels et de groupe pour apprendre les langues étrangères avec des méthodes innovantes à Udine",
         "cta": "Découvrir les Cours"
       },
       "events": {

@@ -44,7 +44,7 @@ const AdminDashboard = () => {
   const [newEvent, setNewEvent] = useState({
     title: "",
     date: "",
-    time: "",
+    time: "18:00",
     location: "",
     description: "",
     category: "Lingue",
@@ -158,6 +158,12 @@ const AdminDashboard = () => {
   const handleAddEvent = async (e) => {
     e.preventDefault();
     try {
+      // Validazione campo time - deve essere nel formato HH:MM
+      if (!newEvent.time || !newEvent.time.match(/^\d{2}:\d{2}$/)) {
+        alert('Inserisci un orario valido nel formato HH:MM (es. 18:00)');
+        return;
+      }
+
       const eventData = {
         title: newEvent.title,
         description: newEvent.description,
@@ -185,7 +191,7 @@ const AdminDashboard = () => {
       setNewEvent({
         title: "",
         date: "",
-        time: "",
+        time: "18:00",
         location: "",
         description: "",
         category: "Lingue",
@@ -377,7 +383,7 @@ const AdminDashboard = () => {
     setNewEvent({
       title: "",
       date: "",
-      time: "",
+      time: "18:00",
       location: "",
       description: "",
       category: "Lingue",
@@ -523,22 +529,14 @@ const AdminDashboard = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Livello
                     </label>
-                    <select
+                    <input
+                      type="text"
                       value={newCourse.level}
                       onChange={(e) => setNewCourse({...newCourse, level: e.target.value})}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent mb-2"
-                    >
-                        <option value="Principiante">Principiante</option>
-                        <option value="Da base a intermedio">Da base a intermedio</option>
-                        <option value="Intermedio">Intermedio</option>
-                        <option value="Da intermedio ad avanzato">Da intermedio ad avanzato</option>
-                        <option value="Da base ad avanzato">Da base ad avanzato</option>
-                        <option value="Avanzato">Avanzato</option>
-                        <option value="Base">Base</option>
-                        <option value="Esperto">Esperto</option>
-                        <option value="Principiante Assoluto">Principiante Assoluto</option>
-                        <option value="Principiante con Basi">Principiante con Basi</option>
-                    </select>
+                      placeholder="es. Principiante, Intermedio, Avanzato"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      required
+                    />
                   </div>
                 </div>
 
@@ -546,30 +544,27 @@ const AdminDashboard = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Tipo di Corso
                   </label>
-                  <select
+                  <input
+                    type="text"
                     value={newCourse.type}
                     onChange={(e) => setNewCourse({...newCourse, type: e.target.value})}
+                    placeholder="es. Individuale, Gruppo, Semi-privato"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  >
-                    <option value="Individuale">Individuale</option>
-                    <option value="Gruppo">Gruppo</option>
-                  </select>
+                    required
+                  />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Modalità
                   </label>
-                  <select
+                  <input
+                    type="text"
                     value={newCourse.modality}
                     onChange={(e) => setNewCourse({...newCourse, modality: e.target.value})}
+                    placeholder="es. Online, In presenza, Blended"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  >
-                    <option value="">Seleziona modalità</option>
-                    <option value="Online">Online</option>
-                    <option value="In presenza">In presenza</option>
-                    <option value="Blended">Blended</option>
-                  </select>
+                  />
                 </div>
 
                 <div>
@@ -656,10 +651,9 @@ const AdminDashboard = () => {
                       Orario
                     </label>
                     <input
-                      type="text"
+                      type="time"
                       value={newEvent.time}
                       onChange={(e) => setNewEvent({...newEvent, time: e.target.value})}
-                      placeholder="es. 18:00 - 19:30"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                       required
                     />
@@ -683,16 +677,14 @@ const AdminDashboard = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Categoria
                   </label>
-                  <select
+                  <input
+                    type="text"
                     value={newEvent.category}
                     onChange={(e) => setNewEvent({...newEvent, category: e.target.value})}
+                    placeholder="es. Lingue, Benessere, Cultura, Workshop"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  >
-                    <option value="Lingue">Lingue</option>
-                    <option value="Benessere">Benessere</option>
-                    <option value="Cultura">Cultura</option>
-                    <option value="Workshop">Workshop</option>
-                  </select>
+                    required
+                  />
                 </div>
 
                 <div>
@@ -791,15 +783,14 @@ const AdminDashboard = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Tipo
                     </label>
-                    <select
+                    <input
+                      type="text"
                       value={newStudyWeek.type}
                       onChange={(e) => setNewStudyWeek({...newStudyWeek, type: e.target.value})}
+                      placeholder="es. Intensiva, Culturale, Mista"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    >
-                      <option value="Intensiva">Intensiva</option>
-                      <option value="Culturale">Culturale</option>
-                      <option value="Mista">Mista</option>
-                    </select>
+                      required
+                    />
                   </div>
                 </div>
 
