@@ -145,16 +145,16 @@
   "activities": {
     "title": "Nuestras Actividades",
     "subtitle": "Explora nuestros cursos, eventos y semanas de estudio",
-    "coursesTitle": "Nuestros Cursos",
+    "coursesTitle": "Cursos / Parcorsos Didàctics",
     "coursesSubtitle": "Lecciones personalizadas para cada nivel y objetivo de aprendizaje",
-    "eventsTitle": "Nuestros Eventos",
+    "eventsTitle": "Eventos",
     "eventsSubtitle": "Únete a nuestros eventos especiales para practicar y mejorar tus habilidades lingüísticas",
-    "studyWeeksTitle": "Semanas de Estudio",
+    "studyWeeksTitle": "Skill Up Camps",
     "studyWeeksSubtitle": "Programas intensivos semanales para una experiencia de aprendizaje completa e inmersiva",
     "tabs": {
-      "courses": "Cursos",
+      "courses": "Cursos / Parcorsos Didàctics",
       "events": "Eventos",
-      "studyWeeks": "Semanas de Estudio"
+      "studyWeeks": "Skill Up Camps"
     },
     "course": {
       "duration": "Duración",

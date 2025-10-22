@@ -149,16 +149,16 @@
   "activities": {
     "title": "Le Nostre Attività - Centro Formazione Udine",
     "subtitle": "Scopri tutti i corsi di formazione professionale, eventi e settimane studio disponibili a Udine nel Friuli Venezia Giulia",
-    "coursesTitle": "Corsi di Formazione Professionale Udine",
+    "coursesTitle": "Corsi / Percorsi Didattici",
     "coursesSubtitle": "Corsi di inglese e formazione professionale per ogni livello e necessità nel Friuli Venezia Giulia",
-    "eventsTitle": "Eventi Formativi Udine",
+    "eventsTitle": "Eventi ",
     "eventsSubtitle": "Workshop, seminari e incontri culturali per arricchire il tuo percorso di apprendimento",
-    "studyWeeksTitle": "Settimane Studio All-Hub",
+    "studyWeeksTitle": "Skill Up Camps",
     "studyWeeksSubtitle": "Esperienze immersive all'estero per praticare le lingue in contesti reali",
     "tabs": {
-      "courses": "Corsi Formazione",
-      "events": "Eventi Formativi",
-      "studyWeeks": "Settimane Studio"
+      "courses": "Corsi / Percorsi Didattici",
+      "events": "Eventi ",
+      "studyWeeks": "Skill Up Camps"
     },
     "course": {
       "duration": "Durata",
