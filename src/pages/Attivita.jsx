@@ -56,15 +56,15 @@ const Attivita = () => {
     <>
       {Array.from({ length: count }).map((_, idx) => (
         <div key={idx} className="bg-white/70 rounded-2xl shadow-lg p-6 border border-gray-100">
-          <div className="text-center">
+                    <div className="text-center">
             <div className={`w-full h-48 mb-4 rounded-lg overflow-hidden bg-gradient-to-br ${gradient} animate-pulse`}></div>
             <div className="h-5 w-3/5 bg-gray-200 rounded mx-auto mb-3 animate-pulse"></div>
             <div className="h-4 w-4/5 bg-gray-200 rounded mx-auto mb-2 animate-pulse"></div>
             <div className="h-4 w-2/3 bg-gray-200 rounded mx-auto mb-4 animate-pulse"></div>
             <div className="h-9 w-32 bg-purple-200 rounded-full mx-auto animate-pulse"></div>
-          </div>
-        </div>
-      ))}
+                    </div>
+                  </div>
+                ))}
     </>
   );
 
@@ -75,7 +75,7 @@ const Attivita = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-800 mb-4">{t('activities.title')}</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('activities.subtitle')}</p>
-          </div>
+              </div>
           <div className="flex justify-center mb-8">
             <div className="bg-white/70 rounded-2xl p-2 shadow-lg">
               <button className="px-6 py-3 rounded-xl font-medium bg-purple-600 text-white shadow-lg">{t('activities.tabs.courses')}</button>
@@ -99,13 +99,13 @@ const Attivita = () => {
             <h2 className="text-lg font-semibold text-red-800 mb-2">Errore di Caricamento</h2>
             <p className="text-red-700">{error}</p>
           </div>
-          <button 
-            onClick={() => window.location.reload()} 
+            <button
+              onClick={() => window.location.reload()}
             className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors"
-          >
+            >
             Riprova
-          </button>
-        </div>
+            </button>
+          </div>
       </div>
     );
   }
@@ -126,42 +126,42 @@ const Attivita = () => {
         {/* Tabs */}
         <div className="flex justify-center mb-8">
           <div className="bg-white/70 rounded-2xl p-2 shadow-lg">
-            <button
+                    <button
               onClick={() => setActiveTab('corsi')}
               className={`px-6 py-3 rounded-xl font-medium transition-all ${
                 activeTab === 'corsi'
                   ? 'bg-purple-600 text-white shadow-lg'
                   : 'text-gray-600 hover:text-purple-600'
               }`}
-            >
-              {t('activities.tabs.courses')}
-            </button>
-            <button
+                    >
+                      {t('activities.tabs.courses')}
+                    </button>
+                    <button
               onClick={() => setActiveTab('eventi')}
               className={`px-6 py-3 rounded-xl font-medium transition-all ${
                 activeTab === 'eventi'
                   ? 'bg-purple-600 text-white shadow-lg'
                   : 'text-gray-600 hover:text-purple-600'
               }`}
-            >
-              {t('activities.tabs.events')}
-            </button>
-            <button
+                    >
+                      {t('activities.tabs.events')}
+                    </button>
+                    <button
               onClick={() => setActiveTab('settimane')}
               className={`px-6 py-3 rounded-xl font-medium transition-all ${
                 activeTab === 'settimane'
                   ? 'bg-purple-600 text-white shadow-lg'
                   : 'text-gray-600 hover:text-purple-600'
               }`}
-            >
-              {t('activities.tabs.studyWeeks')}
-            </button>
-          </div>
-        </div>
+                    >
+                      {t('activities.tabs.studyWeeks')}
+                    </button>
+                </div>
+              </div>
 
         {/* Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {activeTab === 'corsi' && (
+                {activeTab === 'corsi' && (
             <>
               { (loadingCourses || (courses.length === 0 && firstLoad)) ? (
                 <SkeletonCards />
@@ -169,62 +169,62 @@ const Attivita = () => {
             <SkeletonCards />
               ) : (
                 courses.map((course) => (
-                  <div
-                    key={course.id}
+                        <div
+                          key={course.id}
                     className="bg-white/70 hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl cursor-pointer"
                     onClick={() => setSelectedCourse(course)}
-                  >
+                        >
                     <div className="text-center">
                       <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
-                        <ImageWithFallback 
-                          src={course.image_url}
-                          alt={course.title}
-                          fallbackIcon="bi bi-book"
-                          fallbackGradient="from-purple-400 to-blue-500"
+                            <ImageWithFallback
+                              src={course.image_url}
+                              alt={course.title}
+                              fallbackIcon="bi bi-book"
+                              fallbackGradient="from-purple-400 to-blue-500"
                           className="w-full h-full object-contain"
-                        />
-                      </div>
-                      
+                            />
+                          </div>
+
                       <h3 className="text-xl font-semibold text-gray-800 truncate max-w-full mb-2">
-                        {course.title}
-                      </h3>
-                      
+                              {course.title}
+                            </h3>
+
                       <p className="text-gray-600 mb-4 text-sm">
-                        {course.description}
-                      </p>
+                              {course.description}
+                            </p>
 
                       <div className="space-y-2 mb-4">
-                        <div className="chip chip-purple">
-                          <i className="bi bi-clock mr-2"></i>
-                          <span>{course.duration}</span>
-                        </div>
-                        <div className="chip chip-blue">
-                          <i className="bi bi-graph-up mr-2"></i>
-                          <span>{course.level}</span>
-                        </div>
-                        <div className="chip chip-green">
-                          <i className="bi bi-people mr-2"></i>
-                          <span>{course.type}</span>
-                        </div>
-                        {course.modality && (
+                              <div className="chip chip-purple">
+                                <i className="bi bi-clock mr-2"></i>
+                                <span>{course.duration}</span>
+                              </div>
+                              <div className="chip chip-blue">
+                                <i className="bi bi-graph-up mr-2"></i>
+                                <span>{course.level}</span>
+                              </div>
+                              <div className="chip chip-green">
+                                <i className="bi bi-people mr-2"></i>
+                                <span>{course.type}</span>
+                              </div>
+                              {course.modality && (
                           <div className="chip chip-indigo">
                             <i className="bi bi-laptop mr-2"></i>
                             <span>{course.modality}</span>
-                          </div>
-                        )}
-                      </div>
+                                </div>
+                              )}
+                            </div>
 
                       <div className="bg-purple-600 text-white px-6 py-2 rounded-full font-medium hover:bg-purple-700 transition-colors text-sm inline-block">
                         Prenota Ora
-                      </div>
+                        </div>
                     </div>
                   </div>
                 ))
               )}
             </>
-          )}
+                )}
 
-          {activeTab === 'eventi' && (
+                {activeTab === 'eventi' && (
             <>
               { (loadingEvents || (events.length === 0 && firstLoad)) ? (
                 <SkeletonCards icon="bi bi-calendar-event" gradient="from-green-400 to-blue-500" />
@@ -235,7 +235,7 @@ const Attivita = () => {
                     <h3 className="text-xl font-semibold text-gray-600 mb-2">Nessun evento disponibile</h3>
                     <p className="text-gray-500">Gli eventi saranno presto disponibili. Controlla di nuovo più tardi.</p>
                   </div>
-                </div>
+                    </div>
               ) : (
                 events.map((event) => (
                   <div
@@ -245,53 +245,53 @@ const Attivita = () => {
                   >
                     <div className="text-center">
                       <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
-                        <ImageWithFallback 
-                          src={event.image_url}
-                          alt={event.title}
-                          fallbackIcon="bi bi-calendar-event"
-                          fallbackGradient="from-green-400 to-blue-500"
+                            <ImageWithFallback
+                              src={event.image_url}
+                              alt={event.title}
+                              fallbackIcon="bi bi-calendar-event"
+                              fallbackGradient="from-green-400 to-blue-500"
                           className="w-full h-full object-contain"
-                        />
-                      </div>
-                      
+                            />
+                          </div>
+
                       <h3 className="text-xl font-semibold text-gray-800 truncate max-w-full mb-2">
-                        {event.title}
-                      </h3>
-                      
+                              {event.title}
+                            </h3>
+
                       <p className="text-gray-600 mb-4 text-sm">
-                        {event.description}
-                      </p>
+                              {event.description}
+                            </p>
 
                       <div className="space-y-2 mb-4">
-                        <div className="chip chip-green">
-                          <i className="bi bi-calendar mr-2"></i>
+                              <div className="chip chip-green">
+                                <i className="bi bi-calendar mr-2"></i>
                           <span>{new Date(event.date).toLocaleDateString('it-IT')}</span>
-                        </div>
-                        <div className="chip chip-blue">
-                          <i className="bi bi-clock mr-2"></i>
+                              </div>
+                              <div className="chip chip-blue">
+                                <i className="bi bi-clock mr-2"></i>
                           <span>{event.time}</span>
-                        </div>
-                        <div className="chip chip-purple">
-                          <i className="bi bi-geo-alt mr-2"></i>
+                              </div>
+                              <div className="chip chip-purple">
+                                <i className="bi bi-geo-alt mr-2"></i>
                           <span>{event.location}</span>
                         </div>
                         <div className="chip chip-indigo">
                           <i className="bi bi-tag mr-2"></i>
                           <span>{event.category}</span>
-                        </div>
-                      </div>
+                              </div>
+                            </div>
 
                       <div className="bg-green-600 text-white px-6 py-2 rounded-full font-medium hover:bg-green-700 transition-colors text-sm inline-block">
                         Prenota Ora
-                      </div>
+                        </div>
                     </div>
                   </div>
                 ))
               )}
             </>
-          )}
+                )}
 
-          {activeTab === 'settimane' && (
+                {activeTab === 'settimane' && (
             <>
               { (loadingStudyWeeks || (studyWeeks.length === 0 && firstLoad)) ? (
                 <SkeletonCards icon="bi bi-globe" gradient="from-indigo-400 to-purple-500" />
@@ -302,7 +302,7 @@ const Attivita = () => {
                     <h3 className="text-xl font-semibold text-gray-600 mb-2">Nessuna settimana studio disponibile</h3>
                     <p className="text-gray-500">Le settimane studio saranno presto disponibili. Controlla di nuovo più tardi.</p>
                   </div>
-                </div>
+                    </div>
               ) : (
                 studyWeeks.map((studyWeek) => (
                   <div
@@ -312,53 +312,53 @@ const Attivita = () => {
                   >
                     <div className="text-center">
                       <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
-                        <ImageWithFallback 
+                            <ImageWithFallback
                           src={studyWeek.image_url}
                           alt={studyWeek.title}
-                          fallbackIcon="bi bi-globe"
-                          fallbackGradient="from-indigo-400 to-purple-500"
+                              fallbackIcon="bi bi-globe"
+                              fallbackGradient="from-indigo-400 to-purple-500"
                           className="w-full h-full object-contain"
-                        />
-                      </div>
-                      
+                            />
+                          </div>
+
                       <h3 className="text-xl font-semibold truncate max-w-full text-gray-800 mb-2">
                         {studyWeek.title}
-                      </h3>
-                      
+                            </h3>
+
                       <p className="text-gray-600 mb-4 text-sm">
                         {studyWeek.description}
-                      </p>
+                            </p>
 
                       <div className="space-y-2 mb-4">
-                        <div className="chip chip-indigo">
-                          <i className="bi bi-clock mr-2"></i>
+                              <div className="chip chip-indigo">
+                                <i className="bi bi-clock mr-2"></i>
                           <span>{studyWeek.duration}</span>
-                        </div>
-                        <div className="chip chip-purple">
-                          <i className="bi bi-tag mr-2"></i>
+                              </div>
+                              <div className="chip chip-purple">
+                                <i className="bi bi-tag mr-2"></i>
                           <span>{studyWeek.type}</span>
-                        </div>
-                        <div className="chip chip-green">
-                          <i className="bi bi-geo-alt mr-2"></i>
+                              </div>
+                              <div className="chip chip-green">
+                                <i className="bi bi-geo-alt mr-2"></i>
                           <span>{studyWeek.city}</span>
                         </div>
                         <div className="chip chip-blue">
                           <i className="bi bi-list-check mr-2"></i>
                           <span className="truncate">{studyWeek.activities}</span>
-                        </div>
-                      </div>
+                              </div>
+                            </div>
 
                       <div className="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition-colors text-sm inline-block">
                         Prenota Settimana
-                      </div>
+                        </div>
                     </div>
                   </div>
                 ))
               )}
             </>
-          )}
-        </div>
-      </div>
+                )}
+              </div>
+            </div>
     </div>
   );
 };

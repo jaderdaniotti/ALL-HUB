@@ -53,7 +53,7 @@ const checkSupabaseClient = (operation) => {
 
 // Servizio Supabase migliorato con debug completo
 export const supabaseService = {
-  // Corsi
+  // Corsi (con fallback di query per robustezza)
   async getCorsi() {
     checkSupabaseClient('getCorsi')
     
@@ -65,7 +65,19 @@ export const supabaseService = {
         .order('created_at', { ascending: false })
       
       if (error) {
-        // fallback semplice: ritorna array vuoto
+        // Fallback 1: senza filtro is_active
+        const { data: altData, error: altError } = await supabase
+          .from('corsi')
+          .select('*')
+          .order('created_at', { ascending: false })
+        if (!altError) return altData || []
+
+        // Fallback 2: senza ORDER BY
+        const { data: simpleData, error: simpleError } = await supabase
+          .from('corsi')
+          .select('*')
+        if (!simpleError) return simpleData || []
+
         return []
       }
       return data || []
@@ -122,12 +134,34 @@ export const supabaseService = {
     checkSupabaseClient('getEventi')
     
     try {
+      // Query principale con filtro e ordinamento
       const { data, error } = await supabase
         .from('eventi')
         .select('*')
+        .eq('is_active', true)
         .order('date', { ascending: true })
       
       if (error) {
+        // Fallback 1: senza is_active, solo ORDER BY
+        const { data: alt1, error: err1 } = await supabase
+          .from('eventi')
+          .select('*')
+          .order('date', { ascending: true })
+        if (!err1) return alt1 || []
+
+        // Fallback 2: solo is_active, senza ORDER BY
+        const { data: alt2, error: err2 } = await supabase
+          .from('eventi')
+          .select('*')
+          .eq('is_active', true)
+        if (!err2) return alt2 || []
+
+        // Fallback 3: query semplice senza filtri/ordinamento
+        const { data: alt3, error: err3 } = await supabase
+          .from('eventi')
+          .select('*')
+        if (!err3) return alt3 || []
+
         return []
       }
       return data || []
@@ -195,6 +229,11 @@ export const supabaseService = {
         .order('created_at', { ascending: false })
       
       if (error) {
+        // Fallback: senza ORDER BY
+        const { data: altData, error: altError } = await supabase
+          .from('settimane_studio')
+          .select('*')
+        if (!altError) return altData || []
         return []
       }
       return data || []

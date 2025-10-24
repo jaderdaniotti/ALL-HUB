@@ -79,11 +79,14 @@ const AdminDashboard = () => {
       try {
         setLoading(true);
         setError(null);
-        const [coursesData, eventsData, studyWeeksData] = await Promise.all([
+        const [coursesData, eventsData, studyWeeksData] = await Promise.allSettled([
           supabaseService.getCorsi(),
           supabaseService.getEventi(),
           supabaseService.getSettimaneStudio()
-        ])
+        ]).then(results => {
+          const map = r => r.status === 'fulfilled' ? (r.value || []) : []
+          return [map(results[0]), map(results[1]), map(results[2])]
+        })
 
         setCourses(coursesData);
         setEvents(eventsData);
