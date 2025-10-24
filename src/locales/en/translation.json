@@ -18,8 +18,13 @@
       "cta2": "Contact us now"
     },
     "mission": {
-      "title": "Grow with us, transform your knowledge",
-      "description": "Our educational center was born with the goal of accompanying every person on a path of continuous growth — mental, professional and personal.\nWe offer personalized training paths, designed for different professional sectors and for every phase of life:\nStudy weeks dedicated to young people, adults and elderly, to deepen knowledge and stimulate curiosity.\nPractical courses and workshops, in person and online, to develop skills useful in the world of work and daily life.\nWe also propose events, meetings and cultural activities to promote exchange, creativity and personal growth.",
+      "title": "ENHANCE YOURSELF",
+      "description": "Our educational center was created to accompany every person on a path of continuous growth — mental, professional and personal. We propose:",
+      "points": {
+        "studyWeeks": "Study weeks dedicated to children, adults and seniors, to deepen knowledge and stimulate curiosity.",
+        "courses": "Practical courses and workshops, in-person and online, to develop skills useful for work and everyday life.",
+        "events": "Events, meetings and cultural activities to promote exchange, creativity and personal growth"
+      },
       "cta": "Learn more"
     },
     "services": {
@@ -61,15 +66,15 @@
       "title": "How it works?",
       "step1": {
         "title": "Select the service",
-        "description": "Select the service most suitable for your needs. The services offered are highly customizable, we will study together the path most suitable for your needs."
+        "description": "Select the service that best suits your needs. Our services are highly customizable and we will design together the most suitable path for you."
       },
       "step2": {
-        "title": "Choose a day",
-        "description": "Choose the day you want to use the service. For particular needs, contact me and we will find a solution together."
+        "title": "Contact us",
+        "description": "We will explore your wishes and needs together, creating the most suitable training package for you."
       },
       "step3": {
-        "title": "Start studying",
-        "description": "You will be ready to start your journey of growth and personal improvement."
+        "title": "Start your transformative journey",
+        "description": "You will be ready to start your path of growth and personal improvement. Whether it is joining an event, a workshop or participating in a study week in Italy or Europe, we will be there to support and guide you."
       }
     },
     "finalCta": {
@@ -81,15 +86,15 @@
       "title": "How it works?",
       "step1": {
         "title": "Select the service",
-        "description": "Select the service most suitable for your needs. The services offered are highly customizable, we will study together the path most suitable for your needs."
+        "description": "Select the service that best suits your needs. Our services are highly customizable and we will design together the most suitable path for you."
       },
       "step2": {
-        "title": "Choose a day",
-        "description": "Choose the day you want to use the service. For particular needs, contact me and we will find a solution together."
+        "title": "Contact us",
+        "description": "We will explore your wishes and needs together, creating the most suitable training package for you."
       },
       "step3": {
-        "title": "Start studying",
-        "description": "You will be ready to start your journey of growth and personal improvement."
+        "title": "Start your transformative journey",
+        "description": "You will be ready to start your path of growth and personal improvement. Whether it is joining an event, a workshop or participating in a study week in Italy or Europe, we will be there to support and guide you."
       }
     },
     "newsletter": {

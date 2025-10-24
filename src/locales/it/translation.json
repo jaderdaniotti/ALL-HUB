@@ -19,7 +19,12 @@
     },
     "mission": {
       "title": "Cresci con noi, trasforma il tuo sapere",
-      "description": "Il nostro centro educativo nasce con l’obiettivo di accompagnare ogni persona in un percorso di crescita continua — mentale, professionale e personale.\nOffriamo percorsi formativi personalizzati, pensati per diversi settori professionali e per ogni fase della vita:\nSettimane studio dedicate a ragazzi, adulti e anziani, per approfondire conoscenze e stimolare la curiosità.\nCorsi e laboratori pratici, in presenza ed online. per sviluppare competenze utili nel mondo del lavoro e nella vita quotidiana.\nProponiamo inoltre eventi, incontri e attività culturali per favorire lo scambio, la creatività e la crescita personale.",
+      "description": "Il nostro centro educativo nasce con l’obiettivo di accompagnare ogni persona in un percorso di crescita continua — mentale, professionale e personale. Proponiamo:",
+      "points": {
+        "studyWeeks": "Settimane studio dedicate a ragazzi, adulti e anziani, per approfondire conoscenze e stimolare la curiosità.",
+        "courses": "Corsi e laboratori pratici, in presenza ed online, per sviluppare competenze utili nel mondo del lavoro e nella vita quotidiana.",
+        "events": "Eventi, incontri e attività culturali per favorire lo scambio, la creatività e la crescita personale"
+      },
       "cta": "Scopri di più"
     },
     "services": {
@@ -53,12 +58,12 @@
         "description": "Seleziona il servizio più adatto alle tue esigenze. I servizi offerti sono altamente personalizzabili, studieremo insieme il percorso più adatto alle tue esigenze."
       },
       "step2": {
-        "title": "Scegli un giorno",
-        "description": "Scegli il giorno in cui usufruire del servizio. Per particolari esigenze contattami e troveremo insieme una soluzione."
+        "title": "Contattaci",
+        "description": "Studieremo assieme desideri ed esigenze, creando il pacchetto formativo più adatto a te."
       },
       "step3": {
-        "title": "Inizia a studiare",
-        "description": "Sarai pronto a iniziare il tuo percorso di crescita e miglioramento personale."
+        "title": "Inizia il tuo percorso trasformativo",
+        "description": "Sarai pronto a iniziare il tuo percorso di crescita e miglioramento personale. Che si tratti di aderire ad un evento, ad un laboratorio o di partecipare ad una settimana studio in Italia o Europa saremo presenti per sostenerti e guidarti."
       }
     },
     "finalCta": {
@@ -73,12 +78,12 @@
         "description": "Seleziona il servizio più adatto alle tue esigenze. I servizi offerti sono altamente personalizzabili, studieremo insieme il percorso più adatto alle tue esigenze."
       },
       "step2": {
-        "title": "Scegli un giorno",
-        "description": "Scegli il giorno in cui usufruire del servizio. Per particolari esigenze contattami e troveremo insieme una soluzione."
+        "title": "Contattaci",
+        "description": "Studieremo assieme desideri ed esigenze, creando il pacchetto formativo più adatto a te."
       },
       "step3": {
-        "title": "Inizia a studiare",
-        "description": "Sarai pronto a iniziare il tuo percorso di crescita e miglioramento personale."
+        "title": "Inizia il tuo percorso trasformativo",
+        "description": "Sarai pronto a iniziare il tuo percorso di crescita e miglioramento personale. Che si tratti di aderire ad un evento, ad un laboratorio o di partecipare ad una settimana studio in Italia o Europa saremo presenti per sostenerti e guidarti."
       }
     },
     "newsletter": {

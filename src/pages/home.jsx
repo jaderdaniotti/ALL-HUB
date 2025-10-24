@@ -56,9 +56,14 @@ const Home = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-4 md:mb-6">
               {t('home.mission.title')}
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 mb-4 md:mb-6 leading-relaxed">
               {t('home.mission.description')}
             </p>
+            <ul className="list-disc pl-6 text-base sm:text-lg text-gray-700 space-y-2 mb-6 md:mb-8">
+              <li>{t('home.mission.points.studyWeeks')}</li>
+              <li>{t('home.mission.points.courses')}</li>
+              <li>{t('home.mission.points.events')}</li>
+            </ul>
             <Link 
               to="/about" 
               className="bg-purple-600 text-white px-6 py-3 md:px-8 md:py-3 rounded-full font-semibold hover:bg-purple-700 transition-colors inline-block text-sm md:text-base"
