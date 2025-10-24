@@ -181,11 +181,11 @@ const Attivita = () => {
                           alt={course.title}
                           fallbackIcon="bi bi-book"
                           fallbackGradient="from-purple-400 to-blue-500"
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                       
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      <h3 className="text-xl font-semibold text-gray-800 truncate max-w-full mb-2">
                         {course.title}
                       </h3>
                       
@@ -250,11 +250,11 @@ const Attivita = () => {
                           alt={event.title}
                           fallbackIcon="bi bi-calendar-event"
                           fallbackGradient="from-green-400 to-blue-500"
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                       
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      <h3 className="text-xl font-semibold text-gray-800 truncate max-w-full mb-2">
                         {event.title}
                       </h3>
                       
@@ -317,11 +317,11 @@ const Attivita = () => {
                           alt={studyWeek.title}
                           fallbackIcon="bi bi-globe"
                           fallbackGradient="from-indigo-400 to-purple-500"
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                       
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                      <h3 className="text-xl font-semibold truncate max-w-full text-gray-800 mb-2">
                         {studyWeek.title}
                       </h3>
                       

@@ -145,14 +145,14 @@
   "activities": {
     "title": "Unsere Aktivitäten",
     "subtitle": "Entdecken Sie unsere Kurse, Veranstaltungen und Studienwochen",
-    "coursesTitle": "Kurse / Didaktische Pfade",
+    "coursesTitle": "Kurse",
     "coursesSubtitle": "Personalisierte Lektionen für jedes Niveau und Lernziel",
     "eventsTitle": "Veranstaltungen",
     "eventsSubtitle": "Nehmen Sie an unseren besonderen Veranstaltungen teil, um Ihre Sprachkenntnisse zu üben und zu verbessern",
     "studyWeeksTitle": "Skill Up Camps",
     "studyWeeksSubtitle": "Intensive wöchentliche Programme für eine vollständige und immersive Lernerfahrung",
     "tabs": {
-      "courses": "Kurse / Didaktische Pfade",
+      "courses": "Kurse",
       "events": "Veranstaltungen",
       "studyWeeks": "Skill Up Camps"
     },

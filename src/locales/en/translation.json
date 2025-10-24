@@ -160,14 +160,14 @@
   "activities": {
     "title": "Our Activities",
     "subtitle": "Explore our courses, events and study weeks",
-    "coursesTitle": "Courses / Didactic Paths",
+    "coursesTitle": "Courses",
     "coursesSubtitle": "Personalized lessons for every level and learning objective",
     "eventsTitle": "Events",
     "eventsSubtitle": "Join our special events to practice and improve your language skills",
     "studyWeeksTitle": "Skill Up Camps",
     "studyWeeksSubtitle": "Intensive weekly programs for a complete and immersive learning experience",
     "tabs": {
-      "courses": "Courses / Didactic Paths",
+      "courses": "Courses",
       "events": "Events",
       "studyWeeks": "Skill Up Camps"
     },
