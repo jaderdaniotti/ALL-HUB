@@ -1,7 +1,10 @@
+// Sistema di debug per le pagine
+// Sostituisci il contenuto di src/pages/Attivita.jsx con questo
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import { supabaseService } from "../lib/supabase";
+import { supabaseService, testSupabaseConnection } from "../lib/supabase";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 
 const Attivita = () => {
@@ -10,82 +13,94 @@ const Attivita = () => {
   const [courses, setCourses] = useState([]);
   const [events, setEvents] = useState([]);
   const [studyWeeks, setStudyWeeks] = useState([]);
-  const [loadingCourses, setLoadingCourses] = useState(true);
-  const [loadingEvents, setLoadingEvents] = useState(true);
-  const [loadingStudyWeeks, setLoadingStudyWeeks] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [firstLoad, setFirstLoad] = useState(true);
+  const [debugInfo, setDebugInfo] = useState(null);
   const [selectedCourse, setSelectedCourse] = React.useState(null);
   const [selectedEvent, setSelectedEvent] = React.useState(null);
   const [selectedStudyWeek, setSelectedStudyWeek] = React.useState(null);
+
+  // Debug: Test connessione Supabase
+  useEffect(() => {
+    const testConnection = async () => {
+      console.log('🧪 Testing Supabase connection from Attivita page...')
+      const result = await testSupabaseConnection()
+      setDebugInfo(result)
+      console.log('🧪 Connection test result:', result)
+    }
+    
+    testConnection()
+  }, []);
 
   // Carica dati da Supabase con debug completo
   useEffect(() => {
     const loadData = async () => {
       try {
+        console.log('🔄 Starting data load for Attivita page...')
+        setLoading(true);
         setError(null);
-        setLoadingCourses(true);
-        setLoadingEvents(true);
-        setLoadingStudyWeeks(true);
 
-        const [corsiRes, eventiRes, settimaneRes] = await Promise.allSettled([
+        // Test connessione prima di caricare i dati
+        const connectionTest = await testSupabaseConnection()
+        if (!connectionTest.success) {
+          throw new Error(`Connection failed: ${connectionTest.error}`)
+        }
+
+        console.log('📊 Loading data with Promise.all...')
+        const startTime = Date.now()
+        
+        const [coursesData, eventsData, studyWeeksData] = await Promise.all([
           supabaseService.getCorsi(),
           supabaseService.getEventi(),
           supabaseService.getSettimaneStudio()
-        ])
+        ]);
 
-        if (corsiRes.status === 'fulfilled') setCourses(corsiRes.value || []); else setCourses([]);
-        if (eventiRes.status === 'fulfilled') setEvents(eventiRes.value || []); else setEvents([]);
-        if (settimaneRes.status === 'fulfilled') setStudyWeeks(settimaneRes.value || []); else setStudyWeeks([]);
+        const endTime = Date.now()
+        console.log(`✅ Data loaded successfully in ${endTime - startTime}ms`)
 
+        setCourses(coursesData);
+        setEvents(eventsData);
+        setStudyWeeks(studyWeeksData);
+        
+        console.log('📊 Final data counts:', {
+          courses: coursesData.length,
+          events: eventsData.length,
+          studyWeeks: studyWeeksData.length
+        })
+        
       } catch (err) {
-        setError('Errore nel caricamento dei dati. Riprova più tardi.');
+        console.error('❌ Error loading data in Attivita:', err);
+        setError(`Errore nel caricamento dei dati: ${err.message}`);
       } finally {
-        setLoadingCourses(false);
-        setLoadingEvents(false);
-        setLoadingStudyWeeks(false);
-        setFirstLoad(false);
+        setLoading(false);
       }
     };
 
     loadData();
   }, []);
 
-
-  const SkeletonCards = ({ count = 6, icon = 'bi bi-book', gradient = 'from-purple-400 to-blue-500' }) => (
-    <>
-      {Array.from({ length: count }).map((_, idx) => (
-        <div key={idx} className="bg-white/70 rounded-2xl shadow-lg p-6 border border-gray-100">
-          <div className="text-center">
-            <div className={`w-full h-48 mb-4 rounded-lg overflow-hidden bg-gradient-to-br ${gradient} animate-pulse`}></div>
-            <div className="h-5 w-3/5 bg-gray-200 rounded mx-auto mb-3 animate-pulse"></div>
-            <div className="h-4 w-4/5 bg-gray-200 rounded mx-auto mb-2 animate-pulse"></div>
-            <div className="h-4 w-2/3 bg-gray-200 rounded mx-auto mb-4 animate-pulse"></div>
-            <div className="h-9 w-32 bg-purple-200 rounded-full mx-auto animate-pulse"></div>
-          </div>
-        </div>
-      ))}
-    </>
-  );
-
-  if (loadingCourses && loadingEvents && loadingStudyWeeks) {
+  // Debug info component
+  const DebugInfo = () => {
+    if (!debugInfo) return null;
+    
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="container mx-auto px-4 py-12">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">{t('activities.title')}</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('activities.subtitle')}</p>
-          </div>
-          <div className="flex justify-center mb-8">
-            <div className="bg-white/70 rounded-2xl p-2 shadow-lg">
-              <button className="px-6 py-3 rounded-xl font-medium bg-purple-600 text-white shadow-lg">{t('activities.tabs.courses')}</button>
-              <button className="px-6 py-3 rounded-xl font-medium text-gray-600">{t('activities.tabs.events')}</button>
-              <button className="px-6 py-3 rounded-xl font-medium text-gray-600">{t('activities.tabs.studyWeeks')}</button>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <SkeletonCards />
-          </div>
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <h3 className="text-sm font-semibold text-blue-800 mb-2">Debug Info</h3>
+        <div className="text-xs text-blue-700">
+          <p>Connection: {debugInfo.success ? '✅ Success' : '❌ Failed'}</p>
+          {debugInfo.error && <p>Error: {debugInfo.error}</p>}
+          <p>Data loaded: Courses: {courses.length}, Events: {events.length}, Study Weeks: {studyWeeks.length}</p>
+        </div>
+      </div>
+    );
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Caricamento dati...</p>
         </div>
       </div>
     );
@@ -112,6 +127,9 @@ const Attivita = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
+      {/* Debug Info */}
+      <DebugInfo />
+      
       {/* Header */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
@@ -134,7 +152,7 @@ const Attivita = () => {
                   : 'text-gray-600 hover:text-purple-600'
               }`}
             >
-              {t('activities.tabs.courses')}
+              {t('activities.courses')}
             </button>
             <button
               onClick={() => setActiveTab('eventi')}
@@ -144,7 +162,7 @@ const Attivita = () => {
                   : 'text-gray-600 hover:text-purple-600'
               }`}
             >
-              {t('activities.tabs.events')}
+              {t('activities.events')}
             </button>
             <button
               onClick={() => setActiveTab('settimane')}
@@ -154,7 +172,7 @@ const Attivita = () => {
                   : 'text-gray-600 hover:text-purple-600'
               }`}
             >
-              {t('activities.tabs.studyWeeks')}
+              {t('activities.studyWeeks')}
             </button>
           </div>
         </div>
@@ -163,10 +181,18 @@ const Attivita = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {activeTab === 'corsi' && (
             <>
-              { (loadingCourses || (courses.length === 0 && firstLoad)) ? (
-                <SkeletonCards />
-              ) : courses.length === 0 ? (
-            <SkeletonCards />
+              {courses.length === 0 ? (
+                <div className="col-span-full text-center py-12">
+                  <div className="bg-white/70 rounded-2xl p-8 shadow-lg">
+                    <i className="bi bi-book text-6xl text-gray-400 mb-4"></i>
+                    <h3 className="text-xl font-semibold text-gray-600 mb-2">
+                      Nessun corso disponibile
+                    </h3>
+                    <p className="text-gray-500">
+                      I corsi saranno presto disponibili. Controlla di nuovo più tardi.
+                    </p>
+                  </div>
+                </div>
               ) : (
                 courses.map((course) => (
                   <div
@@ -226,14 +252,16 @@ const Attivita = () => {
 
           {activeTab === 'eventi' && (
             <>
-              { (loadingEvents || (events.length === 0 && firstLoad)) ? (
-                <SkeletonCards icon="bi bi-calendar-event" gradient="from-green-400 to-blue-500" />
-              ) : events.length === 0 ? (
+              {events.length === 0 ? (
                 <div className="col-span-full text-center py-12">
                   <div className="bg-white/70 rounded-2xl p-8 shadow-lg">
                     <i className="bi bi-calendar-event text-6xl text-gray-400 mb-4"></i>
-                    <h3 className="text-xl font-semibold text-gray-600 mb-2">Nessun evento disponibile</h3>
-                    <p className="text-gray-500">Gli eventi saranno presto disponibili. Controlla di nuovo più tardi.</p>
+                    <h3 className="text-xl font-semibold text-gray-600 mb-2">
+                      Nessun evento disponibile
+                    </h3>
+                    <p className="text-gray-500">
+                      Gli eventi saranno presto disponibili. Controlla di nuovo più tardi.
+                    </p>
                   </div>
                 </div>
               ) : (
@@ -293,14 +321,16 @@ const Attivita = () => {
 
           {activeTab === 'settimane' && (
             <>
-              { (loadingStudyWeeks || (studyWeeks.length === 0 && firstLoad)) ? (
-                <SkeletonCards icon="bi bi-globe" gradient="from-indigo-400 to-purple-500" />
-              ) : studyWeeks.length === 0 ? (
+              {studyWeeks.length === 0 ? (
                 <div className="col-span-full text-center py-12">
                   <div className="bg-white/70 rounded-2xl p-8 shadow-lg">
                     <i className="bi bi-globe text-6xl text-gray-400 mb-4"></i>
-                    <h3 className="text-xl font-semibold text-gray-600 mb-2">Nessuna settimana studio disponibile</h3>
-                    <p className="text-gray-500">Le settimane studio saranno presto disponibili. Controlla di nuovo più tardi.</p>
+                    <h3 className="text-xl font-semibold text-gray-600 mb-2">
+                      Nessuna settimana studio disponibile
+                    </h3>
+                    <p className="text-gray-500">
+                      Le settimane studio saranno presto disponibili. Controlla di nuovo più tardi.
+                    </p>
                   </div>
                 </div>
               ) : (

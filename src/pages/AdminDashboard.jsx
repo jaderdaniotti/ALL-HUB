@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { useTranslation } from 'react-i18next'; // Non utilizzato al momento
 import { supabaseService } from "../lib/supabase";
 import { EventPreview, CoursePreview, StudyWeekPreview } from "../components/PreviewCards";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 import { ConfirmDeleteModal } from "../components/ConfirmDeleteModal";
 
 const AdminDashboard = () => {
-  // const { t } = useTranslation(); // Non utilizzato al momento
   const [activeTab, setActiveTab] = useState('corsi');
   const [courses, setCourses] = useState([]);
   const [events, setEvents] = useState([]);
   const [studyWeeks, setStudyWeeks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   
   // Modal states
   const [deleteModal, setDeleteModal] = useState({
@@ -39,7 +39,6 @@ const AdminDashboard = () => {
     additional_notes: "",
     image: null
   });
-  
   
   const [newEvent, setNewEvent] = useState({
     title: "",
@@ -74,26 +73,42 @@ const AdminDashboard = () => {
     }
   }, [navigate]);
 
-  // Carica dati da Supabase
+  // Carica dati da Supabase con debug completo
   useEffect(() => {
     const loadData = async () => {
       try {
+        setLoading(true);
+        setError(null);
         const [coursesData, eventsData, studyWeeksData] = await Promise.all([
           supabaseService.getCorsi(),
           supabaseService.getEventi(),
           supabaseService.getSettimaneStudio()
-        ]);
-        
+        ])
+
         setCourses(coursesData);
         setEvents(eventsData);
         setStudyWeeks(studyWeeksData);
-      } catch (error) {
-        console.error('Errore nel caricamento dati:', error);
+      } catch (err) {
+        setError('Errore nel caricamento dei dati. Riprova più tardi.');
+      } finally {
+        setLoading(false);
       }
     };
 
     loadData();
   }, []);
+
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Caricamento dashboard...</p>
+        </div>
+      </div>
+    );
+  }
 
   // Gestione upload immagine
   const handleImageUpload = (file, setter, previewSetter) => {
@@ -406,7 +421,21 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white/80">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
+      {/* Error Display */}
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6 mx-4">
+          <h3 className="text-sm font-semibold text-red-800 mb-2">Errore</h3>
+          <p className="text-red-700 text-sm">{error}</p>
+          <button 
+            onClick={() => setError(null)} 
+            className="mt-2 text-red-600 hover:text-red-800 text-sm"
+          >
+            Chiudi
+          </button>
+        </div>
+      )}
+
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">

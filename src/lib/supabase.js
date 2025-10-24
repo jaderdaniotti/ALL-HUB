@@ -4,53 +4,98 @@ import bcrypt from 'bcryptjs'
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-
+// Config check (silenzioso in prod)
 
 if (!supabaseUrl || !supabaseKey) {
-  console.warn('Missing Supabase environment variables - using fallback authentication')
+  console.error('❌ CRITICAL: Missing Supabase environment variables!')
+  console.error('URL:', supabaseUrl)
+  console.error('Key:', supabaseKey)
+  console.error('Please check your .env.local file')
 }
 
-export const supabase = createClient(supabaseUrl, supabaseKey)
+// Crea il client Supabase con configurazione ottimizzata
+export const supabase = supabaseUrl && supabaseKey 
+  ? createClient(supabaseUrl, supabaseKey, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+        detectSessionInUrl: false
+      },
+      db: {
+        schema: 'public'
+      },
+      global: {
+        headers: {
+          'X-Client-Info': 'all-hub-app'
+        }
+      }
+    })
+  : null
 
-// Test connessione Supabase
+// Test connessione (usato solo in dev)
 export const testSupabaseConnection = async () => {
-  try {
-    console.log('🧪 Testing Supabase connection...');
-    const { data, error } = await supabase
-      .from('eventi')
-      .select('count')
-      .limit(1);
-    
-    console.log('🧪 Connection test result:', { data, error });
-    return { success: !error, error };
-  } catch (err) {
-    console.error('🧪 Connection test failed:', err);
-    return { success: false, error: err };
-  }
-};
+  if (!supabase) return { success: false, error: 'Supabase client not initialized' }
+  const { data, error } = await supabase.from('corsi').select('count').limit(1)
+  return { success: !error, data, error }
+}
 
-// Helper functions per le operazioni CRUD
+// Helper per gestire errori Supabase
+const handleSupabaseError = (operation, error) => error
+
+// Helper per verificare se il client è inizializzato
+const checkSupabaseClient = (operation) => {
+  if (!supabase) {
+    const error = new Error(`Supabase client not initialized for ${operation}`)
+    console.error('❌', error.message)
+    throw error
+  }
+}
+
+// Servizio Supabase migliorato con debug completo
 export const supabaseService = {
   // Corsi
   async getCorsi() {
-    const { data, error } = await supabase
-      .from('corsi')
-      .select('*')
-      .eq('is_active', true)
-      .order('created_at', { ascending: false })
+    checkSupabaseClient('getCorsi')
     
-    if (error) throw error
-    return data || []
+    try {
+      const { data, error } = await supabase
+        .from('corsi')
+        .select('*')
+        .eq('is_active', true)
+        .order('created_at', { ascending: false })
+      
+      if (error) {
+        // fallback semplice: ritorna array vuoto
+        return []
+      }
+      return data || []
+    } catch (err) {
+      return []
+    }
   },
 
   async addCorso(corso) {
-    const { data, error } = await supabase
-      .from('corsi')
-      .insert([corso])
-      .select()
+    checkSupabaseClient('addCorso')
     
-    if (error) throw error
-    return data[0]
+    console.log('➕ Adding corso:', corso)
+    
+    try {
+      const { data, error } = await supabase
+        .from('corsi')
+        .insert([corso])
+        .select()
+      
+      if (error) {
+        handleSupabaseError('addCorso', error)
+        throw error
+      }
+      
+      console.log('✅ Corso added successfully:', data[0])
+      return data[0]
+    } catch (err) {
+      console.error('❌ addCorso failed:', err)
+      throw err
+    }
   },
 
   async deleteCorso(id) {
@@ -73,15 +118,22 @@ export const supabaseService = {
     return data[0]
   },
 
-  // Eventi
   async getEventi() {
-    const { data, error } = await supabase
-      .from('eventi')
-      .select('*')
-      .order('date', { ascending: true })
+    checkSupabaseClient('getEventi')
     
-    if (error) throw error
-    return data || []
+    try {
+      const { data, error } = await supabase
+        .from('eventi')
+        .select('*')
+        .order('date', { ascending: true })
+      
+      if (error) {
+        return []
+      }
+      return data || []
+    } catch (err) {
+      return []
+    }
   },
 
   async addEvento(evento) {
@@ -132,15 +184,23 @@ export const supabaseService = {
     return data[0]
   },
 
-  // Skill Up Camps
+  // Settimane Studio
   async getSettimaneStudio() {
-    const { data, error } = await supabase
-      .from('settimane_studio')
-      .select('*')
-      .order('created_at', { ascending: false })
+    checkSupabaseClient('getSettimaneStudio')
     
-    if (error) throw error
-    return data || []
+    try {
+      const { data, error } = await supabase
+        .from('settimane_studio')
+        .select('*')
+        .order('created_at', { ascending: false })
+      
+      if (error) {
+        return []
+      }
+      return data || []
+    } catch (err) {
+      return []
+    }
   },
 
   async addSettimanaStudio(settimana) {

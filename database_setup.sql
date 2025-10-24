@@ -28,7 +28,9 @@ CREATE TABLE IF NOT EXISTS corsi (
     image_url TEXT,
     is_active BOOLEAN DEFAULT true,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    modality VARCHAR(100),
+    additional_notes TEXT
 );
 
 -- Tabella Eventi
@@ -60,7 +62,6 @@ CREATE TABLE IF NOT EXISTS settimane_studio (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
-
 -- ==============================================
 -- 2. CREAZIONE INDICI PER PERFORMANCE
 -- ==============================================
@@ -181,3 +182,4 @@ ALTER TABLE corsi ENABLE ROW LEVEL SECURITY;
 ALTER TABLE eventi ENABLE ROW LEVEL SECURITY;
 ALTER TABLE settimane_studio ENABLE ROW LEVEL SECURITY;
 */
+

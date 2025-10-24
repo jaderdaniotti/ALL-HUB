@@ -1,0 +1,19 @@
+# Supabase Configuration Template
+# Copia questo file come .env.local e inserisci le tue credenziali
+
+VITE_SUPABASE_URL=https://vrtdijkbejtthhcrnclr.supabase.co
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+
+# ISTRUZIONI:
+# 1. Crea un file chiamato .env.local nella root del progetto
+# 2. Copia il contenuto di questo file nel .env.local
+# 3. Vai su https://supabase.com/dashboard
+# 4. Seleziona il tuo progetto "secretariat.allhub@gmail.com's Project"
+# 5. Vai su Settings > API
+# 6. Copia la "anon public" key e sostituisci "your_supabase_anon_key_here"
+# 7. Riavvia il server di sviluppo (npm run dev)
+
+# IMPORTANTE: 
+# - Il file .env.local deve essere nella root del progetto (stesso livello di package.json)
+# - Non committare mai il file .env.local nel repository
+# - Il file .env.local è già nel .gitignore

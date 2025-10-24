@@ -33,6 +33,8 @@ Tabella per gestire i corsi di lingua offerti.
 | `is_active` | BOOLEAN | Corso attivo/disattivo |
 | `created_at` | TIMESTAMP | Data di creazione |
 | `updated_at` | TIMESTAMP | Data ultimo aggiornamento |
+| `modality` | VARCHAR(100) | Modalità del corso (es. "Online", "Presenza") |
+| `additional_notes` | TEXT | Note aggiuntive sul corso |
 
 ### 3. Eventi
 Tabella per gestire gli eventi e workshop.

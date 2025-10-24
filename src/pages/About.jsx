@@ -9,15 +9,15 @@ const About = () => {
   const testimonials = [
     {
       id: 1,
-      text: "Sono molto soddisfatto del modo con cui si tengono le lezioni in quanto l'insegnante è attenta al coinvolgimento dei partecipanti. Bene le tabelle descrittive e riassuntive a casa con grammatica, esercizi e approfondimenti. Personalmente mi sono impegnato anche con i compiti per casa e ritengo che oggi mi sento di poter dire qualche frase in inglese senza sentirmi in imbarazzo se commetto qualche errore. Grazie di tutto. Have a good life.",
-      author: "Giampaolo",
+      text: "Ho trovato il corso ben strutturato anche se aperto a continue modifiche per colmare lacune, dubbi o rispondere a richieste dei partecipanti. Le lezioni sono divise in 3 momenti: correzione dei compiti assegnati, argomento grammaticale e ascolto/lettura/discussione di un brano; questo permette di accrescere le proprie competenze linguistiche senza annoiarsi, in maniera divertente e varia. Grazie per la bella esperienza che sicuramente vorrò continuare.",
+      author: "Elisabetta",
       level: "CORSO LIVELLO A2"
     },
     {
       id: 2,
-      text: "Ho trovato il corso ben strutturato anche se aperto a continue modifiche per colmare lacune, dubbi o rispondere a richieste dei partecipanti. Le lezioni sono divise in 3 momenti: correzione dei compiti assegnati, argomento grammaticale e ascolto/lettura/discussione di un brano; questo permette di accrescere le proprie competenze linguistiche senza annoiarsi, in maniera divertente e varia. Grazie per la bella esperienza che sicuramente vorrò continuare.",
-      author: "Elisabetta",
-      level: "CORSO LIVELLO A2"
+      text: "The weekly English lessons are very useful in terms of both practice and grammar. The fact that the course teacher sends us the course topic 1 week before the lesson and that the notes used as course material can also be listened to with the audio description method and that new words are given in advance within the subject facilitate and reinforce learning. Thanks to the participants being from different countries, a multi-minded environment is created by the people who contribute to the course topics and content, and thus the social and cognitive levels of the participants develop faster and a multicultural environment is created thanks to the new cultures getting to know each other. I would like to thank our teacher Lavinya Hanım, who constantly works to develop both our personal and social skills thanks to the English course, and everyone who provided this course opportunity.",
+      author: "Hakan E.",
+      level: "CORSO LIVELLO B2 - CONVERSAZIONE"
     },
     {
       id: 3,
@@ -63,10 +63,12 @@ const About = () => {
     },
     {
       id: 10,
-      text: "The weekly English lessons are very useful in terms of both practice and grammar. The fact that the course teacher sends us the course topic 1 week before the lesson and that the notes used as course material can also be listened to with the audio description method and that new words are given in advance within the subject facilitate and reinforce learning. Thanks to the participants being from different countries, a multi-minded environment is created by the people who contribute to the course topics and content, and thus the social and cognitive levels of the participants develop faster and a multicultural environment is created thanks to the new cultures getting to know each other. I would like to thank our teacher Lavinya Hanım, who constantly works to develop both our personal and social skills thanks to the English course, and everyone who provided this course opportunity.",
-      author: "Hakan E.",
-      level: "CORSO LIVELLO B2 - CONVERSAZIONE"
+      text: "Sono molto soddisfatto del modo con cui si tengono le lezioni in quanto l'insegnante è attenta al coinvolgimento dei partecipanti. Bene le tabelle descrittive e riassuntive a casa con grammatica, esercizi e approfondimenti. Personalmente mi sono impegnato anche con i compiti per casa e ritengo che oggi mi sento di poter dire qualche frase in inglese senza sentirmi in imbarazzo se commetto qualche errore. Grazie di tutto. Have a good life.",
+      author: "Giampaolo",
+      level: "CORSO LIVELLO A2"
+      
     }
+   
   ];
 
   // State per gestire le testimonianze visibili
