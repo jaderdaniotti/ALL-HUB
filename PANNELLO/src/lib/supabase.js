@@ -27,7 +27,11 @@ const ensureClient = (op) => {
 export const supabaseService = {
   async getCorsi() {
     ensureClient('getCorsi')
-    const { data, error } = await supabase.from('corsi').select('*').order('created_at', { ascending: false })
+    const { data, error } = await supabase
+      .from('corsi')
+      .select('*')
+      .eq('is_active', true)
+      .order('created_at', { ascending: false })
     if (error) return []
     return data || []
   },
@@ -51,7 +55,11 @@ export const supabaseService = {
 
   async getEventi() {
     ensureClient('getEventi')
-    const { data, error } = await supabase.from('eventi').select('*').order('date', { ascending: true })
+    const { data, error } = await supabase
+      .from('eventi')
+      .select('*')
+      .eq('is_active', true)
+      .order('date', { ascending: true })
     if (error) return []
     return data || []
   },
@@ -103,7 +111,7 @@ export const supabaseService = {
 
     const { data, error } = await supabase
       .from('users')
-      .select('*')
+      .select('id,email,name,password_hash,is_admin')
       .eq('email', email)
       .eq('is_admin', true)
       .single()

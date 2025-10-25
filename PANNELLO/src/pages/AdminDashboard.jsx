@@ -78,65 +78,81 @@ export const AdminDashboard = () => {
 
   const handleAddCourse = async (e) => {
     e.preventDefault()
-    const payload = { title: newCourse.title, description: newCourse.description, duration: newCourse.duration, level: newCourse.level, type: newCourse.type, modality: newCourse.modality, additional_notes: newCourse.additional_notes, image_url: newCourse.image }
-    if (editMode.isEditing && editMode.editingType === 'course') {
-      const updated = await supabaseService.updateCorso(editMode.editingId, payload)
-      setCourses((prev) => prev.map((x) => (x.id === editMode.editingId ? updated : x)))
-      cancelEdit()
-    } else {
-      const added = await supabaseService.addCorso(payload)
-      setCourses((prev) => [...prev, added])
-      cancelEdit()
+    try {
+      const payload = { title: newCourse.title, description: newCourse.description, duration: newCourse.duration, level: newCourse.level, type: newCourse.type, modality: newCourse.modality, additional_notes: newCourse.additional_notes, image_url: newCourse.image }
+      if (editMode.isEditing && editMode.editingType === 'course') {
+        const updated = await supabaseService.updateCorso(editMode.editingId, payload)
+        setCourses((prev) => prev.map((x) => (x.id === editMode.editingId ? updated : x)))
+        cancelEdit()
+      } else {
+        const added = await supabaseService.addCorso(payload)
+        setCourses((prev) => [...prev, added])
+        cancelEdit()
+      }
+    } catch (err) {
+      setError(err?.message || 'Errore nella gestione del corso')
     }
   }
 
   const handleAddEvent = async (e) => {
     e.preventDefault()
-    if (!newEvent.time || !/^\d{2}:\d{2}$/.test(newEvent.time)) {
-      alert('Inserisci un orario valido nel formato HH:MM')
-      return
-    }
-    const payload = { title: newEvent.title, description: newEvent.description, date: newEvent.date, time: newEvent.time, location: newEvent.location, category: newEvent.category, image_url: newEvent.image }
-    if (editMode.isEditing && editMode.editingType === 'event') {
-      const updated = await supabaseService.updateEvento(editMode.editingId, payload)
-      setEvents((prev) => prev.map((x) => (x.id === editMode.editingId ? updated : x)))
-      cancelEdit()
-    } else {
-      const added = await supabaseService.addEvento(payload)
-      setEvents((prev) => [...prev, added])
-      cancelEdit()
+    try {
+      if (!newEvent.time || !/^\d{2}:\d{2}$/.test(newEvent.time)) {
+        alert('Inserisci un orario valido nel formato HH:MM')
+        return
+      }
+      const payload = { title: newEvent.title, description: newEvent.description, date: newEvent.date, time: newEvent.time, location: newEvent.location, category: newEvent.category, image_url: newEvent.image }
+      if (editMode.isEditing && editMode.editingType === 'event') {
+        const updated = await supabaseService.updateEvento(editMode.editingId, payload)
+        setEvents((prev) => prev.map((x) => (x.id === editMode.editingId ? updated : x)))
+        cancelEdit()
+      } else {
+        const added = await supabaseService.addEvento(payload)
+        setEvents((prev) => [...prev, added])
+        cancelEdit()
+      }
+    } catch (err) {
+      setError(err?.message || "Errore nella gestione dell'evento")
     }
   }
 
   const handleAddStudyWeek = async (e) => {
     e.preventDefault()
-    const payload = { title: newStudyWeek.title, description: newStudyWeek.description, duration: newStudyWeek.duration, type: newStudyWeek.type, city: newStudyWeek.city, activities: newStudyWeek.activities, image_url: newStudyWeek.image }
-    if (editMode.isEditing && editMode.editingType === 'studyWeek') {
-      const updated = await supabaseService.updateSettimanaStudio(editMode.editingId, payload)
-      setStudyWeeks((prev) => prev.map((x) => (x.id === editMode.editingId ? updated : x)))
-      cancelEdit()
-    } else {
-      const added = await supabaseService.addSettimanaStudio(payload)
-      setStudyWeeks((prev) => [...prev, added])
-      cancelEdit()
+    try {
+      const payload = { title: newStudyWeek.title, description: newStudyWeek.description, duration: newStudyWeek.duration, type: newStudyWeek.type, city: newStudyWeek.city, activities: newStudyWeek.activities, image_url: newStudyWeek.image }
+      if (editMode.isEditing && editMode.editingType === 'studyWeek') {
+        const updated = await supabaseService.updateSettimanaStudio(editMode.editingId, payload)
+        setStudyWeeks((prev) => prev.map((x) => (x.id === editMode.editingId ? updated : x)))
+        cancelEdit()
+      } else {
+        const added = await supabaseService.addSettimanaStudio(payload)
+        setStudyWeeks((prev) => [...prev, added])
+        cancelEdit()
+      }
+    } catch (err) {
+      setError(err?.message || 'Errore nella gestione della settimana studio')
     }
   }
 
   const openDeleteModal = (id, type, title) => setDeleteModal({ isOpen: true, itemId: id, itemType: type, itemTitle: title })
   const closeDeleteModal = () => setDeleteModal({ isOpen: false, itemId: null, itemType: null, itemTitle: '' })
   const confirmDelete = async () => {
-    if (!deleteModal.itemId || !deleteModal.itemType) return
-    if (deleteModal.itemType === 'course') {
-      await supabaseService.deleteCorso(deleteModal.itemId)
-      setCourses((prev) => prev.filter((x) => x.id !== deleteModal.itemId))
-    } else if (deleteModal.itemType === 'event') {
-      await supabaseService.deleteEvento(deleteModal.itemId)
-      setEvents((prev) => prev.filter((x) => x.id !== deleteModal.itemId))
-    } else if (deleteModal.itemType === 'studyWeek') {
-      await supabaseService.deleteSettimanaStudio(deleteModal.itemId)
-      setStudyWeeks((prev) => prev.filter((x) => x.id !== deleteModal.itemId))
+    try {
+      if (!deleteModal.itemId || !deleteModal.itemType) return
+      if (deleteModal.itemType === 'course') {
+        await supabaseService.deleteCorso(deleteModal.itemId)
+        setCourses((prev) => prev.filter((x) => x.id !== deleteModal.itemId))
+      } else if (deleteModal.itemType === 'event') {
+        await supabaseService.deleteEvento(deleteModal.itemId)
+        setEvents((prev) => prev.filter((x) => x.id !== deleteModal.itemId))
+      } else if (deleteModal.itemType === 'studyWeek') {
+        await supabaseService.deleteSettimanaStudio(deleteModal.itemId)
+        setStudyWeeks((prev) => prev.filter((x) => x.id !== deleteModal.itemId))
+      }
+      closeDeleteModal()
+    } catch (err) {
+      setError(err?.message || "Errore nell'eliminazione")
     }
-    closeDeleteModal()
   }
 
   if (loading) {
@@ -167,7 +183,7 @@ export const AdminDashboard = () => {
             <p className="text-gray-600 text-sm">Gestisci corsi, eventi e settimane formative</p>
           </div>
           <div className="flex items-center space-x-2">
-            <button onClick={() => { localStorage.removeItem('adminLoggedIn'); navigate('/login') }} className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">Logout</button>
+            <button onClick={() => { localStorage.removeItem('adminLoggedIn'); localStorage.removeItem('adminUsername'); localStorage.removeItem('adminEmail'); navigate('/login') }} className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">Logout</button>
           </div>
         </div>
 
