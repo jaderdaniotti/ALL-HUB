@@ -4,9 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { supabaseService } from "../lib/supabase";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 import { CourseModal, EventModal, StudyWeekModal } from "../components/Modal";
+import { getLocalizedField, getAvailableLanguages, getLangFlag } from "../utils/localizationHelper";
 
 const Attivita = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language; // Lingua corrente (it, en, de, es, fr)
+  
+  // Helper per ottenere campo localizzato
+  const getField = (item, fieldName) => getLocalizedField(item, fieldName, currentLang);
   const [activeTab, setActiveTab] = useState('corsi');
   const [courses, setCourses] = useState([]);
   const [events, setEvents] = useState([]);
@@ -204,7 +209,7 @@ const Attivita = () => {
                           </div>
 
                       <h3 className="text-xl font-semibold text-gray-800 truncate max-w-full mb-2">
-                              {course.title}
+                              {getField(course, 'title')}
                             </h3>
 
                       <p className="text-gray-600 mb-4 text-sm overflow-hidden" style={{
@@ -213,7 +218,7 @@ const Attivita = () => {
                         WebkitBoxOrient: 'vertical',
                         maxHeight: '4.5rem'
                       }}>
-                              {course.description}
+                              {getField(course, 'description')}
                             </p>
 
                       <div className="space-y-2 mb-4">
@@ -283,7 +288,7 @@ const Attivita = () => {
                           </div>
 
                       <h3 className="text-xl font-semibold text-gray-800 truncate max-w-full mb-2">
-                              {event.title}
+                              {getField(event, 'title')}
                             </h3>
 
                       <p className="text-gray-600 mb-4 text-sm overflow-hidden" style={{
@@ -292,7 +297,7 @@ const Attivita = () => {
                         WebkitBoxOrient: 'vertical',
                         maxHeight: '4.5rem'
                       }}>
-                              {event.description}
+                              {getField(event, 'description')}
                             </p>
 
                       <div className="space-y-2 mb-4">
@@ -360,7 +365,7 @@ const Attivita = () => {
                           </div>
 
                       <h3 className="text-xl font-semibold truncate max-w-full text-gray-800 mb-2">
-                        {studyWeek.title}
+                        {getField(studyWeek, 'title')}
                             </h3>
 
                       <p className="text-gray-600 mb-4 text-sm overflow-hidden" style={{
@@ -369,7 +374,7 @@ const Attivita = () => {
                         WebkitBoxOrient: 'vertical',
                         maxHeight: '4.5rem'
                       }}>
-                        {studyWeek.description}
+                        {getField(studyWeek, 'description')}
                             </p>
 
                       <div className="space-y-2 mb-4">
@@ -387,7 +392,7 @@ const Attivita = () => {
                         </div>
                         <div className="chip chip-blue">
                           <i className="bi bi-list-check mr-2"></i>
-                          <span className="truncate">{studyWeek.activities}</span>
+                          <span className="truncate">{getField(studyWeek, 'activities')}</span>
                               </div>
                             </div>
 
