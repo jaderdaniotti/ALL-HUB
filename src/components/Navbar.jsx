@@ -116,37 +116,6 @@ const Navbar = () => {
             >
               {t('nav.location')}
             </Link>
-            {isLoggedIn ? (
-              <div className="flex items-center space-x-4">
-                <Link 
-                  to="/admin/dashboard" 
-                  className={`text-gray-700 hover:text-purple-600 hover:border-b-2 hover:border-purple-600 font-medium linear ${
-                    location.pathname === '/admin/dashboard' ? 'text-purple-600 border-b-2 border-purple-600' : ''
-                  }`}
-                >
-                  {t('nav.panel')}
-                </Link>
-                <div className="flex items-center space-x-2">
-                  <span className="text-sm text-gray-600">{t('nav.hello')}, {adminUsername}</span>
-                  <button
-                    onClick={handleLogout}
-                    className="text-gray-500 hover:text-red-600 text-sm font-medium"
-                    title={t('nav.logout')}
-                  >
-                    <i className="bi bi-box-arrow-right"></i>
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <Link 
-                to="/login" 
-                className={`text-gray-700 hover:text-purple-600 hover:border-b-2 hover:border-purple-600 font-medium linear ${
-                  location.pathname === '/login' ? 'text-purple-600 border-b-2 border-purple-600' : ''
-                }`}
-              >
-                {t('nav.login')}
-              </Link>
-            )}
             
             {/* Language Switcher */}
             <LanguageSwitcher />

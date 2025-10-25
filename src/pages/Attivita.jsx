@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { supabaseService } from "../lib/supabase";
 import { ImageWithFallback } from "../components/ImageWithFallback";
+import { CourseModal, EventModal, StudyWeekModal } from "../components/Modal";
 
 const Attivita = () => {
   const { t } = useTranslation();
@@ -111,7 +112,25 @@ const Attivita = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
+    <>
+      {/* Modali */}
+      <CourseModal 
+        course={selectedCourse} 
+        isOpen={!!selectedCourse} 
+        onClose={() => setSelectedCourse(null)} 
+      />
+      <EventModal 
+        event={selectedEvent} 
+        isOpen={!!selectedEvent} 
+        onClose={() => setSelectedEvent(null)} 
+      />
+      <StudyWeekModal 
+        studyWeek={selectedStudyWeek} 
+        isOpen={!!selectedStudyWeek} 
+        onClose={() => setSelectedStudyWeek(null)} 
+      />
+
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
       {/* Header */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
@@ -171,8 +190,7 @@ const Attivita = () => {
                 courses.map((course) => (
                         <div
                           key={course.id}
-                    className="bg-white/70 hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl cursor-pointer"
-                    onClick={() => setSelectedCourse(course)}
+                    className="bg-white/70 hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl"
                         >
                     <div className="text-center">
                       <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
@@ -189,7 +207,12 @@ const Attivita = () => {
                               {course.title}
                             </h3>
 
-                      <p className="text-gray-600 mb-4 text-sm">
+                      <p className="text-gray-600 mb-4 text-sm overflow-hidden" style={{
+                        display: '-webkit-box',
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: 'vertical',
+                        maxHeight: '4.5rem'
+                      }}>
                               {course.description}
                             </p>
 
@@ -214,9 +237,15 @@ const Attivita = () => {
                               )}
                             </div>
 
-                      <div className="bg-purple-600 text-white px-6 py-2 rounded-full font-medium hover:bg-purple-700 transition-colors text-sm inline-block">
-                        Prenota Ora
-                        </div>
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedCourse(course);
+                        }}
+                        className="bg-purple-600 text-white px-6 py-2 rounded-full font-medium hover:bg-purple-700 transition-colors text-sm inline-block"
+                      >
+                        Leggi di più
+                      </button>
                     </div>
                   </div>
                 ))
@@ -240,8 +269,7 @@ const Attivita = () => {
                 events.map((event) => (
                   <div
                     key={event.id}
-                    className="bg-white/70 hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl cursor-pointer"
-                    onClick={() => setSelectedEvent(event)}
+                    className="bg-white/70 hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl"
                   >
                     <div className="text-center">
                       <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
@@ -258,7 +286,12 @@ const Attivita = () => {
                               {event.title}
                             </h3>
 
-                      <p className="text-gray-600 mb-4 text-sm">
+                      <p className="text-gray-600 mb-4 text-sm overflow-hidden" style={{
+                        display: '-webkit-box',
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: 'vertical',
+                        maxHeight: '4.5rem'
+                      }}>
                               {event.description}
                             </p>
 
@@ -281,9 +314,15 @@ const Attivita = () => {
                               </div>
                             </div>
 
-                      <div className="bg-green-600 text-white px-6 py-2 rounded-full font-medium hover:bg-green-700 transition-colors text-sm inline-block">
-                        Prenota Ora
-                        </div>
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedEvent(event);
+                        }}
+                        className="bg-green-600 text-white px-6 py-2 rounded-full font-medium hover:bg-green-700 transition-colors text-sm inline-block"
+                      >
+                        Leggi di più
+                      </button>
                     </div>
                   </div>
                 ))
@@ -307,8 +346,7 @@ const Attivita = () => {
                 studyWeeks.map((studyWeek) => (
                   <div
                     key={studyWeek.id}
-                    className="bg-white/70 hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl cursor-pointer"
-                    onClick={() => setSelectedStudyWeek(studyWeek)}
+                    className="bg-white/70 hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl"
                   >
                     <div className="text-center">
                       <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
@@ -325,7 +363,12 @@ const Attivita = () => {
                         {studyWeek.title}
                             </h3>
 
-                      <p className="text-gray-600 mb-4 text-sm">
+                      <p className="text-gray-600 mb-4 text-sm overflow-hidden" style={{
+                        display: '-webkit-box',
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: 'vertical',
+                        maxHeight: '4.5rem'
+                      }}>
                         {studyWeek.description}
                             </p>
 
@@ -348,9 +391,15 @@ const Attivita = () => {
                               </div>
                             </div>
 
-                      <div className="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition-colors text-sm inline-block">
-                        Prenota Settimana
-                        </div>
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedStudyWeek(studyWeek);
+                        }}
+                        className="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition-colors text-sm inline-block"
+                      >
+                        Leggi di più
+                      </button>
                     </div>
                   </div>
                 ))
@@ -359,7 +408,8 @@ const Attivita = () => {
                 )}
               </div>
             </div>
-    </div>
+      </div>
+    </>
   );
 };
 

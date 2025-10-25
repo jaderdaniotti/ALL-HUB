@@ -37,6 +37,13 @@
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
+  max-width: 100%;
+}
+
+.chip span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .chip-purple {

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Migrazione Immagini a Storage</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 { color: #333; margin-top: 0; }
+    .status {
+      background: #f0f0f0;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .status.running { background: #e3f2fd; }
+    .status.success { background: #e8f5e9; }
+    .status.error { background: #ffebee; }
+    button {
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    button:hover { background: #4f46e5; }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .success { color: #2e7d32; }
+    .error { color: #c62828; }
+    .warning { color: #f57c00; }
+    .info { color: #0277bd; }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin: 5px 0 15px 0;
+      font-size: 14px;
+    }
+    label {
+      font-weight: 500;
+      color: #555;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🖼️ Migrazione Immagini a Supabase Storage</h1>
+    
+    <div id="config-section">
+      <p><strong>Configurazione Supabase</strong></p>
+      <label>Supabase URL:</label>
+      <input type="text" id="supabase-url" placeholder="https://xxx.supabase.co" />
+      
+      <label>Supabase Anon Key:</label>
+      <input type="password" id="supabase-key" placeholder="eyJhbGciOi..." />
+      
+      <button onclick="startMigration()">🚀 Avvia Migrazione</button>
+      <button onclick="testConnection()">🔍 Test Connessione</button>
+    </div>
+    
+    <div id="status" class="status"></div>
+    
+    <div id="summary" class="hidden">
+      <h3>📊 Riepilogo</h3>
+      <p id="summary-text"></p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+    
+    let supabase = null;
+    
+    window.testConnection = async function() {
+      const url = document.getElementById('supabase-url').value;
+      const key = document.getElementById('supabase-key').value;
+      
+      if (!url || !key) {
+        log('❌ Inserisci URL e Key di Supabase', 'error');
+        return;
+      }
+      
+      try {
+        supabase = createClient(url, key);
+        const { data, error } = await supabase.from('corsi').select('count').limit(1);
+        
+        if (error) {
+          log(`❌ Errore connessione: ${error.message}`, 'error');
+        } else {
+          log('✅ Connessione riuscita!', 'success');
+        }
+      } catch (err) {
+        log(`❌ Errore: ${err.message}`, 'error');
+      }
+    };
+    
+    window.startMigration = async function() {
+      const url = document.getElementById('supabase-url').value;
+      const key = document.getElementById('supabase-key').value;
+      
+      if (!url || !key) {
+        log('❌ Inserisci URL e Key di Supabase', 'error');
+        return;
+      }
+      
+      document.getElementById('status').className = 'status running';
+      document.getElementById('status').innerHTML = '';
+      document.getElementById('summary').className = 'hidden';
+      
+      try {
+        supabase = createClient(url, key);
+        await migrateImages();
+      } catch (err) {
+        log(`❌ Errore fatale: ${err.message}`, 'error');
+      }
+    };
+    
+    async function migrateImages() {
+      log('🚀 Inizio migrazione immagini...\n', 'info');
+      
+      const tables = ['corsi', 'eventi', 'settimane_studio'];
+      let totalMigrated = 0;
+      let totalFailed = 0;
+      
+      for (const tableName of tables) {
+        log(`\n📋 Elaborazione tabella: ${tableName}`, 'info');
+        
+        // 1. Fetch records
+        const { data: records, error: fetchError } = await supabase
+          .from(tableName)
+          .select('id, image_url');
+        
+        if (fetchError) {
+          log(`  ❌ Errore fetch: ${fetchError.message}`, 'error');
+          continue;
+        }
+        
+        const base64Records = records.filter(r => 
+          r.image_url && r.image_url.startsWith('data:image')
+        );
+        
+        log(`  Trovati ${records.length} record totali`);
+        log(`  ${base64Records.length} con immagini base64`);
+        
+        if (base64Records.length === 0) {
+          log('  ✅ Nessuna migrazione necessaria', 'success');
+          continue;
+        }
+        
+        // 2. Migra ogni record
+        for (const record of base64Records) {
+          try {
+            log(`\n  🔄 Migrazione ${tableName}/${record.id}...`);
+            
+            // a) Converti base64 a blob
+            const response = await fetch(record.image_url);
+            const blob = await response.blob();
+            
+            log(`     Dimensione: ${(blob.size / 1024).toFixed(2)} KB`);
+            
+            // b) Nome file
+            const ext = blob.type.split('/')[1] || 'jpg';
+            const fileName = `${tableName}/${record.id}.${ext}`;
+            
+            // c) Upload
+            const { error: uploadError } = await supabase.storage
+              .from('images')
+              .upload(fileName, blob, {
+                contentType: blob.type,
+                upsert: true
+              });
+            
+            if (uploadError) {
+              log(`     ❌ Upload fallito: ${uploadError.message}`, 'error');
+              totalFailed++;
+              continue;
+            }
+            
+            // d) URL pubblico
+            const { data: { publicUrl } } = supabase.storage
+              .from('images')
+              .getPublicUrl(fileName);
+            
+            log(`     📷 URL: ${publicUrl}`);
+            
+            // e) Update record
+            const { error: updateError } = await supabase
+              .from(tableName)
+              .update({ image_url: publicUrl })
+              .eq('id', record.id);
+            
+            if (updateError) {
+              log(`     ❌ Update fallito: ${updateError.message}`, 'error');
+              totalFailed++;
+              continue;
+            }
+            
+            log(`     ✅ Migrato con successo!`, 'success');
+            totalMigrated++;
+            
+          } catch (err) {
+            log(`     ❌ Errore: ${err.message}`, 'error');
+            totalFailed++;
+          }
+        }
+      }
+      
+      // Riepilogo
+      log('\n========================================', 'info');
+      log('📊 RIEPILOGO MIGRAZIONE', 'info');
+      log('========================================', 'info');
+      log(`✅ Migrati: ${totalMigrated}`, totalMigrated > 0 ? 'success' : '');
+      log(`❌ Falliti: ${totalFailed}`, totalFailed > 0 ? 'error' : '');
+      log('========================================\n', 'info');
+      
+      if (totalMigrated > 0) {
+        document.getElementById('status').className = 'status success';
+        document.getElementById('summary').className = '';
+        document.getElementById('summary-text').innerHTML = `
+          ✅ Migrazione completata con successo!<br>
+          ${totalMigrated} immagini migrate su Supabase Storage.<br><br>
+          <strong>Prossimi passi:</strong><br>
+          1. Verifica le immagini su Supabase Dashboard → Storage → images<br>
+          2. Ricarica il sito FRONTEND per vedere le nuove immagini<br>
+          3. Le immagini ora sono servite da CDN (più veloci!)
+        `;
+      } else {
+        document.getElementById('status').className = 'status';
+        log('ℹ️  Nessuna immagine da migrare o tutte già migrate', 'info');
+      }
+    }
+    
+    function log(message, type = '') {
+      const statusDiv = document.getElementById('status');
+      const line = document.createElement('div');
+      line.className = type;
+      line.textContent = message;
+      statusDiv.appendChild(line);
+      statusDiv.scrollTop = statusDiv.scrollHeight;
+    }
+  </script>
+</body>
+</html>
+
