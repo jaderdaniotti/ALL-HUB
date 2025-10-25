@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet, Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import { AdminLogin } from './pages/AdminLogin.jsx'
 import { AdminDashboard } from './pages/AdminDashboard.jsx'
 

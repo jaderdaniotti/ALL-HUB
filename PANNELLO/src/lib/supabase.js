@@ -16,7 +16,7 @@ export const supabase = supabaseUrl && supabaseKey
 
 export const testSupabaseConnection = async () => {
   if (!supabase) return { success: false, error: 'Supabase client not initialized' }
-  const { data, error } = await supabase.from('corsi').select('count').limit(1)
+  const { data, error } = await supabase.from('corsi').select('id', { count: 'exact', head: true })
   return { success: !error, data, error }
 }
 
@@ -45,7 +45,7 @@ export const supabaseService = {
   },
   async deleteCorso(id) {
     ensureClient('deleteCorso')
-    const { error } = await supabase.from('corsi').delete().eq('id', id)
+    const { error } = await supabase.from('corsi').update({ is_active: false }).eq('id', id)
     if (error) throw error
   },
 

@@ -36,7 +36,7 @@ export const AdminDashboard = () => {
     const boot = async () => {
       setLoading(true)
       setError(null)
-      const test = await testSupabaseConnection()
+      const test = await testSupabaseConnection().catch(() => ({ success: false }))
       setDebug(test)
       try {
         const [c, e, s] = await Promise.all([
