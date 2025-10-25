@@ -1,3 +1,4 @@
+// Dashboard amministrativa: gestisce CRUD per corsi, eventi e settimane studio
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabaseService, testSupabaseConnection } from '../lib/supabase.js'
@@ -6,6 +7,7 @@ import { ImageWithFallback } from '../components/ImageWithFallback.jsx'
 import { EventPreview, CoursePreview, StudyWeekPreview } from '../components/PreviewCards.jsx'
 
 export const AdminDashboard = () => {
+  console.debug('[AdminDashboard] mount')
   const [activeTab, setActiveTab] = useState('corsi')
   const [courses, setCourses] = useState([])
   const [events, setEvents] = useState([])
@@ -29,11 +31,13 @@ export const AdminDashboard = () => {
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('adminLoggedIn')
+    console.debug('[AdminDashboard] auth check:', isLoggedIn)
     if (isLoggedIn !== 'true') navigate('/login')
   }, [navigate])
 
   useEffect(() => {
     const boot = async () => {
+      console.debug('[AdminDashboard] boot: start')
       setLoading(true)
       setError(null)
       const test = await testSupabaseConnection().catch(() => ({ success: false }))
@@ -47,10 +51,13 @@ export const AdminDashboard = () => {
         setCourses(c || [])
         setEvents(e || [])
         setStudyWeeks(s || [])
+        console.debug('[AdminDashboard] data loaded:', { courses: c?.length, events: e?.length, studyWeeks: s?.length })
       } catch (err) {
         setError('Errore nel caricamento dei dati. Verifica configurazione Supabase.')
+        console.error('[AdminDashboard] boot error:', err)
       } finally {
         setLoading(false)
+        console.debug('[AdminDashboard] boot: end')
       }
     }
     boot()
@@ -58,6 +65,7 @@ export const AdminDashboard = () => {
 
   const handleImageUpload = (file, setter, previewSetter) => {
     if (!file) return
+    console.debug('[AdminDashboard] handleImageUpload: file selected', { name: file.name, size: file.size })
     const reader = new FileReader()
     reader.onload = (e) => {
       previewSetter(e.target.result)
@@ -79,6 +87,7 @@ export const AdminDashboard = () => {
   const handleAddCourse = async (e) => {
     e.preventDefault()
     try {
+      console.debug('[AdminDashboard] handleAddCourse: submit, editing?', editMode)
       const payload = { title: newCourse.title, description: newCourse.description, duration: newCourse.duration, level: newCourse.level, type: newCourse.type, modality: newCourse.modality, additional_notes: newCourse.additional_notes, image_url: newCourse.image }
       if (editMode.isEditing && editMode.editingType === 'course') {
         const updated = await supabaseService.updateCorso(editMode.editingId, payload)
@@ -91,6 +100,7 @@ export const AdminDashboard = () => {
       }
     } catch (err) {
       setError(err?.message || 'Errore nella gestione del corso')
+      console.error('[AdminDashboard] handleAddCourse error:', err)
     }
   }
 
@@ -101,6 +111,7 @@ export const AdminDashboard = () => {
         alert('Inserisci un orario valido nel formato HH:MM')
         return
       }
+      console.debug('[AdminDashboard] handleAddEvent: submit, editing?', editMode)
       const payload = { title: newEvent.title, description: newEvent.description, date: newEvent.date, time: newEvent.time, location: newEvent.location, category: newEvent.category, image_url: newEvent.image }
       if (editMode.isEditing && editMode.editingType === 'event') {
         const updated = await supabaseService.updateEvento(editMode.editingId, payload)
@@ -113,12 +124,14 @@ export const AdminDashboard = () => {
       }
     } catch (err) {
       setError(err?.message || "Errore nella gestione dell'evento")
+      console.error('[AdminDashboard] handleAddEvent error:', err)
     }
   }
 
   const handleAddStudyWeek = async (e) => {
     e.preventDefault()
     try {
+      console.debug('[AdminDashboard] handleAddStudyWeek: submit, editing?', editMode)
       const payload = { title: newStudyWeek.title, description: newStudyWeek.description, duration: newStudyWeek.duration, type: newStudyWeek.type, city: newStudyWeek.city, activities: newStudyWeek.activities, image_url: newStudyWeek.image }
       if (editMode.isEditing && editMode.editingType === 'studyWeek') {
         const updated = await supabaseService.updateSettimanaStudio(editMode.editingId, payload)
@@ -131,10 +144,14 @@ export const AdminDashboard = () => {
       }
     } catch (err) {
       setError(err?.message || 'Errore nella gestione della settimana studio')
+      console.error('[AdminDashboard] handleAddStudyWeek error:', err)
     }
   }
 
-  const openDeleteModal = (id, type, title) => setDeleteModal({ isOpen: true, itemId: id, itemType: type, itemTitle: title })
+  const openDeleteModal = (id, type, title) => {
+    console.debug('[AdminDashboard] openDeleteModal:', { id, type, title })
+    setDeleteModal({ isOpen: true, itemId: id, itemType: type, itemTitle: title })
+  }
   const closeDeleteModal = () => setDeleteModal({ isOpen: false, itemId: null, itemType: null, itemTitle: '' })
   const confirmDelete = async () => {
     try {
@@ -152,6 +169,7 @@ export const AdminDashboard = () => {
       closeDeleteModal()
     } catch (err) {
       setError(err?.message || "Errore nell'eliminazione")
+      console.error('[AdminDashboard] confirmDelete error:', err)
     }
   }
 

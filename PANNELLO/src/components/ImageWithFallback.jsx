@@ -1,3 +1,4 @@
+// Immagine con fallback visivo e stato di caricamento
 import React, { useState } from 'react'
 
 export const ImageWithFallback = ({ src, alt, fallbackIcon, fallbackGradient = 'from-purple-400 to-blue-500', className = 'w-full h-full object-cover' }) => {
@@ -5,11 +6,13 @@ export const ImageWithFallback = ({ src, alt, fallbackIcon, fallbackGradient = '
   const [imageLoading, setImageLoading] = useState(true)
 
   const handleImageError = () => {
+    console.warn('[ImageWithFallback] image load error for src:', src)
     setImageError(true)
     setImageLoading(false)
   }
 
   const handleImageLoad = () => {
+    console.debug('[ImageWithFallback] image loaded ok for src:', src)
     setImageLoading(false)
   }
 

@@ -1,3 +1,4 @@
+// Piccole card di anteprima per i form (non salvano dati)
 import React from 'react'
 import { ImageWithFallback } from './ImageWithFallback.jsx'
 

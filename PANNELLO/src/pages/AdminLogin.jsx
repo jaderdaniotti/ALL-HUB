@@ -1,3 +1,4 @@
+// Pagina di login amministratore: verifica credenziali su tabella users
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabaseService } from '../lib/supabase.js'
@@ -14,6 +15,7 @@ export const AdminLogin = () => {
     setError('')
     setLoading(true)
     try {
+      console.debug('[AdminLogin] submit login for email', email)
       const res = await supabaseService.loginAdmin(email, password)
       if (res.success) {
         localStorage.setItem('adminLoggedIn', 'true')
@@ -25,6 +27,7 @@ export const AdminLogin = () => {
       }
     } catch (err) {
       setError('Errore di connessione. Riprova più tardi.')
+      console.error('[AdminLogin] login error:', err)
     } finally {
       setLoading(false)
     }

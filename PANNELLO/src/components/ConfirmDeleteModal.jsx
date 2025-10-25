@@ -1,3 +1,4 @@
+// Modale di conferma per eliminazioni
 import React from 'react'
 
 export const ConfirmDeleteModal = ({ isOpen, onClose, onConfirm, itemType, itemTitle }) => {
