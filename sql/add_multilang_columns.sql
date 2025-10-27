@@ -116,3 +116,4 @@ COMMENT ON COLUMN settimane_studio.activities_en IS 'Attività incluse in ingles
 -- 
 -- ========================================
 
+

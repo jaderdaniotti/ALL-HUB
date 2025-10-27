@@ -414,6 +414,37 @@ const Attivita = () => {
               </div>
             </div>
       </div>
+
+      {/* Modali */}
+      <CourseModal 
+        course={selectedCourse ? {
+          ...selectedCourse,
+          title: getField(selectedCourse, 'title'),
+          description: getField(selectedCourse, 'description')
+        } : null}
+        isOpen={!!selectedCourse}
+        onClose={() => setSelectedCourse(null)}
+      />
+
+      <EventModal 
+        event={selectedEvent ? {
+          ...selectedEvent,
+          title: getField(selectedEvent, 'title'),
+          description: getField(selectedEvent, 'description')
+        } : null}
+        isOpen={!!selectedEvent}
+        onClose={() => setSelectedEvent(null)}
+      />
+
+      <StudyWeekModal 
+        studyWeek={selectedStudyWeek ? {
+          ...selectedStudyWeek,
+          title: getField(selectedStudyWeek, 'title'),
+          description: getField(selectedStudyWeek, 'description')
+        } : null}
+        isOpen={!!selectedStudyWeek}
+        onClose={() => setSelectedStudyWeek(null)}
+      />
     </>
   );
 };

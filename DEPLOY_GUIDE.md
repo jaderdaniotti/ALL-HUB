@@ -999,3 +999,4 @@ Se hai domande o problemi, consulta la documentazione tecnica in `DOCUMENTAZIONE
 - `README_SEO.md` - Ottimizzazioni SEO
 - `README_OTTIMIZZAZIONI.md` - Performance optimizations
 
+

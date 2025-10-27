@@ -6,7 +6,7 @@ export const ImageWithFallback = ({
   alt, 
   fallbackIcon, 
   fallbackGradient = "from-purple-400 to-blue-500",
-  className = "w-full h-full object-cover"
+  className = "w-full h-full object-contain"
 }) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);

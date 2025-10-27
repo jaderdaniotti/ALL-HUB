@@ -381,6 +381,34 @@
     "confirm": "Conferma",
     "back": "Indietro",
     "next": "Avanti"
+  },
+  "cookies": {
+    "title": "Utilizzo dei Cookie",
+    "description": "Utilizziamo i cookie per migliorare la tua esperienza di navigazione, analizzare il traffico del sito e personalizzare i contenuti. Continuando a utilizzare il nostro sito, accetti la nostra politica sui cookie.",
+    "detailedDescription": "Puoi scegliere quali tipi di cookie accettare. I cookie necessari sono sempre attivi perché essenziali per il funzionamento del sito.",
+    "learnMore": "Scopri di più",
+    "acceptAll": "Accetta Tutti",
+    "decline": "Rifiuta",
+    "declineAll": "Rifiuta Tutti",
+    "customize": "Personalizza",
+    "preferences": "Preferenze Cookie",
+    "savePreferences": "Salva Preferenze",
+    "necessary": {
+      "title": "Cookie Necessari",
+      "description": "Questi cookie sono essenziali per il funzionamento del sito web. Senza questi cookie, il sito non può funzionare correttamente."
+    },
+    "analytics": {
+      "title": "Cookie Analitici",
+      "description": "Ci aiutano a capire come i visitatori interagiscono con il sito raccogliendo e segnalando informazioni in modo anonimo. Include Google Analytics."
+    },
+    "marketing": {
+      "title": "Cookie di Marketing",
+      "description": "Utilizzati per tracciare i visitatori attraverso i siti web per mostrare annunci pertinenti e coinvolgenti."
+    },
+    "functional": {
+      "title": "Cookie Funzionali",
+      "description": "Permettono al sito di ricordare le tue scelte (come lingua o regione) e fornire funzionalità migliorate e più personali."
+    }
   }
 }
 

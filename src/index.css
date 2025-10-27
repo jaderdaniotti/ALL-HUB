@@ -103,3 +103,25 @@
     max-height: 3.75em;
   }
 }
+
+/* Animazione per il Cookie Banner */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Stili aggiuntivi per checkbox personalizzate (DaisyUI override) */
+.checkbox-pink:checked {
+  background-color: rgb(236 72 153) !important;
+  border-color: rgb(236 72 153) !important;
+}
