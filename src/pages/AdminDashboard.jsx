@@ -939,8 +939,12 @@ const AdminDashboard = () => {
                         />
                       </div>
                       
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">{course.title}</h3>
-                      <p className="text-gray-600 mb-4 text-sm">{course.description}</p>
+                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                        {course.title || "Titolo non disponibile"}
+                      </h3>
+                      <p className="text-gray-600 mb-4 text-sm">
+                        {course.description || "Descrizione non disponibile"}
+                      </p>
                       
                       {/* Chips per i dettagli del corso */}
                       <div className="grid space-y-2 mb-4">
@@ -1018,8 +1022,12 @@ const AdminDashboard = () => {
                         />
                       </div>
                       
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">{event.title}</h3>
-                      <p className="text-gray-600 mb-4 text-sm">{event.description}</p>
+                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                        {event.title || "Titolo non disponibile"}
+                      </h3>
+                      <p className="text-gray-600 mb-4 text-sm">
+                        {event.description || "Descrizione non disponibile"}
+                      </p>
                       
                       {/* Chips per i dettagli dell'evento */}
                       <div className="flex flex-col space-y-2 mb-4">
@@ -1085,8 +1093,12 @@ const AdminDashboard = () => {
                         />
                       </div>
                       
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">{week.title}</h3>
-                      <p className="text-gray-600 mb-4 text-sm">{week.description}</p>
+                      <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                        {week.title || "Titolo non disponibile"}
+                      </h3>
+                      <p className="text-gray-600 mb-4 text-sm">
+                        {week.description || "Descrizione non disponibile"}
+                      </p>
                       
                       {/* Chips per i dettagli della settimana studio */}
                       <div className="grid space-y-2 mb-4">
