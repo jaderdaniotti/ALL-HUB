@@ -189,42 +189,6 @@ const Navbar = () => {
               >
                 {t('nav.location')}
               </Link>
-              {isLoggedIn ? (
-                <>
-                  <Link 
-                    to="/admin/dashboard" 
-                    onClick={closeMenu}
-                    className={`block text-gray-700 hover:text-purple-600 font-medium text-lg ${
-                      location.pathname === '/admin/dashboard' ? 'text-purple-600' : ''
-                    }`}
-                  >
-                    {t('nav.panel')}
-                  </Link>
-                  <div className="flex items-center justify-between py-2">
-                    <span className="text-gray-600 text-sm">{t('nav.hello')}, {adminUsername}</span>
-                    <button
-                      onClick={() => {
-                        handleLogout();
-                        closeMenu();
-                      }}
-                      className="text-red-500 hover:text-red-700 text-sm font-medium"
-                    >
-                      <i className="bi bi-box-arrow-right mr-1"></i>
-                      {t('nav.logout')}
-                    </button>
-                  </div>
-                </>
-              ) : (
-                <Link 
-                  to="/login" 
-                  onClick={closeMenu}
-                  className={`block text-gray-700 hover:text-purple-600 font-medium text-lg ${
-                    location.pathname === '/login' ? 'text-purple-600' : ''
-                  }`}
-                >
-                  {t('nav.login')}
-                </Link>
-              )}
               
               {/* Language Switcher Mobile */}
               <div className="pt-4 border-t border-gray-200">

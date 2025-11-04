@@ -152,8 +152,9 @@
     }
   },
   "activities": {
-    "title": "Le Nostre Attività - Centro Formazione Udine",
-    "subtitle": "Scopri tutti i corsi di formazione professionale, eventi e settimane studio disponibili a Udine nel Friuli Venezia Giulia",
+    "title": "Le Nostre Attività",
+    "subtitle": "Scopri tutti i corsi di formazione professionale, i programmi studio, gli eventi e le settimane educative che proponiamo in Italia ed all’ estero per ragazzi ed adulti ",
+    "subtitle2": "Accettiamo inoltre gruppi in mobilità ERASMUS+ (progetti K1 supportati dall’ Unione Europea). Il nostro OID (organisation's unique identifier/Organisation ID) è : E10411189.",
     "coursesTitle": "Corsi",
     "coursesSubtitle": "Corsi di inglese e formazione professionale per ogni livello e necessità nel Friuli Venezia Giulia",
     "eventsTitle": "Eventi ",
