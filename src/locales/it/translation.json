@@ -92,6 +92,9 @@
       "placeholder": "Inserisci la tua email",
       "button": "Sign up",
       "privacy": "Accetto il trattamento dei miei dati personali per l'invio di newsletter"
+    },
+    "euro": {
+      "description": "Finanziato dall'Unione europea. Le opinioni espresse appartengono, tuttavia, al solo o ai soli autori e non riflettono necessariamente le opinioni dell'Unione europea o dell’Agenzia esecutiva europea per l’istruzione e la cultura (EACEA). Né l'Unione europea né l'EACEA possono esserne ritenute responsabili."
     }
   },
   "about": {

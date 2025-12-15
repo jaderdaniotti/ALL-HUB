@@ -83,6 +83,9 @@
       "placeholder": "Ingresa tu email",
       "button": "Registrarse",
       "privacy": "Acepto el procesamiento de mis datos personales para el envío de boletines"
+    },
+    "euro": {
+      "description": "Financiado por la Unión Europea. Sin embargo, las opiniones expresadas son exclusivamente de los autores y no reflejan necesariamente las de la Unión Europea ni de la Agencia Ejecutiva Europea de Educación y Cultura (EACEA). Ni la Unión Europea ni la EACEA se responsabilizan de ellas."
     }
   },
   "about": {
@@ -138,7 +141,7 @@
       },
       "passion": {
         "title": "Pasión",
-        "description": "Amor por la enseñanza y el aprendizaje"
+        "description": "Amor por la enseñanza y el aprendizaje" 
       }
     }
   },

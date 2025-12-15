@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useState, } from "react";
+import { Link, useLocation, } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import logoImage from "../assets/img/logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -7,45 +7,12 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const Navbar = () => {
   const { t } = useTranslation();
   const location = useLocation();
-  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [adminUsername, setAdminUsername] = useState("");
 
   // Controlla lo stato di login al caricamento e quando cambia la location
-  useEffect(() => {
-    const checkLoginStatus = () => {
-      const loggedIn = localStorage.getItem("adminLoggedIn") === "true";
-      const username = localStorage.getItem("adminUsername") || "";
-      setIsLoggedIn(loggedIn);
-      setAdminUsername(username);
-    };
 
-    checkLoginStatus();
-    
-    // Ascolta i cambiamenti nel localStorage
-    const handleStorageChange = () => {
-      checkLoginStatus();
-    };
 
-    window.addEventListener('storage', handleStorageChange);
-    
-    // Controlla anche quando cambia la location (per aggiornamenti immediati)
-    checkLoginStatus();
 
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, [location]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("adminLoggedIn");
-    localStorage.removeItem("adminUsername");
-    localStorage.removeItem("adminEmail");
-    setIsLoggedIn(false);
-    setAdminUsername("");
-    navigate("/");
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

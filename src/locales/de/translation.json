@@ -83,6 +83,9 @@
       "placeholder": "Geben Sie Ihre E-Mail ein",
       "button": "Anmelden",
       "privacy": "Ich akzeptiere die Verarbeitung meiner persönlichen Daten für den Newsletter-Versand"
+    },
+    "euro": {
+      "description": "Gefördert von der Europäischen Union. Die geäußerten Meinungen sind jedoch ausschließlich die der Autoren und spiegeln nicht notwendigerweise die Ansichten der Europäischen Union oder der Exekutivagentur für Bildung und Kultur (EACEA) wider. Weder die Europäische Union noch die EACEA übernehmen dafür die Verantwortung."
     }
   },
   "about": {

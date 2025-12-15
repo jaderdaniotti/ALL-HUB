@@ -103,6 +103,9 @@
       "placeholder": "Enter your email",
       "button": "Sign up",
       "privacy": "I accept the processing of my personal data for newsletter sending"
+    },
+    "euro": {
+      "description": "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor EACEA can be held responsible for them."
     }
   },
   "about": {
