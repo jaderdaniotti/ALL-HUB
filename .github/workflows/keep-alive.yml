@@ -1,0 +1,32 @@
+# Keep-Alive workflow: mantiene attivi il sito e il database (ping periodico)
+# Esegue una richiesta HTTP alla Home Page per evitare cold start e timeout
+
+name: Keep-Alive Ping
+
+on:
+  # Esecuzione automatica ogni 45 minuti
+  schedule:
+    - cron: '*/45 * * * *'
+  # Avvio manuale per test (Actions → Keep-Alive Ping → Run workflow)
+  workflow_dispatch:
+
+jobs:
+  ping:
+    name: Ping Home Page
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Keep-Alive request to production site
+        run: |
+          HTTP_CODE=$(curl -fsSL -o /dev/null -w "%{http_code}" \
+            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" \
+            -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" \
+            -H "Accept-Language: it-IT,it;q=0.9,en;q=0.8" \
+            "${{ secrets.PROD_URL }}")
+          echo "Response HTTP code: $HTTP_CODE"
+          if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 400 ]; then
+            echo "Keep-Alive ping completed successfully."
+          else
+            echo "Unexpected status: $HTTP_CODE"
+            exit 1
+          fi
