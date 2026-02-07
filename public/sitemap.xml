@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://allhub.org/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- About Page -->
   <url>
     <loc>https://allhub.org/about</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -23,7 +23,7 @@
   <!-- Activities/Courses Page -->
   <url>
     <loc>https://allhub.org/attivita</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -31,7 +31,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://allhub.org/contatti</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -39,7 +39,7 @@
   <!-- Location Page -->
   <url>
     <loc>https://allhub.org/location</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from 'react-i18next';
+import { seoConfig } from '../config/seo';
 import booksImage from "../assets/img/books.jpg";
 
 const Contatti = () => {
   const { t } = useTranslation();
+  useEffect(() => {
+    document.title = seoConfig.pages.contacts.title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', seoConfig.pages.contacts.description);
+  }, []);
 
   return (
     <div>

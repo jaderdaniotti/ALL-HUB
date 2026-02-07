@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { seoConfig } from '../config/seo';
 import booksImage from "../assets/img/books.jpg";
 import logorosa from "../assets/img/logorosa-Photoroom.png";
 import euroimg from '../assets/img/europa.webp'
 
 const Home = () => {
   const { t } = useTranslation();
+  useEffect(() => {
+    document.title = seoConfig.pages.home.title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', seoConfig.pages.home.description);
+  }, []);
 
   return (
     <div className="">

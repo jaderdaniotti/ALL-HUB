@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { seoConfig } from '../config/seo';
 import udine from "../assets/img/udine.avif";
 import udine2 from "../assets/img/udine2.avif";
 import udine3 from "../assets/img/udine3.avif";
@@ -11,6 +12,11 @@ import vienna from "../assets/img/vienna.jpg";
 
 const Location = () => {
   const { t } = useTranslation();
+  useEffect(() => {
+    document.title = seoConfig.pages.location.title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', seoConfig.pages.location.description);
+  }, []);
 
   return (
     <div className="">

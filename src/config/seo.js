@@ -1,25 +1,26 @@
-// SEO Configuration per All-Hub Centro Educativo
+// SEO Configuration per All-Hub Centro Educativo - Ottimizzato per ricerche locali Udine
 export const seoConfig = {
   site: {
-    name: "All-Hub Centro Educativo",
+    name: "All-Hub Udine - Corsi di Formazione e SkillUp Camps",
     url: "https://allhub.org",
-    description: "Centro educativo specializzato in corsi di formazione professionale, corsi di inglese, eventi e settimane studio a Udine",
+    description: "All-Hub Udine: corsi di formazione a Udine, corsi formazione Udine, SkillUp Camps Udine e settimane studio Udine. Formazione professionale e inglese nel Friuli Venezia Giulia.",
     keywords: [
-      "corsi formazione Udine",
-      "corsi inglese Udine", 
-      "formazione professionale Friuli",
-      "centro educativo Udine",
-      "corsi lingua straniera",
-      "skill up camps",
-      "settimane studio",
-      "formazione continua",
-      "All-Hub Udine",
-      "corsi formazione Friuli Venezia Giulia",
-      "centro formazione Udine",
-      "corsi inglese Friuli",
-      "formazione professionale Udine",
-      "corsi lingua Udine",
-      "All-Hub centro educativo"
+      "corsi di formazione udine",
+      "corsi formazione udine",
+      "allhub",
+      "allhub udine",
+      "all-hub udine",
+      "skillup camps udine",
+      "skill up camps udine",
+      "settimane studio udine",
+      "corsi inglese udine",
+      "formazione professionale udine",
+      "centro educativo udine",
+      "all-hub centro educativo",
+      "corsi lingua udine",
+      "formazione friuli venezia giulia",
+      "corsi formazione friuli",
+      "centro formazione udine"
     ]
   },
   local: {
@@ -46,29 +47,29 @@ export const seoConfig = {
   },
   pages: {
     home: {
-      title: "Corsi di Formazione Udine | Centro Educativo All-Hub | Friuli Venezia Giulia",
-      description: "Centro educativo All-Hub Udine: corsi di formazione professionale, corsi di inglese, eventi e settimane studio. Formazione personalizzata per crescita personale e successo duraturo nel Friuli Venezia Giulia.",
-      keywords: "corsi formazione Udine, corsi inglese Udine, formazione professionale Friuli, centro educativo Udine, corsi lingua straniera, skill up camps, settimane studio, formazione continua, All-Hub Udine"
+      title: "Corsi di Formazione Udine | All-Hub Udine | SkillUp Camps e Settimane Studio",
+      description: "All-Hub Udine: corsi di formazione a Udine, corsi formazione Udine, SkillUp Camps Udine e settimane studio Udine. Formazione professionale e inglese nel Friuli Venezia Giulia.",
+      keywords: "corsi di formazione udine, corsi formazione udine, allhub udine, skillup camps udine, settimane studio udine, corsi inglese udine, all-hub udine"
     },
     about: {
-      title: "Chi Siamo | Centro Educativo All-Hub Udine | Formazione Professionale Friuli",
-      description: "Scopri All-Hub, il centro educativo di Udine specializzato in corsi di formazione professionale, corsi di inglese e settimane studio. Testimonianze degli studenti e metodologie innovative nel Friuli Venezia Giulia.",
-      keywords: "chi siamo All-Hub, centro educativo Udine, formazione professionale Friuli, corsi inglese Udine, testimonianze studenti, metodologie formative, All-Hub team"
+      title: "Chi Siamo | All-Hub Udine | Corsi Formazione e SkillUp Camps",
+      description: "Scopri All-Hub Udine: centro per corsi di formazione a Udine, SkillUp Camps e settimane studio. Testimonianze e metodologie innovative a Udine e Friuli Venezia Giulia.",
+      keywords: "allhub udine, chi siamo all-hub, corsi formazione udine, skillup camps udine, settimane studio udine, centro educativo udine"
     },
     activities: {
-      title: "Corsi di Formazione Udine | Corsi Inglese Friuli | All-Hub Centro Educativo",
-      description: "Scopri i corsi di formazione professionale e corsi di inglese a Udine. Eventi, settimane studio e skill up camps nel Friuli Venezia Giulia. Formazione personalizzata per ogni livello con All-Hub.",
-      keywords: "corsi formazione Udine, corsi inglese Udine, formazione professionale Friuli, corsi lingua straniera Udine, eventi formativi, settimane studio, skill up camps, All-Hub corsi"
+      title: "Corsi di Formazione Udine | SkillUp Camps e Settimane Studio | All-Hub",
+      description: "Corsi di formazione Udine, SkillUp Camps Udine e settimane studio Udine con All-Hub. Corsi inglese, eventi e formazione professionale a Udine e Friuli.",
+      keywords: "corsi di formazione udine, corsi formazione udine, skillup camps udine, settimane studio udine, allhub udine, corsi inglese udine"
     },
     contacts: {
-      title: "Contatti | Centro Educativo All-Hub Udine | Prenota Corsi Formazione",
-      description: "Contatta All-Hub Udine per informazioni sui corsi di formazione professionale e corsi di inglese. Prenota il tuo corso nel Friuli Venezia Giulia. Email, telefono e social media.",
-      keywords: "contatti All-Hub Udine, prenota corsi formazione, informazioni corsi inglese Udine, centro educativo Udine contatti, All-Hub telefono email"
+      title: "Contatti All-Hub Udine | Prenota Corsi Formazione Udine",
+      description: "Contatta All-Hub Udine per corsi di formazione, SkillUp Camps e settimane studio a Udine. Prenota corsi formazione Udine. Email, telefono e social.",
+      keywords: "contatti allhub udine, prenota corsi formazione udine, all-hub udine contatti, corsi formazione udine"
     },
     location: {
-      title: "Dove Siamo | All-Hub Centro Educativo Udine | Friuli Venezia Giulia",
-      description: "Scopri dove si trova All-Hub a Udine nel Friuli Venezia Giulia. Centro educativo per corsi di formazione professionale e corsi di inglese. Mappa interattiva e informazioni sulla città.",
-      keywords: "dove siamo All-Hub, centro educativo Udine, Friuli Venezia Giulia, mappa Udine, corsi formazione Udine, All-Hub indirizzo"
+      title: "Dove Siamo | All-Hub Udine | Corsi Formazione e SkillUp Camps",
+      description: "Dove trovarci a Udine: All-Hub per corsi di formazione Udine, SkillUp Camps e settimane studio. Indirizzo, mappa e informazioni su Udine e Friuli Venezia Giulia.",
+      keywords: "allhub udine dove siamo, corsi formazione udine, centro all-hub udine, udine formazione"
     }
   }
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { seoConfig } from '../config/seo';
 import { supabaseService } from "../lib/supabase";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 import { CourseModal, EventModal, StudyWeekModal } from "../components/Modal";
@@ -9,7 +10,12 @@ import { getLocalizedField, getAvailableLanguages, getLangFlag } from "../utils/
 const Attivita = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language; // Lingua corrente (it, en, de, es, fr)
-  
+  useEffect(() => {
+    document.title = seoConfig.pages.activities.title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', seoConfig.pages.activities.description);
+  }, []);
+
   // Helper per ottenere campo localizzato
   const getField = (item, fieldName) => getLocalizedField(item, fieldName, currentLang);
   const [activeTab, setActiveTab] = useState('corsi');

@@ -16,9 +16,6 @@ Allow: /attivita
 Allow: /contatti
 Allow: /location
 
-# Crawl delay (optional)
-Crawl-delay: 1
-
 # Specific bot instructions
 User-agent: Googlebot
 Allow: /

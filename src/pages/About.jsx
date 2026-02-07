@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
+import { seoConfig } from '../config/seo';
 import booksImage from "../assets/img/books.jpg";
 
 const About = () => {
   const { t } = useTranslation();
-  
+  useEffect(() => {
+    document.title = seoConfig.pages.about.title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', seoConfig.pages.about.description);
+  }, []);
+
   // Array delle nuove testimonianze dei corsi di inglese
   const testimonials = [
     {

@@ -12,8 +12,8 @@
   },
   "home": {
     "hero": {
-      "title": "Benvenuto nel nostro hub educativo!",
-      "subtitle": "Il nostro piccolo centro educativo si  impegna a supportare mente e anima per migliorare conoscenze e competenze. Proponiamo percorsi di formazione (studiati per settori d’ impiego), settimane studio (per ragazzi, adulti, anziani), corsi, eventi e molto altro…",
+      "title": "All-Hub Udine: corsi di formazione e SkillUp Camps",
+      "subtitle": "All-Hub Udine è il centro per corsi di formazione a Udine, corsi formazione Udine, SkillUp Camps Udine e settimane studio Udine. Formazione professionale, corsi di inglese, eventi per ragazzi, adulti e anziani.",
       "cta1": "Scopri i Corsi",
       "cta2": "Contattaci ora"
     },
@@ -28,11 +28,11 @@
       "cta": "Scopri di più"
     },
     "services": {
-      "title": "Scopri le Nostre Attività",
-      "subtitle": "Corsi di formazione professionale, eventi e Skill Up Camps per ogni età e livello di apprendimento a Udine",
+      "title": "Corsi di formazione Udine | All-Hub Udine",
+      "subtitle": "Corsi di formazione a Udine, SkillUp Camps Udine e settimane studio Udine. Corsi formazione Udine con All-Hub per ogni età e livello.",
       "courses": {
-        "title": "Corsi",
-        "description": "Corsi di inglese e formazione professionale individuali e di gruppo per imparare le lingue straniere con metodi innovativi a Udine",
+        "title": "Corsi di formazione Udine",
+        "description": "Corsi di formazione e corsi di inglese a Udine: formazione professionale individuale e di gruppo con All-Hub Udine.",
         "cta": "Vedi Corsi"
       },
       "events": {
@@ -41,8 +41,8 @@
         "cta": "Scopri Eventi"
       },
       "studyWeeks": {
-        "title": "Skill up Camps",
-        "description": "Esperienze immersive all'estero per praticare le lingue in contesti reali - Settimane studio Udine",
+        "title": "SkillUp Camps Udine",
+        "description": "SkillUp Camps Udine e settimane studio Udine: esperienze immersive per praticare le lingue in contesti reali con All-Hub.",
         "cta": "Esplora Settimane"
       }
     },
@@ -70,21 +70,6 @@
       "title": "Inizia il Tuo Percorso Oggi",
       "subtitle": "Unisciti a noi e scopri come l'apprendimento continuo può trasformare la tua vita",
       "button": "Contattaci Ora"
-    },
-    "howItWorks": {
-      "title": "Come funziona?",
-      "step1": {
-        "title": "Seleziona il servizio",
-        "description": "Seleziona il servizio più adatto alle tue esigenze. I servizi offerti sono altamente personalizzabili, studieremo insieme il percorso più adatto alle tue esigenze."
-      },
-      "step2": {
-        "title": "Contattaci",
-        "description": "Studieremo assieme desideri ed esigenze, creando il pacchetto formativo più adatto a te."
-      },
-      "step3": {
-        "title": "Inizia il tuo percorso trasformativo",
-        "description": "Sarai pronto a iniziare il tuo percorso di crescita e miglioramento personale. Che si tratti di aderire ad un evento, ad un laboratorio o di partecipare ad una settimana studio in Italia o Europa saremo presenti per sostenerti e guidarti."
-      }
     },
     "newsletter": {
       "title": "Iscriviti alla Newsletter",
@@ -415,4 +400,3 @@
     }
   }
 }
-
