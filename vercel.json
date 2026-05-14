@@ -1,6 +1,12 @@
 {
   "version": 2,
   "name": "a-lifelong-learning-hub",
+  "crons": [
+    {
+      "path": "/api/db-keep-alive",
+      "schedule": "0 */3 * * *"
+    }
+  ],
   "builds": [
     {
       "src": "package.json",

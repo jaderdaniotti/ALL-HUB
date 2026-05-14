@@ -4,6 +4,10 @@
 VITE_SUPABASE_URL=https://vrtdijkbejtthhcrnclr.supabase.co
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key_here
 
+# Vercel (solo produzione): secret per /api/db-keep-alive (cron DB ogni 3h)
+# Genera una stringa casuale lunga e impostala in Vercel → Environment Variables come CRON_SECRET
+# CRON_SECRET=your_random_secret_here
+
 # ISTRUZIONI:
 # 1. Crea un file chiamato .env.local nella root del progetto
 # 2. Copia il contenuto di questo file nel .env.local
