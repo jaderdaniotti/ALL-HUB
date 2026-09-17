@@ -76,13 +76,12 @@ export const localSeoConfig = {
     "name": "All-Hub Centro Educativo",
     "description": "Centro educativo specializzato in corsi di formazione professionale e corsi di inglese a Udine",
     "url": "https://allhub.org",
-    "telephone": "+39-XXX-XXXXXXX",
-    "email": "secretaria.allhub@gmail.com",
+    "telephone": "+393402218595",
+    "email": "secretariat.allhub@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Via Udine",
       "addressLocality": "Udine",
-      "addressRegion": "Friuli Venezia Giulia",
+      "addressRegion": "Friuli-Venezia Giulia",
       "postalCode": "33100",
       "addressCountry": "IT"
     },

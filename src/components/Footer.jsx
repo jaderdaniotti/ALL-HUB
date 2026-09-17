@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import logoImage from "../assets/img/logo.png";
+import { seoConfig } from '../config/seo';
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { whatsapp, facebook } = seoConfig.local.contact;
   
   return (
   <footer className="w-full z-50 bg-white/90 backdrop-blur-md shadow-sm py-3">
@@ -17,16 +18,13 @@ const Footer = () => {
          
           {/* Social Media Icons */}
           <div className="flex justify-center gap-6">
-            <a href="https://www.facebook.com/share/1BjGLxA7af/" aria-label="Facebook" className="text-gray-900 hover:text-blue-500 transition-colors duration-300" target="__blank">
+            <a href={facebook} aria-label="Facebook" className="text-gray-900 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-facebook text-2xl"></i>
             </a>
-            <a href="#" aria-label="Instagram" className="text-gray-900 hover:text-pink-500 transition-colors duration-300">
-              <i className="bi bi-instagram text-2xl"></i>
-            </a>
-            <a href="#" aria-label="WhatsApp" className="text-gray-900 hover:text-green-500 transition-colors duration-300">
+            <a href={whatsapp} aria-label="WhatsApp" className="text-gray-900 hover:text-green-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-whatsapp text-2xl"></i>
             </a>
-            <a href="mailto:secretariat.allhub@gmail.com" aria-label="Email" className="text-gray-900 hover:text-purple-500 transition-colors duration-300">
+            <a href={`mailto:${seoConfig.local.contact.email}`} aria-label="Email" className="text-gray-900 hover:text-purple-500 transition-colors duration-300">
               <i className="bi bi-envelope text-2xl"></i>
             </a>
           </div>
@@ -40,10 +38,18 @@ const Footer = () => {
         <p className="text-gray-400 text-sm mt-1">
           {t('footer.vat')}
         </p>
+        <p className="text-gray-400 text-sm mt-2">
+          <Link to="/privacy" className="hover:text-purple-600 underline-offset-2 hover:underline">
+            Privacy &amp; Cookie Policy
+          </Link>
+        </p>
+        <p className="font-normal text-md mt-2">
+          Made with <i className="bi bi-heart-fill text-red-500"></i> by <a href="https://jaderweb.com/" target="__blank" className="underline transition-colors duration-300 underline-offset-2 hover:underline text-violet-500  font-bold">Jaderweb</a>
+        </p>
       </div>
     </div>
   </footer>
   );
 };
 
-export default Footer; 
+export default Footer;

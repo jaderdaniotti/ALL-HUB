@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import { seoConfig } from '../config/seo';
+import { seoConfig, breadcrumbSchema } from '../config/seo';
+import SEO from '../components/SEO';
 import { supabaseService } from "../lib/supabase";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 import { CourseModal, EventModal, StudyWeekModal } from "../components/Modal";
@@ -10,11 +11,7 @@ import { getLocalizedField, getAvailableLanguages, getLangFlag } from "../utils/
 const Attivita = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language; // Lingua corrente (it, en, de, es, fr)
-  useEffect(() => {
-    document.title = seoConfig.pages.activities.title;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', seoConfig.pages.activities.description);
-  }, []);
+  const page = seoConfig.pages.activities;
 
   // Helper per ottenere campo localizzato
   const getField = (item, fieldName) => getLocalizedField(item, fieldName, currentLang);
@@ -69,7 +66,7 @@ const Attivita = () => {
       {Array.from({ length: count }).map((_, idx) => (
         <div key={idx} className="bg-white/70 rounded-2xl shadow-lg p-6 border border-gray-100">
                     <div className="text-center">
-            <div className={`w-full h-48 mb-4 rounded-lg overflow-hidden bg-gradient-to-br ${gradient} animate-pulse`}></div>
+            <div className={`w-full aspect-video mb-4 rounded-lg overflow-hidden bg-gradient-to-br ${gradient} animate-pulse`}></div>
             <div className="h-5 w-3/5 bg-gray-200 rounded mx-auto mb-3 animate-pulse"></div>
             <div className="h-4 w-4/5 bg-gray-200 rounded mx-auto mb-2 animate-pulse"></div>
             <div className="h-4 w-2/3 bg-gray-200 rounded mx-auto mb-4 animate-pulse"></div>
@@ -83,6 +80,16 @@ const Attivita = () => {
   if (loadingCourses && loadingEvents && loadingStudyWeeks) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
+        <SEO
+          title={page.title}
+          description={page.description}
+          keywords={page.keywords}
+          path={page.path}
+          structuredData={breadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Attività', url: '/attivita' },
+          ])}
+        />
         <div className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-800 mb-4">{t('activities.title')}</h1>
@@ -106,6 +113,12 @@ const Attivita = () => {
   if (error) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
+        <SEO
+          title={page.title}
+          description={page.description}
+          keywords={page.keywords}
+          path={page.path}
+        />
         <div className="text-center max-w-md mx-auto p-6">
           <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
             <h2 className="text-lg font-semibold text-red-800 mb-2">Errore di Caricamento</h2>
@@ -124,6 +137,16 @@ const Attivita = () => {
 
   return (
     <>
+      <SEO
+        title={page.title}
+        description={page.description}
+        keywords={page.keywords}
+        path={page.path}
+        structuredData={breadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: 'Attività', url: '/attivita' },
+        ])}
+      />
       {/* Modali */}
       <CourseModal 
         course={selectedCourse} 
@@ -205,13 +228,13 @@ const Attivita = () => {
                     className="bg-white/70 hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl"
                         >
                     <div className="text-center">
-                      <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                      <div className="w-full aspect-video mb-4 rounded-lg overflow-hidden">
                             <ImageWithFallback
                               src={course.image_url}
                               alt={course.title}
                               fallbackIcon="bi bi-book"
                               fallbackGradient="from-purple-400 to-blue-500"
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-cover"
                             />
                           </div>
 
@@ -284,13 +307,13 @@ const Attivita = () => {
                     className="bg-white/70 hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl"
                   >
                     <div className="text-center">
-                      <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                      <div className="w-full aspect-video mb-4 rounded-lg overflow-hidden">
                             <ImageWithFallback
                               src={event.image_url}
                               alt={event.title}
                               fallbackIcon="bi bi-calendar-event"
                               fallbackGradient="from-green-400 to-blue-500"
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-cover"
                             />
                           </div>
 
@@ -361,13 +384,13 @@ const Attivita = () => {
                     className="bg-white/70 hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl"
                   >
                     <div className="text-center">
-                      <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                      <div className="w-full aspect-video mb-4 rounded-lg overflow-hidden">
                             <ImageWithFallback
                           src={studyWeek.image_url}
                           alt={studyWeek.title}
                               fallbackIcon="bi bi-globe"
                               fallbackGradient="from-indigo-400 to-purple-500"
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-cover"
                             />
                           </div>
 

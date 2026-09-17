@@ -1,27 +1,15 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+Disallow: /admin/
+Disallow: /admin/login
+Disallow: /login
+Disallow: /admin/dashboard
+
 Sitemap: https://allhub.org/sitemap.xml
 
-# Disallow admin areas
-Disallow: /admin/
-Disallow: /login
-Disallow: /admin/login
-
-# Allow important pages
-Allow: /
-Allow: /about
-Allow: /attivita
-Allow: /contatti
-Allow: /location
-
-# Specific bot instructions
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
 Allow: /

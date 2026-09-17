@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
-import { seoConfig } from '../config/seo';
+import { seoConfig, breadcrumbSchema } from '../config/seo';
+import SEO from '../components/SEO';
 import booksImage from "../assets/img/books.jpg";
 
 const About = () => {
   const { t } = useTranslation();
-  useEffect(() => {
-    document.title = seoConfig.pages.about.title;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', seoConfig.pages.about.description);
-  }, []);
+  const page = seoConfig.pages.about;
 
   // Array delle nuove testimonianze dei corsi di inglese
   const testimonials = [
@@ -124,6 +121,16 @@ const About = () => {
 
   return (
   <div className="">
+    <SEO
+      title={page.title}
+      description={page.description}
+      keywords={page.keywords}
+      path={page.path}
+      structuredData={breadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Chi siamo', url: '/about' },
+      ])}
+    />
     {/* Hero Section */}
     <section className="relative py-20 overflow-hidden">
       <div 

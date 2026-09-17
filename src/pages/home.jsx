@@ -1,21 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { seoConfig } from '../config/seo';
+import SEO from '../components/SEO';
 import booksImage from "../assets/img/books.jpg";
 import logorosa from "../assets/img/logorosa-Photoroom.png";
 import euroimg from '../assets/img/europa.webp'
 
 const Home = () => {
   const { t } = useTranslation();
-  useEffect(() => {
-    document.title = seoConfig.pages.home.title;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', seoConfig.pages.home.description);
-  }, []);
+  const page = seoConfig.pages.home;
 
   return (
     <div className="">
+      <SEO
+        title={page.title}
+        description={page.description}
+        keywords={page.keywords}
+        path={page.path}
+        includeWebsiteSchema
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}

@@ -6,8 +6,10 @@ import About from './pages/About'
 import Attivita from './pages/Attivita'
 import Contatti from './pages/Contatti'
 import Location from './pages/Location'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 import AdminLogin from './pages/AdminLogin'
 import AdminDashboard from './pages/AdminDashboard'
+import SEO from './components/SEO'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
@@ -43,9 +45,35 @@ function App() {
           <Route path="/attivita" element={<Attivita />} />
           <Route path="/contatti" element={<Contatti />} />
           <Route path="/location" element={<Location />} />
-          <Route path="/login" element={<AdminLogin />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route
+            path="/login"
+            element={
+              <>
+                <SEO title="Login | All-Hub" path="/login" noindex />
+                <AdminLogin />
+              </>
+            }
+          />
+          <Route
+            path="/admin/login"
+            element={
+              <>
+                <SEO title="Admin Login | All-Hub" path="/admin/login" noindex />
+                <AdminLogin />
+              </>
+            }
+          />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <>
+                <SEO title="Admin | All-Hub" path="/admin/dashboard" noindex />
+                <AdminDashboard />
+              </>
+            }
+          />
         </Routes>
         <Footer />
         <CookieBanner />

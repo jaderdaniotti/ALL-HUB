@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { seoConfig } from '../config/seo';
+import { seoConfig, breadcrumbSchema } from '../config/seo';
+import SEO from '../components/SEO';
 import udine from "../assets/img/udine.avif";
 import udine2 from "../assets/img/udine2.avif";
 import udine3 from "../assets/img/udine3.avif";
@@ -12,14 +13,20 @@ import vienna from "../assets/img/vienna.jpg";
 
 const Location = () => {
   const { t } = useTranslation();
-  useEffect(() => {
-    document.title = seoConfig.pages.location.title;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', seoConfig.pages.location.description);
-  }, []);
+  const page = seoConfig.pages.location;
 
   return (
     <div className="">
+      <SEO
+        title={page.title}
+        description={page.description}
+        keywords={page.keywords}
+        path={page.path}
+        structuredData={breadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: 'Dove siamo', url: '/location' },
+        ])}
+      />
       {/* Sezione principale */}
       <section className="py-16 bg-white/80">
         <div className="container mx-auto px-4 max-w-6xl">

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { revokeConsent } from '../utils/cookieManager';
+import { seoConfig, breadcrumbSchema } from '../config/seo';
 import SEO from '../components/SEO';
 
 /**
@@ -8,6 +9,7 @@ import SEO from '../components/SEO';
  */
 const PrivacyPolicy = () => {
   const { t } = useTranslation();
+  const page = seoConfig.pages.privacy;
 
   // Gestisce la revoca del consenso cookies
   const handleRevokeConsent = () => {
@@ -19,8 +21,14 @@ const PrivacyPolicy = () => {
   return (
     <>
       <SEO
-        title="Privacy Policy & Cookie Policy - All-Hub"
-        description="Informativa sulla privacy e cookie policy del centro educativo All-Hub Udine. Scopri come proteggiamo i tuoi dati personali."
+        title={page.title}
+        description={page.description}
+        keywords={page.keywords}
+        path={page.path}
+        structuredData={breadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: 'Privacy', url: '/privacy' },
+        ])}
       />
       
       <div className="min-h-screen bg-chiaro text-scuro py-20 px-4">

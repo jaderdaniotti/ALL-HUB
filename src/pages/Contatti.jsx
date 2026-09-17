@@ -1,18 +1,36 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslation } from 'react-i18next';
-import { seoConfig } from '../config/seo';
+import { seoConfig, breadcrumbSchema } from '../config/seo';
+import SEO from '../components/SEO';
 import booksImage from "../assets/img/books.jpg";
 
 const Contatti = () => {
   const { t } = useTranslation();
-  useEffect(() => {
-    document.title = seoConfig.pages.contacts.title;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', seoConfig.pages.contacts.description);
-  }, []);
+  const page = seoConfig.pages.contacts;
 
   return (
     <div>
+      <SEO
+        title={page.title}
+        description={page.description}
+        keywords={page.keywords}
+        path={page.path}
+        structuredData={[
+          breadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Contatti', url: '/contatti' },
+          ]),
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            name: page.title,
+            description: page.description,
+            url: `${seoConfig.site.url}/contatti`,
+            isPartOf: { "@id": "https://allhub.org/#website" },
+            about: { "@id": "https://allhub.org/#organization" },
+          },
+        ]}
+      />
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div
